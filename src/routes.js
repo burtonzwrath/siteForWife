@@ -7,6 +7,7 @@ import {
   HEART_ROUTE,
   CLOCK_ROUTE,
   DOSYAGNENYA_ROUTE,
+  CONTACTS_ROUTE,
 } from "./constants/consts";
 
 import AboutMe from "./components/AboutMe";
@@ -17,6 +18,7 @@ import Calculator from "./components/Calculator";
 import Heart from "./components/Heart";
 import Clock from "./components/Clock";
 import Dosyagnenya from "./components/Dosyagnenya";
+import Contacts from "./components/Contacts";
 
 export const navRoutes = [
   {
@@ -50,5 +52,9 @@ export const navRoutes = [
   {
     path: DOSYAGNENYA_ROUTE,
     Component: Dosyagnenya,
+  },
+  {
+    path: CONTACTS_ROUTE,
+    Component: Contacts,
   },
 ];

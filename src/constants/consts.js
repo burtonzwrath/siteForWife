@@ -7,6 +7,7 @@ export const CALC_ROUTE='/calc'
 export const HEART_ROUTE='/heart'
 export const CLOCK_ROUTE='/clock'
 export const DOSYAGNENYA_ROUTE='/dosyagnenya'
+export const CONTACTS_ROUTE='/contacts'
 
 export const initalState = [
     { idx: 1, pos: 1, url:  "/img/about2.jpg"  , active: true },

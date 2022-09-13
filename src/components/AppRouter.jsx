@@ -1,7 +1,5 @@
-
 import { Route, Routes } from "react-router-dom";
-import {navRoutes, } from "../routes";
-
+import { navRoutes } from "../routes";
 
 const AppRouter = () => {
 
@@ -11,7 +9,7 @@ const AppRouter = () => {
         <Route key={path} path={path} element={Component()} exact={true} />
       ))}
     </Routes>
-  )
+  );
 };
 
 export default AppRouter;
