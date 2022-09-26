@@ -52,7 +52,7 @@ function Carousel() {
         handleLeftClick();
         break;
       case "1": {
-        div.classList.toggle("scale-150");
+        div.classList.toggle("scale-[2]");
         div.classList.toggle("cursor-zoom-out");
         div.classList.toggle("cursor-zoom-in");
       }
@@ -62,10 +62,10 @@ function Carousel() {
   return (
     <div className="flex gap-6">
       <div
-        className=" md:text-5xl cursor-pointer flex items-center "
+        className=" md:text-xl cursor-pointer flex items-center "
         onClick={(e) => handleRightClick(e)}
       >
-        <div className="w-10 h-10 hover:scale-150 ease-in duration-150  ">
+        <div className="w-5 h-5 hover:scale-150 ease-in duration-150  ">
           {"<"}
         </div>
       </div>
@@ -96,10 +96,10 @@ function Carousel() {
           </div>
         ))}
       <div
-        className="flex items-center md:text-5xl cursor-pointer"
+        className="flex items-center md:text-xl cursor-pointer"
         onClick={(e) => handleLeftClick(e)}
       >
-        <div className="w-10 h-10 hover:scale-150 ease-in duration-150">
+        <div className="w-5 h-5 hover:scale-150 ease-in duration-150">
           {">"}
         </div>
       </div>

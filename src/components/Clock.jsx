@@ -4,12 +4,12 @@ function Clock() {
   const clockStyles = {
 
     cogs: {
-      width: "50px",
-      height: "30px",
+      width: "45px",
+      height: "25px",
       background: "#333",
       borderRadius: "4px",
       position: "absolute",
-      top: "90px",
+      top: "80px",
       left: "33%",
       overflow: "hidden",
     },
@@ -17,7 +17,7 @@ function Clock() {
       width: "90px",
       height: "90px",
       position: "absolute",
-      left: "-80px",
+      left: "-70px",
       top: "-20px",
       animation: " cog 6s linear infinite",
     },
@@ -25,7 +25,7 @@ function Clock() {
       width: "70px",
       height: "70px",
       position: "absolute",
-      left: "25px",
+      left: "15px",
       top: "-20px",
       animation: " cog 6s linear infinite reverse",
     },
@@ -51,10 +51,10 @@ function Clock() {
       position: "absolute",
       display: "flex",
       justifyContent: "center",
-      width: "130px",
-      height: "130px",
-      top: "calc(50% - 65px)",
-      left: " calc(50% - 65px)",
+      width: "120px",
+      height: "120px",
+      top: "calc(50% - 60px)",
+      left: " calc(50% - 60px)",
     },
     minArr: {
       background: "rgba(84,205,213,0.7)",
@@ -67,7 +67,7 @@ function Clock() {
       borderRadius: "4px 4px 0 0",
       boxShadow: "2px 2px 5px rgba(0,0,0,0.5)",
       width: "2px",
-      height: "75px",
+      height: "70px",
       background: "rgba(154,217,238,0.6)",
     },
     hourArr: {
@@ -93,7 +93,6 @@ function Clock() {
     const hour =document.querySelector('.hour')
     const sec=document.querySelector('.sec')
     if ( sec && hour &&  min ) {
-console.log (min)
       min.style.transform=`rotate(${mm}deg)`
     hour.style.transform = `rotate(${hh}deg)`;
     sec.style.transform = `rotate(${ss}deg)`;
@@ -101,7 +100,7 @@ console.log (min)
   }
 
   return (
-    <div className="h-[150px] w-[150px] rounded-full relative shadow-[0_0_20px_10px_rgba(0,0,0,0.6) shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] " >
+    <div className="h-[130px] w-[130px] border-[1px] border-white rounded-full mt-4  relative shadow-[0_0_20px_10px_rgba(0,0,0,0.6) shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] " >
       <img src="/img/clock.png" alt="" />
 
       <div className="cogs overflow-hidden " style={clockStyles.cogs}>

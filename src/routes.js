@@ -33,10 +33,10 @@ export const navRoutes = [
     path: MAIN_ROUTE,
     Component: MainPage,
   },
-  {
-    path: CHAT_ROUTE,
-    Component: ChatOnline,
-  },
+  // {
+  //   path: CHAT_ROUTE,
+  //   Component: ChatOnline,
+  // },
   {
     path: CALC_ROUTE,
     Component: Calculator,
