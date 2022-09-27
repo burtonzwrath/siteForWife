@@ -9,9 +9,10 @@ import {
 import { useAuthState } from "react-firebase-hooks/auth";
 import Heart from "./Heart";
 
-function Sun(props) {
-  const navigate = useNavigate();
 
+function Sun(props) {
+
+  const navigate = useNavigate();
   const [user] = useAuthState(auth);
 
   function chatEnter() {
@@ -22,6 +23,7 @@ function Sun(props) {
       props.setShowChat(true);
     }
   }
+
 
   let animationState = sessionStorage.getItem("animation");
 
@@ -36,14 +38,13 @@ function Sun(props) {
     e.target.closest(".links-icon").style.transition = "transform 0.1s linear";
   }
 
-
   return (
     <div className=" mt-3 ml-2 sm:right-20 linksRef   w-10 h-10 rounded-3xl relative flex  items-center justify-center   ">
       <Heart/>
       <div
-        className={`   ${
-          animationState === "true" ? "animate-sun1 " : " "
-        }links opacity-0 absolute z-20  flex items-center rotate-90 top-[10vmin] left-[20vmin] sm:top-[29vmin] sm:left-[12vmin] `}
+        className={`  opacity-0   links  absolute z-20  flex items-center rotate-90 top-[10vmin] left-[20vmin] sm:top-[29vmin] sm:left-[12vmin]  ${
+            animationState === "true" ? "animate-sun1 " : "opacity-95"
+        } `}
       >
         <div tabIndex="1"
              onKeyPress={(e=>{if(e.key==="Enter"){ props.setShowModal(true)}})}
@@ -65,8 +66,8 @@ function Sun(props) {
 
       <div
         className={`${
-          animationState === "true" ? "animate-sun2 " : " "
-        }links opacity-0  z-20  absolute flex items-center -rotate-45  top-[26vmin] right-[0vmin] sm:top-[17vmin] sm:right-[1vmin]  `}
+          animationState === "true" ? "animate-sun2 " : "opacity-95"
+        } links opacity-0  z-20  absolute flex items-center -rotate-45  top-[26vmin] right-[0vmin] sm:top-[17vmin] sm:right-[1vmin]  `}
       >
         `
         <div
@@ -92,8 +93,8 @@ function Sun(props) {
 
       <div
         className={`${
-          animationState === "true" ? "animate-sun3 " : " "
-        }links opacity-0   pills z-20  absolute flex items-center rotate-180 top-[10vmin] right-[25vmin] sm:-top-[0vmin] sm:right-[14vmin]`}
+          animationState === "true" ? "animate-sun3 " : "opacity-95 "
+        } links opacity-0   pills z-20  absolute flex items-center rotate-180 top-[10vmin] right-[25vmin] sm:-top-[0vmin] sm:right-[14vmin]`}
       >
         <div
             tabIndex="3"
@@ -116,8 +117,8 @@ function Sun(props) {
 
       <div
         className={`${
-          animationState === "true" ? "animate-sun4 " : " "
-        }links opacity-0  absolute z-20  flex items-center rotate-45 bottom-[10vmin] right-[25vmin] sm:-top-[21vmin] sm:right-[12vmin]`}
+          animationState === "true" ? "animate-sun4 " : "opacity-95 "
+        } links opacity-0  absolute z-20  flex items-center rotate-45 bottom-[10vmin] right-[25vmin] sm:-top-[21vmin] sm:right-[12vmin]`}
       >
         <div
             tabIndex="4"
@@ -140,8 +141,8 @@ function Sun(props) {
 
       <div
         className={`${
-          animationState === "true" ? "animate-sun5 " : " "
-        }links opacity-0 z-20  absolute flex items-center -rotate-90 bottom-[28vmin] right-[0vmin] sm:-top-[25vmin] sm:-right-[1vmin]`}
+          animationState === "true" ? "animate-sun5 " : "opacity-95 "
+        } links opacity-0 z-20  absolute flex items-center -rotate-90 bottom-[28vmin] right-[0vmin] sm:-top-[25vmin] sm:-right-[1vmin]`}
       >
         <div
             tabIndex="5"
@@ -164,8 +165,8 @@ function Sun(props) {
 
       <div
         className={`${
-          animationState === "true" ? "animate-sun6 " : " "
-        }links opacity-0 z-30  absolute flex items-center -rotate-90 bottom-[10vmin] left-[20vmin] sm:-top-[40vmin] sm:left-[14vmin] `}
+          animationState === "true" ? "animate-sun6 " : "opacity-95"
+        } links opacity-0 z-30  absolute flex items-center -rotate-90 bottom-[10vmin] left-[20vmin] sm:-top-[40vmin] sm:left-[14vmin] `}
       >
         <div
             tabIndex="6"

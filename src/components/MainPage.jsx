@@ -13,8 +13,8 @@ function MainPage(props) {
   const [showChat, setShowChat] = useState(false);
 
   setTimeout(() => {
-    sessionStorage.setItem("animation", "true");
-  }, 2000);
+    sessionStorage.setItem("animation", "false");
+  }, 6000);
 
   const animationState = sessionStorage.getItem("animation");
 
@@ -23,14 +23,13 @@ function MainPage(props) {
     auth.signInWithPopup(provider);
   }
   useEffect(() => {
-    const nav = document.querySelector(".nav");
-    setTimeout(() => {
-      props.setNav(true);
-    }, 6000);
+    if (window.screen.width > 640)
+      setTimeout(() => {
+        props.setNav(true);
+      }, 7000);
     document.addEventListener(
       "click",
       (e) => {
-        e.stopPropagation();
         if (!e.target.classList.contains("modalClass")) {
           setShowModal(false);
         }
@@ -40,7 +39,9 @@ function MainPage(props) {
   }, []);
   return (
     <div className=" h-screen flex w-screen justify-center bg-orange-50 absolute -z-20 ">
-      <div className="text-green-100 text-5xl left-[20vmax] xl:text-7xl absolute  xl:left-[16vmax] top-10 w-52 h-40 font-['Italianno','cursive']">Dr.Svetlana Saray</div>
+      <div className={` ${animationState==="true"? "animate-nameShow":"opacity-95" } text-green-100 text-xl right-10 top-10 sm:text-5xl sm:left-[20vmax] z-50 xl:text-7xl absolute  xl:left-[16vmax] sm:top-10 sm:w-52 sm:h-40 font-['Italianno','cursive'] animate-nameShow opacity-0`}>
+        Dr.Svetlana Saray
+      </div>
       <div className="w-screen overflow-hidden relative   ">
         <div className="absolute h-screen w-screen flex justify-center items-center md:justify-end md:pr-10">
           <ChatOnline setShowChat={setShowChat} showChat={showChat} />
