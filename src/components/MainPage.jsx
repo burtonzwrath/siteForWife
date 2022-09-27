@@ -11,12 +11,14 @@ import { auth } from "./firebase";
 function MainPage(props) {
   const [showModal, setShowModal] = useState(false);
   const [showChat, setShowChat] = useState(false);
+  const [animationState,setAnimationstate]=useState("true")
 
-  setTimeout(() => {
-    sessionStorage.setItem("animation", "false");
-  }, 8000);
+  useEffect(()=>{
+    setTimeout(()=>{
+      setAnimationstate("false")
+    },8000)
+  },[animationState,setAnimationstate])
 
-  const animationState = sessionStorage.getItem("animation");
 
   function signWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
@@ -62,6 +64,7 @@ function MainPage(props) {
           <div className="w-10 h-10  ">
             <Contacts showModal={showModal} />
             <Sun
+                animationState={animationState}
               signWithGoogle={signWithGoogle}
               setShowChat={setShowChat}
               setShowModal={setShowModal}

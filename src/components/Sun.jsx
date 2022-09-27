@@ -25,8 +25,6 @@ function Sun(props) {
   }
 
 
-  let animationState = sessionStorage.getItem("animation");
-
   function onMouseEnter(e) {
     e.target.closest(".links-icon").nextSibling.style.opacity = "100";
     e.target.closest(".links-icon").style.transform = "scale(1.1)";
@@ -43,7 +41,7 @@ function Sun(props) {
       <Heart/>
       <div
         className={`  opacity-0   links  absolute z-20  flex items-center rotate-90 top-[10vmin] left-[20vmin] sm:top-[29vmin] sm:left-[12vmin]  ${
-            animationState === "true" ? "animate-sun1 " : "opacity-95"
+            props.animationState === "true" ? "animate-sun1 " : "opacity-95"
         } `}
       >
         <div tabIndex="1"
@@ -66,7 +64,7 @@ function Sun(props) {
 
       <div
         className={`${
-          animationState === "true" ? "animate-sun2 " : "opacity-95"
+          props.animationState === "true" ? "animate-sun2 " : "opacity-95"
         } links opacity-0  z-20  absolute flex items-center -rotate-45  top-[26vmin] right-[0vmin] sm:top-[17vmin] sm:right-[1vmin]  `}
       >
         `
@@ -93,7 +91,7 @@ function Sun(props) {
 
       <div
         className={`${
-          animationState === "true" ? "animate-sun3 " : "opacity-95 "
+          props.animationState === "true" ? "animate-sun3 " : "opacity-95 "
         } links opacity-0   pills z-20  absolute flex items-center rotate-180 top-[10vmin] right-[25vmin] sm:-top-[0vmin] sm:right-[14vmin]`}
       >
         <div
@@ -117,7 +115,7 @@ function Sun(props) {
 
       <div
         className={`${
-          animationState === "true" ? "animate-sun4 " : "opacity-95 "
+          props.animationState === "true" ? "animate-sun4 " : "opacity-95 "
         } links opacity-0  absolute z-20  flex items-center rotate-45 bottom-[10vmin] right-[25vmin] sm:-top-[21vmin] sm:right-[12vmin]`}
       >
         <div
@@ -141,7 +139,7 @@ function Sun(props) {
 
       <div
         className={`${
-          animationState === "true" ? "animate-sun5 " : "opacity-95 "
+          props.animationState === "true" ? "animate-sun5 " : "opacity-95 "
         } links opacity-0 z-20  absolute flex items-center -rotate-90 bottom-[28vmin] right-[0vmin] sm:-top-[25vmin] sm:-right-[1vmin]`}
       >
         <div
@@ -165,7 +163,7 @@ function Sun(props) {
 
       <div
         className={`${
-          animationState === "true" ? "animate-sun6 " : "opacity-95"
+          props.animationState === "true" ? "animate-sun6 " : "opacity-95"
         } links opacity-0 z-30  absolute flex items-center -rotate-90 bottom-[10vmin] left-[20vmin] sm:-top-[40vmin] sm:left-[14vmin] `}
       >
         <div

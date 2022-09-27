@@ -1,5 +1,4 @@
 import NavBar from "./NavBar";
-import image from "../img/dos.jpg";
 function AboutMe(props) {
   return (
     <div className="flex h-screen w-screen absolute bg-green-50 ">
