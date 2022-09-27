@@ -14,7 +14,7 @@ function MainPage(props) {
 
   setTimeout(() => {
     sessionStorage.setItem("animation", "false");
-  }, 6000);
+  }, 8000);
 
   const animationState = sessionStorage.getItem("animation");
 
@@ -26,7 +26,7 @@ function MainPage(props) {
     if (window.screen.width > 640)
       setTimeout(() => {
         props.setNav(true);
-      }, 7000);
+      }, 6000);
     document.addEventListener(
       "click",
       (e) => {
@@ -39,7 +39,7 @@ function MainPage(props) {
   }, []);
   return (
     <div className=" h-screen flex w-screen justify-center bg-orange-50 absolute -z-20 ">
-      <div className={` ${animationState==="true"? "animate-nameShow":"opacity-95" } text-green-100 text-xl right-10 top-10 sm:text-5xl sm:left-[20vmax] z-50 xl:text-7xl absolute  xl:left-[16vmax] sm:top-10 sm:w-52 sm:h-40 font-['Italianno','cursive'] animate-nameShow opacity-0`}>
+      <div className={` ${animationState==="true"? "animate-nameShow":"opacity-95" } text-green-100 text-xl right-10 top-10 sm:text-5xl sm:left-[20vmax] z-50 xl:text-7xl absolute  xl:left-[16vmax] sm:top-10 sm:w-52 sm:h-40 font-['Italianno','cursive']  opacity-0`}>
         Dr.Svetlana Saray
       </div>
       <div className="w-screen overflow-hidden relative   ">

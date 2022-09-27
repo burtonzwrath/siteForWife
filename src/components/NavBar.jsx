@@ -15,7 +15,7 @@ function NavBar({ nav, setNav }) {
   const location=useLocation()
   console.log(location.pathname)
 
-  function showMenu (e){
+  function showMenu (){
     setNav(!nav)
     const menu=document.querySelector('.burgerMenu')
     const cross=document.querySelector('.crosshair')
@@ -24,7 +24,7 @@ function NavBar({ nav, setNav }) {
     cross.style.opacity="1"
 
   }
-  function hideMenu(e){
+  function hideMenu(){
     setNav(!nav)
     const menu=document.querySelector('.burgerMenu')
     const cross=document.querySelector('.crosshair')
