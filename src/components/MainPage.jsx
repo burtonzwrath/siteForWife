@@ -8,7 +8,6 @@ import ChatOnline from "./ChatOnline";
 import firebase from "firebase/compat/app";
 import { auth } from "./firebase";
 
-
 function MainPage(props) {
   const [showModal, setShowModal] = useState(false);
   const [showChat, setShowChat] = useState(false);
@@ -17,13 +16,17 @@ function MainPage(props) {
     sessionStorage.setItem("animation", "true");
   }, 2000);
 
-  const animationState=sessionStorage.getItem("animation")
+  const animationState = sessionStorage.getItem("animation");
 
   function signWithGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider);
   }
   useEffect(() => {
+    const nav = document.querySelector(".nav");
+    setTimeout(() => {
+      props.setNav(true);
+    }, 6000);
     document.addEventListener(
       "click",
       (e) => {
@@ -37,6 +40,7 @@ function MainPage(props) {
   }, []);
   return (
     <div className=" h-screen flex w-screen justify-center bg-orange-50 absolute -z-20 ">
+      <div className="text-green-100 text-5xl left-[20vmax] xl:text-7xl absolute  xl:left-[16vmax] top-10 w-52 h-40 font-['Italianno','cursive']">Dr.Svetlana Saray</div>
       <div className="w-screen overflow-hidden relative   ">
         <div className="absolute h-screen w-screen flex justify-center items-center md:justify-end md:pr-10">
           <ChatOnline setShowChat={setShowChat} showChat={showChat} />
@@ -45,8 +49,8 @@ function MainPage(props) {
         <div
           className={
             props.nav === true
-              ? "nav flex absolute h-screen  z-[100]  left-0    ease-in duration-500   "
-              : "nav flex absolute h-screen z-[100] -left-36 w-32 top-100 opacity-100     ease-in duration-500   "
+              ? "nav flex absolute h-screen  z-40  lg:left-0  ease-in duration-700  "
+              : "nav flex absolute h-screen z-40 -left-44 lg:-left-36  w-32 top-100 opacity-100     ease-in duration-700   "
           }
         >
           <NavBar nav={props.nav} setNav={props.setNav} />
@@ -67,17 +71,17 @@ function MainPage(props) {
         </div>
         <img
           className={`hidden sm:block sm:w-screen sm:absolute sm:h-screen sm:bg-contain ${
-              animationState === "true" ? "animate-[blur_1.3s_linear]" : " "
+            animationState === "true" ? "animate-[blur_1.3s_linear]" : " "
           }  bg-no-repeat -z-10`}
           src={img}
           alt=""
         />
         <img
-            className={`sm:hidden ${
-                animationState === "true" ? "animate-[blur_1.3s_linear]" : " "
-            } w-[640px] h-screen bg-contain bg-no-repeat -z-10`}
-            src={img2}
-            alt=""
+          className={`sm:hidden ${
+            animationState === "true" ? "animate-[blur_1.3s_linear]" : " "
+          } w-[640px] h-screen bg-contain bg-no-repeat -z-10`}
+          src={img2}
+          alt=""
         />
       </div>
     </div>

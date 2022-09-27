@@ -106,7 +106,7 @@ function Calculator(props) {
             className={
               props.nav === true
                   ? "nav flex absolute h-screen  z-20  left-0    ease-in duration-500   "
-                  : "nav flex absolute h-screen z-20 -left-36 w-32 top-100 opacity-100     ease-in duration-500   "
+                  : "nav flex absolute h-screen z-20 -left-44 lg:-left-36 w-32 top-100 opacity-100     ease-in duration-500   "
             }
         >
           <NavBar nav={props.nav} setNav={props.setNav} />

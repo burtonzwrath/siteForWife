@@ -31,16 +31,11 @@ function Sun(props) {
     e.target.closest(".links-icon").style.transition = "transform 0.1s linear";
   }
   function onMouseLeave(e) {
-    e.target.closest(".links-icon").nextSibling.style.opacity = "0";
+    e.target.closest(".links-icon").nextSibling.style.opacity = "0.3";
     e.target.closest(".links-icon").style.transform = "scale(1)";
     e.target.closest(".links-icon").style.transition = "transform 0.1s linear";
   }
 
-  function onKeyPress(e){
-    if(e.key==="Enter"){
-
-    }
-  }
 
   return (
     <div className=" mt-3 ml-2 sm:right-20 linksRef   w-10 h-10 rounded-3xl relative flex  items-center justify-center   ">
@@ -55,7 +50,7 @@ function Sun(props) {
           onMouseLeave={(e) => onMouseLeave(e)}
           onMouseEnter={(e) => onMouseEnter(e)}
           onClick={() => props.setShowModal(true)}
-          className="modalClass links-icon w-14 h-14 md:w-[5.5vmax] md:h-[5.5vmax]  rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow"
+          className="modalClass links-icon w-14 h-14 md:w-[5.5vmax] md:h-[5.5vmax] xl:w-[4.5vmax] xl:h-[4.5vmax]  rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow"
         >
           <img
             className=" modalClass -rotate-90 hover:animate-hover bg-contain"
@@ -63,7 +58,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" opacity-40 sm:opacity-0 text-[1.5vmax] link-text   pills-text   text-white absolute -rotate-90  bottom-[9vmin] md:bottom-[0vmin] left-[12vmin] md:left-[9vmin] ">
+        <div className=" opacity-40 lg:opacity-30 text-[1.2vmax] link-text   pills-text   text-white absolute -rotate-90  bottom-[9vmin] md:bottom-[0vmin] left-[12vmin] md:left-[9vmin] ">
         Контакти
         </div>
       </div>
@@ -82,7 +77,7 @@ function Sun(props) {
           onClick={() => {
             navigate(ABOUT_ROUTE);
           }}
-          className="  links-icon w-14 h-14  md:w-[5.5vmax] md:h-[5.5vmax]  rounded-full overflow-hidden  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow "
+          className="  links-icon w-14 h-14  md:w-[5.5vmax] md:h-[5.5vmax] xl:w-[4.5vmax] xl:h-[4.5vmax]  rounded-full overflow-hidden  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow "
         >
           <img
             className="decoration-red-500 object-fill rotate-45 hover:animate-hover   "
@@ -90,7 +85,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" opacity-40 sm:opacity-0 link-text text-[1.5vmax] bottom-[5vmin] right-[15vmin] md:right-[15vmin] pills-text  rotate-45 text-white absolute ">
+        <div className=" opacity-40   lg:opacity-30  link-text text-[1.2vmax] bottom-[5vmin] right-[15vmin] md:right-[15vmin] pills-text  rotate-45 text-white absolute ">
    Про мене
         </div>
       </div>
@@ -106,7 +101,7 @@ function Sun(props) {
           onMouseLeave={(e) => onMouseLeave(e)}
           onMouseEnter={(e) => onMouseEnter(e)}
           onClick={() => chatEnter()}
-          className="links-icon w-14 h-14 md:w-[5.5vmax] md:h-[5.5vmax]   rounded-full shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow"
+          className="links-icon w-14 h-14 md:w-[5.5vmax] md:h-[5.5vmax] xl:w-[4.5vmax] xl:h-[4.5vmax]    rounded-full shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow"
         >
           <img
             className="hover:animate-hover bg-contain"
@@ -114,7 +109,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" opacity-40 sm:opacity-0 link-text text-[1.5vmax] -top-[6vmin]  left-[12vmin] md:-tp[0vmin] md-[15vmin]  pills-text rotate-180  text-white absolute ">
+        <div className=" opacity-40 lg:opacity-30 link-text text-[1.2vmax] -top-[6vmin]  left-[12vmin] md:-tp[0vmin] md-[15vmin]  pills-text rotate-180  text-white absolute ">
           Чат
         </div>
       </div>
@@ -130,7 +125,7 @@ function Sun(props) {
           onMouseLeave={(e) => onMouseLeave(e)}
           onMouseEnter={(e) => onMouseEnter(e)}
           onClick={() => navigate(CALC_ROUTE)}
-          className="links-icon w-14 h-14 md:w-[5.5vmax] md:h-[5.5vmax]   rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow"
+          className="links-icon w-14 h-14 md:w-[5.5vmax] md:h-[5.5vmax] xl:w-[4.5vmax] xl:h-[4.5vmax]    rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow"
         >
           <img
             className="-rotate-45 hover:animate-hover bg-contain"
@@ -138,7 +133,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" opacity-40 sm:opacity-0  link-text text-[1.5vmax] right-[10vmin] bottom-[1vmin]   pills-text -rotate-45 text-white absolute ">
+        <div className=" opacity-40 lg:opacity-30  link-text text-[1.2vmax]  right-[8vmin] -bottom-[5vmin]   pills-text -rotate-45 text-white absolute ">
        Розрахувати IMT
         </div>
       </div>
@@ -154,7 +149,7 @@ function Sun(props) {
           onMouseLeave={(e) => onMouseLeave(e)}
           onMouseEnter={(e) => onMouseEnter(e)}
           onClick={() => navigate(DOSYAGNENYA_ROUTE)}
-          className="links-icon w-14 h-14 md:w-[5.5vmax] md:h-[5.5vmax]   rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow"
+          className="links-icon w-14 h-14 md:w-[5.5vmax] md:h-[5.5vmax] xl:w-[4.5vmax] xl:h-[4.5vmax]   rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow"
         >
           <img
             className="hover:animate-hover bg-contain rotate-90"
@@ -162,7 +157,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" opacity-40 sm:opacity-0  link-text text-[1.5vmax] left-[9vmin] md:left-[8vmin]  pills-text rotate-90  text-white absolute  ">
+        <div className=" opacity-40 lg:opacity-30  link-text text-[1.2vmax] left-[9vmin] md:left-[8vmin]  pills-text rotate-90  text-white absolute  ">
           Досягнення
         </div>
       </div>
@@ -178,7 +173,7 @@ function Sun(props) {
           onMouseLeave={(e) => onMouseLeave(e)}
           onMouseEnter={(e) => onMouseEnter(e)}
           onClick={() => navigate(FORM_ROUTE)}
-          className="links-icon w-14 h-14 md:w-[5.5vmax] md:h-[5.5vmax]   rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow"
+          className="links-icon w-14 h-14 md:w-[5.5vmax] md:h-[5.5vmax] xl:w-[4.5vmax] xl:h-[4.5vmax]    rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow"
         >
           <img
             className=" hover:animate-hover rotate-90 bg-contain"
@@ -186,7 +181,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" opacity-40 sm:opacity-0 link-text rotate-90 text-[1.5vmax] left-[12vmin] md:left-[10vmin]  pills-text  text-white absolute  ">
+        <div className=" opacity-40 lg:opacity-30 link-text rotate-90 text-[1.2vmax] left-[12vmin] md:left-[10vmin]  pills-text  text-white absolute  ">
           Записатися на прийом
         </div>
       </div>
