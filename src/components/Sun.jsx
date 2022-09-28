@@ -38,7 +38,7 @@ function Sun(props) {
 
   return (
     <div className=" mt-3 ml-2 sm:right-20 linksRef   w-10 h-10 rounded-3xl relative flex  items-center justify-center   ">
-      <Heart/>
+      <Heart animationState={props.animationState}/>
       <div
         className={`  opacity-0   links  absolute z-20  flex items-center rotate-90 top-[10vmin] left-[20vmin] sm:top-[29vmin] sm:left-[12vmin]  ${
             props.animationState === "true" ? "animate-sun1 " : "opacity-95"

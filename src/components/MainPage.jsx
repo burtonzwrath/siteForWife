@@ -16,8 +16,8 @@ function MainPage(props) {
   useEffect(()=>{
     setTimeout(()=>{
       setAnimationstate("false")
-    },8000)
-  },[animationState,setAnimationstate])
+    },6000)
+  },[])
 
 
   function signWithGoogle() {
@@ -25,10 +25,11 @@ function MainPage(props) {
     auth.signInWithPopup(provider);
   }
   useEffect(() => {
-    if (window.screen.width > 640)
+    if (window.screen.width > 640) {
       setTimeout(() => {
         props.setNav(true);
-      }, 6000);
+      }, 4000);
+    }
     document.addEventListener(
       "click",
       (e) => {
@@ -36,9 +37,8 @@ function MainPage(props) {
           setShowModal(false);
         }
       },
-      false
     );
-  }, []);
+  }, [props.nav,props.setNav]);
   return (
     <div className=" h-screen flex w-screen justify-center bg-orange-50 absolute -z-20 ">
       <div className={` ${animationState==="true"? "animate-nameShow":"opacity-95" } text-green-100 text-xl right-10 top-10 sm:text-5xl sm:left-[20vmax] z-50 xl:text-7xl absolute  xl:left-[16vmax] sm:top-10 sm:w-52 sm:h-40 font-['Italianno','cursive']  opacity-0`}>

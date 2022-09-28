@@ -33,8 +33,18 @@ function NavBar({ nav, setNav }) {
     },500)
     cross.style.opacity="0"
     menu.style.transition="0s"
-
   }
+
+  function onKeyPressEnter(e){
+    if (e.key === "Enter") {
+      navigate(e.dataName);
+    }
+  }
+
+  function switchRoutes (e){
+    if(location.pathname===e.target.dataName){}else{ if(window.screen.width>640) {navigate(e.target.id)}else{navigate(e.target.id);hideMenu()}}
+}
+
   return (
       <div className="h-screen  ">
           <div role="button" onClick={(e) => showMenu(e)} className=" burgerMenu text-center absolute lg:hidden w-20 h-10 bg-green-50 top-1 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10">menu</div>
@@ -71,66 +81,57 @@ function NavBar({ nav, setNav }) {
           </div>
 
           <div
+              id="/about"
+              data-name={ABOUT_ROUTE}
             tabIndex="1"
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                navigate(ABOUT_ROUTE);
-              }
-            }}
-            role="button"
-            onClick={() => {if(location.pathname==="/about"){}else{ navigate(ABOUT_ROUTE);hideMenu()}} }
+              role="button"
+            onKeyPress={(e) => onKeyPressEnter(e)}
+            onClick={(e) =>switchRoutes(e)}
             className=" navButtons  items-center flex justify-center text-teal-900 border-white h-14 w-32 text-center rounded-lg shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverColor "
           >
             Обо мне
           </div>
           <div
+              id="/form"
+              data-name={FORM_ROUTE}
+              role="button"
             tabIndex="2"
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                navigate(FORM_ROUTE);
-              }
-            }}
-            role="button"
-            onClick={() => {if(location.pathname==="/form"){}else{ navigate(FORM_ROUTE);hideMenu()}} }
+              onKeyPress={(e) => onKeyPressEnter(e)}
+            onClick={(e) =>switchRoutes(e)}
             className="navButtons  items-center flex justify-center text-teal-900 h-14  border-white text-center w-32 rounded-lg  shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverColor"
           >
             Записаться на прием
           </div>
           <div
+              id="/"
+              data-name={MAIN_ROUTE}
             tabIndex="3"
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                navigate(MAIN_ROUTE);
-              }
-            }}
-            role="button"
-            onClick={() => {if(location.pathname==="/"){}else{ navigate(MAIN_ROUTE);hideMenu()}} }
+              role="button"
+              onKeyPress={(e) => onKeyPressEnter(e)}
+              onClick={(e) =>switchRoutes(e)}
             className="navButtons   items-center flex justify-center text-teal-900 h-14  border-white text-center w-32 rounded-lg   shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverColor"
           >
             на главную
           </div>
           <div
+              id="/calc"
+              data-name={CALC_ROUTE}
             tabIndex="4"
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                navigate(CALC_ROUTE);
-              }
-            }}
-            role="button"
-            onClick={() => {if(location.pathname==="/calc"){}else{ navigate(CALC_ROUTE);hideMenu()}} }
+              role="button"
+              onKeyPress={(e) => onKeyPressEnter(e)}
+              onClick={(e) =>switchRoutes(e)}
+
             className="navButtons items-center flex justify-center text-teal-900 h-14  border-white text-center w-32 rounded-lg  shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverColor"
           >
             калькулятор
           </div>
           <div
+              id="/dosyagnenya"
+              data-name={DOSYAGNENYA_ROUTE}
             tabIndex="5"
-            onKeyPress={(e) => {
-              if (e.key === "Enter") {
-                navigate(DOSYAGNENYA_ROUTE);
-              }
-            }}
             role="button"
-            onClick={() => {if(location.pathname==="/dosyagnenya"){}else{ navigate(DOSYAGNENYA_ROUTE);hideMenu()}} }
+              onKeyPress={(e) => onKeyPressEnter(e)}
+              onClick={(e) =>switchRoutes(e)}
             className="navButtons items-center flex justify-center text-teal-900 h-14   border-white text-center w-32 rounded-lg  shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverColor"
           >
             достижения
