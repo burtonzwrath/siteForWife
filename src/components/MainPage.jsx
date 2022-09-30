@@ -38,30 +38,32 @@ function MainPage(props) {
         }
       },
     );
-  }, [props.nav,props.setNav]);
+  }, []);
   return (
-    <div className=" h-screen flex w-screen justify-center bg-orange-50 absolute -z-20 ">
-      <div className={` ${animationState==="true"? "animate-nameShow":"opacity-95" } text-green-100 text-xl right-10 top-10 sm:text-5xl sm:left-[20vmax] z-50 xl:text-7xl absolute  xl:left-[16vmax] sm:top-10 sm:w-52 sm:h-40 font-['Italianno','cursive']  opacity-0`}>
-        Dr.Svetlana Saray
+    <div className=" h-screen flex w-screen  bg-orange-50 absolute -z-20 ">
+      <div
+          className={
+            props.nav === true
+                ? "nav flex absolute h-screen  z-40  left-0  ease-in duration-700  "
+                : "nav flex absolute h-screen z-40 -left-44 lg:-left-40  w-32 opacity-100     ease-in duration-700   "
+          }
+      >
+        <NavBar nav={props.nav} setNav={props.setNav} />
+        <div className="w-full"></div>
       </div>
-      <div className="w-screen overflow-hidden relative   ">
-        <div className="absolute h-screen w-screen flex justify-center items-center md:justify-end md:pr-10">
+      {/*<div className={` ${animationState==="true"? "animate-nameShow":"opacity-95 z-10" } text-green-100 text-xl right-10 top-10 md:text-5xl md:left-[20vmax] z-10 xl:text-7xl absolute  xl:left-[16vmax] md:top-10 md:w-52 sm:h-40 font-['Italianno','cursive']  opacity-0`}>*/}
+      {/*  Dr.Svetlana Saray*/}
+      {/*</div>*/}
+      <div className="w-screen overflow-hidden relative flex justify-center ">
+        <div className="absolute h-screen w-screen flex justify-center items-center ">
           <ChatOnline setShowChat={setShowChat} showChat={showChat} />
         </div>
 
-        <div
-          className={
-            props.nav === true
-              ? "nav flex absolute h-screen  z-40  lg:left-0  ease-in duration-700  "
-              : "nav flex absolute h-screen z-40 -left-44 lg:-left-36  w-32 top-100 opacity-100     ease-in duration-700   "
-          }
-        >
-          <NavBar nav={props.nav} setNav={props.setNav} />
-          <div className="w-full"></div>
-        </div>
 
-        <div className="  container absolute items-center  justify-center w-screen h-screen flex ">
-          <div className="w-10 h-10  ">
+
+        <div className=" md:mr-32  container absolute items-center  justify-center  h-screen flex ">
+
+          <div className="w-10 h-10 ">
             <Contacts showModal={showModal} />
             <Sun
                 animationState={animationState}
@@ -74,16 +76,17 @@ function MainPage(props) {
           </div>
         </div>
         <img
-          className={`hidden sm:block sm:w-screen sm:absolute sm:h-screen sm:bg-contain ${
+          className={`hidden md:block md:w-screen sm:absolute sm:h-screen sm:bg-contain ${
             animationState === "true" ? "animate-[blur_1.3s_linear]" : " "
           }  bg-no-repeat -z-10`}
           src={img}
           alt=""
         />
+
         <img
-          className={`sm:hidden ${
+          className={`md:hidden ${
             animationState === "true" ? "animate-[blur_1.3s_linear]" : " "
-          } w-[640px] h-screen bg-contain bg-no-repeat -z-10`}
+          } w-screen h-screen bg-contain bg-no-repeat -z-10`}
           src={img2}
           alt=""
         />

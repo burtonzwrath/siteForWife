@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import img1 from "../../src/img/1.jpg";
-import img2 from "../../src/img/2.jpg";
-import img3 from "../../src/img/3.jpg";
-import img4 from "../../src/img/4.jpg";
+import img1 from "../../src/img/1fat.png";
+import img2 from "../../src/img/2fat.png";
+import img3 from "../../src/img/3fat.png";
+import img4 from "../../src/img/4fat.png";
 import img5 from "../../src/img/5.png";
 import image from "../img/calc5.jpg";
 import NavBar from "./NavBar";
@@ -64,7 +64,7 @@ function Calculator(props) {
     h3 = <h3 className="block w-7 ml-2 text-[3vmin] sm:text-[1.5vmax]">{result === 0 ? "" : result}</h3>;
   } else if (result < 18.5) {
     img = (
-      <img className=" object-contain  h-[50vmin]  sm:h-[13vmax] border rounded" src={img1} alt="" />
+      <img className=" object-contain  h-[50vmin]  sm:h-[13vmax]  " src={img1} alt="" />
     );
     h3 = (
       <h3 className="block w-7 ml-2 text-sky-600 font-semibold text-[3vmin] sm:text-[1.5vmax] italic">
@@ -73,7 +73,7 @@ function Calculator(props) {
     );
   } else if (result >= 18 && result <= 24.9) {
     img = (
-      <img className=" object-contain   h-[50vmin]  sm:h-[13vmax] border rounded" src={img2} alt=""  />
+      <img className=" object-contain   h-[50vmin]  sm:h-[13vmax]  " src={img2} alt=""  />
     );
     h3 = (
       <h3 className=" block w-7 ml-2 text-green-600 font-semibold text-[3vmin] sm:text-[1.5vmax] italic">
@@ -82,7 +82,7 @@ function Calculator(props) {
     );
   } else if (result >= 25 && result <= 29.9) {
     img = (
-      <img className="object-contain   h-[50vmin]  sm:h-[13vmax]  border rounded" src={img3} alt=""  />
+      <img className="object-contain   h-[50vmin]  sm:h-[13vmax]   " src={img3} alt=""  />
     );
     h3 = (
       <h3 className="block w-7 ml-2 text-blue-600 font-semibold text-[3vmin] sm:text-[1.5vmax] italic">
@@ -91,7 +91,7 @@ function Calculator(props) {
     );
   } else if (result >= 30) {
     img = (
-      <img className=" object-contain  h-[50vmin]  sm:h-[13vmax]  border rounded" src={img4} alt=""  />
+      <img className=" object-contain  h-[50vmin]  sm:h-[13vmax]   " src={img4} alt=""  />
     );
     h3 = (
       <h3 className="block w-7 ml-2 text-red-600 font-semibold text-[3vmin] sm:text-[1.5vmax] italic">
@@ -106,7 +106,7 @@ function Calculator(props) {
             className={
               props.nav === true
                   ? "nav flex absolute h-screen  z-20  left-0    ease-in duration-500   "
-                  : "nav flex absolute h-screen z-20 -left-44 lg:-left-36 w-32 top-100 opacity-100     ease-in duration-500   "
+                  : "nav flex absolute h-screen z-20 -left-44 lg:-left-40 w-32 top-100 opacity-100     ease-in duration-500   "
             }
         >
           <NavBar nav={props.nav} setNav={props.setNav} />
@@ -117,7 +117,7 @@ function Calculator(props) {
       <div id="calc" className=" h-screen  w-full justify-center  flex items-center ">
         <div
           id="calcContainer"
-          className="  h-[90vmax]   sm:h-[90vmin] flex flex-col  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl  shadow-[inset_0_0_60px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)]"
+          className="  h-[90vmax]   sm:h-[90vmin] flex flex-col  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]"
         >
           <h1 className="inline-block font-bold italic m-4 text-[3vmin] sm:text-[1.2vmax] text-sky-800">
             Калькулятор индекса массы тела
@@ -143,7 +143,7 @@ function Calculator(props) {
               id="heightRange"
               defaultValue="0"
               type="range"
-              min="1"
+              min="80"
               max="220"
               step="1"
               ref={heightRefRange}
@@ -168,14 +168,14 @@ function Calculator(props) {
               id="weightRange"
               defaultValue="0"
               type="range"
-              min="1"
+              min="40"
               max="220"
               step="1"
               ref={weightRefRange}
               onInput={handleChangeRangeWeight}
             />
             <button
-              className=" text-[3vmin] sm:text-[1.5vmax] text-orange-100 font-semibold border-4 border-sky-700 rounded-xl  bg-sky-500 hover:bg-orange-400 mt-4 transition duration-150 ease-out hover:ease-in"
+              className=" text-[3vmin] text-[4vmin] sm:text-[1vmax] text-blue-300 font-semibold border-2 border-sky-700 rounded-tl-lg  rounded-br-lg   bg-green-200 hover:bg-orange-400 mt-4 transition duration-150 ease-out hover:ease-in"
               onClick={handleReset}
             >
               Сброс

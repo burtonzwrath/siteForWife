@@ -7,7 +7,7 @@ function AboutMe(props) {
             className={
               props.nav === true
                   ? "nav flex absolute h-screen  z-40  left-0    ease-in duration-500   "
-                  : "nav flex absolute h-screen z-40 -left-44 lg:-left-36 w-32 top-100 opacity-100     ease-in duration-500   "
+                  : "nav flex absolute h-screen z-40 -left-44 lg:-left-40 w-32 top-100 opacity-100     ease-in duration-500   "
             }
         >
           <NavBar nav={props.nav} setNav={props.setNav} />
@@ -15,7 +15,7 @@ function AboutMe(props) {
 
       </div>
 
-      <div className="  z-20 rounded-xl mx-auto p-[2vmax] w-5/6 sm:w-1/2 m-10 bg-white  shadow-shadow-[0_0_20px_10px_rgba(0,0,0,0.6) shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)]">
+      <div className="  z-20 rounded-tl-3xl  rounded-br-3xl   mx-auto p-[2vmax] w-5/6 sm:w-1/2 m-10 bg-white  shadow-shadow-[0_0_20px_10px_rgba(0,0,0,0.6) shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)]">
         <div>
           <h1 className="text-center">Давайте знакомиться )</h1>
         </div>

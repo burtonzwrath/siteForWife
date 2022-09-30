@@ -18,7 +18,7 @@ function NavBar({ nav, setNav }) {
   function showMenu (){
     setNav(!nav)
     const menu=document.querySelector('.burgerMenu')
-    const cross=document.querySelector('.crosshair')
+    const cross=document.querySelector('.cross')
     menu.style.display="none"
     menu.style.transition="0s"
     cross.style.opacity="1"
@@ -27,10 +27,10 @@ function NavBar({ nav, setNav }) {
   function hideMenu(){
     setNav(!nav)
     const menu=document.querySelector('.burgerMenu')
-    const cross=document.querySelector('.crosshair')
+    const cross=document.querySelector('.cross')
     setTimeout(()=>{
       menu.style.display="block"
-    },500)
+    },800)
     cross.style.opacity="0"
     menu.style.transition="0s"
   }
@@ -55,10 +55,10 @@ function NavBar({ nav, setNav }) {
         }
       }}
       tabIndex="7"
-      className=" z-50   sm:block flex flex-row h-screen pl-3 bg-green-50  shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)]  "
+      className=" z-50   sm:block flex flex-row h-screen pl-3 bg-neutral-200  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]  "
     >
-      <div onClick={(e)=>hideMenu(e)} className="crosshair lg:hidden w-5 h-5 absolute top-2 right-0">x</div>
-
+      <div role="button" onClick={(e)=>hideMenu(e)} className=" flex  justify-center   text-sm cross  lg:hidden w-5 h-5 absolute top-1 right-0">
+        <img className=" object-fill opacity-40 bg-white rounded-full w-4 h-4 " src="../img/crossPng2.png" alt=""/></div>
       <div>
         <div
           className={
@@ -86,8 +86,8 @@ function NavBar({ nav, setNav }) {
             tabIndex="1"
               role="button"
             onKeyPress={(e) => onKeyPressEnter(e)}
-            onClick={(e) =>switchRoutes(e)}
-            className=" navButtons  items-center flex justify-center text-teal-900 border-white h-14 w-32 text-center rounded-lg shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverColor "
+            onClick={(e) =>{ switchRoutes(e)}}
+            className=" navButtons  items-center flex bg-white justify-center border-2 border-green-100 text-teal-900 rounded-tl-2xl  rounded-br-2xl h-14 w-32 text-center   hover:animate-hoverColor shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 hover:border-white  "
           >
             Обо мне
           </div>
@@ -98,7 +98,7 @@ function NavBar({ nav, setNav }) {
             tabIndex="2"
               onKeyPress={(e) => onKeyPressEnter(e)}
             onClick={(e) =>switchRoutes(e)}
-            className="navButtons  items-center flex justify-center text-teal-900 h-14  border-white text-center w-32 rounded-lg  shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverColor"
+            className="navButtons  items-center flex justify-center text-teal-900 h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl    hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 hover:border-white"
           >
             Записаться на прием
           </div>
@@ -109,7 +109,7 @@ function NavBar({ nav, setNav }) {
               role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-            className="navButtons   items-center flex justify-center text-teal-900 h-14  border-white text-center w-32 rounded-lg   shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverColor"
+            className="navButtons   items-center flex justify-center text-teal-900 h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl   hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 hover:border-white"
           >
             на главную
           </div>
@@ -121,7 +121,7 @@ function NavBar({ nav, setNav }) {
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
 
-            className="navButtons items-center flex justify-center text-teal-900 h-14  border-white text-center w-32 rounded-lg  shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverColor"
+            className="navButtons items-center flex justify-center text-teal-900 h-14   text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 hover:border-white hover:animate-hoverColor"
           >
             калькулятор
           </div>
@@ -132,18 +132,17 @@ function NavBar({ nav, setNav }) {
             role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-            className="navButtons items-center flex justify-center text-teal-900 h-14   border-white text-center w-32 rounded-lg  shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverColor"
+            className="navButtons items-center flex justify-center text-teal-900 h-14    text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2   border-green-100  bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 hover:border-white hover:animate-hoverColor"
           >
             достижения
           </div>
         </div>
         <div
           onClick={() => setNav(!nav)}
-          className=" hidden lg:block lg:self-center lg:h-screen lg:w-7 lg:flex lg:items-center lg:justify-center "
+          className=" lg:ml-3 hidden lg:block lg:self-center lg:h-screen lg:w-9 lg:flex lg:items-center lg:justify-center   "
         >
-          <div className="pl-2  text-xl text-sky-700">
-            {" "}
-            {nav === false ? ">" : "<"}
+          <div className="   w-6 h-6 rounded-full border-2 border-green-100 hover:border-2 hover:border-white text-xl  text-sky-700 ">
+            {nav === false ? <img className=" rotate-180 object-fill rounded-full"  src="../img/ar.png" alt=""/> :  <img className="  object-fill rounded-full" src="../img/ar.png" alt=""/>}
           </div>
         </div>
       </div>

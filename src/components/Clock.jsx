@@ -1,16 +1,17 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+import clock from "../img/clockMax2.png"
 
 function Clock() {
   const clockStyles = {
 
     cogs: {
-      width: "45px",
-      height: "25px",
+      width: "27px",
+      height: "35px",
       background: "#333",
       borderRadius: "4px",
       position: "absolute",
-      top: "80px",
-      left: "33%",
+      bottom:"10%",
+      left: "60%",
       overflow: "hidden",
     },
     cog1: {
@@ -100,8 +101,8 @@ function Clock() {
   }
 
   return (
-    <div className="h-[130px] w-[130px] border-[1px] border-white rounded-full mt-4  relative shadow-[0_0_20px_10px_rgba(0,0,0,0.6) shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] " >
-      <img src="/img/clock.png" alt="" />
+    <div className="h-[130px] w-[130px] rounded-tl-2xl  rounded-br-2xl  from-blue-500  mt-4  relative shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_10px_2px_rgba(0,0,0,0.6)]" >
+      <img className="h-[130px] w-[130px] opacity-20  rounded-2xl object-fill" src="/img/medIcon.jpg" alt=""   />
 
       <div className="cogs overflow-hidden " style={clockStyles.cogs}>
         <div

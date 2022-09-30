@@ -21,7 +21,7 @@ module.exports = {
       },
       shadowInset: {
         shadowInset:
-          "inset 0 0 30px rgba(84,205,213,0.7), 0 0 20px 10px rgba(0,0,0,0.6)",
+          "inset 0 0 30px rgba(187,247,208,12), 0 0 10px 2px rgba(0,0,0,0.6)",
         shadowBox: "0 0 200px  rgba(0,0,0,0.6)",
       },
 
@@ -85,11 +85,11 @@ module.exports = {
         },
         hoverColor: {
           "0%": {},
-          "100%": { backgroundColor: "#86E7F0" },
+          "100%": { backgroundColor: "rgba(187,247,208,0.3)"  },
         },
         hoverShadow: {
           "0%": { boxShadow: "0 0 20px 10px rgba(0,0,0,0.6)" },
-          "100%": { boxShadow: "0 0 20px 10px rgba(0,191,255,0.6)" },
+          "100%": { boxShadow: "0 0 20px 10px rgba(255,250,250,0.6)",},
         },
         hoverShadowSecondary: {
           "0%": { boxShadow: "0 0 20px 10px rgba(0,0,0,0.6)" },
