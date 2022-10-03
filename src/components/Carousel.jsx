@@ -52,7 +52,7 @@ function Carousel() {
         handleLeftClick();
         break;
       case "1": {
-        div.classList.toggle("scale-[2]");
+        div.classList.toggle("scale-[1.5]");
         div.classList.toggle("cursor-zoom-out");
         div.classList.toggle("cursor-zoom-in");
       }
@@ -60,13 +60,13 @@ function Carousel() {
   };
 
   return (
-    <div className="flex gap-6">
+    <div className="flex gap-6 w-full ">
       <div
         className=" md:text-xl cursor-pointer flex items-center "
         onClick={(e) => handleRightClick(e)}
       >
-        <div className="w-5 h-5 hover:scale-150 ease-in duration-150  ">
-          {"<"}
+        <div className="   w-6 h-6 rounded-full border-2 border-green-100 hover:border-2 hover:border-white  hover:scale-150 duration-200 ">
+           <img className="  object-fill rounded-full" src="../img/ar.png" alt=""/>
         </div>
       </div>
       {cards
@@ -78,8 +78,8 @@ function Carousel() {
             onClick={(e) => choosePhoto(e)}
             className={
               index === 1
-                ? "w-52 z-10 h-52 shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] rounded-xl  hover:animate-hoverShadow cursor-zoom-in  "
-                : "max-w-xs  rounded-xl h-44 self-end shrink shadow-[0_0_20px_10px_rgba(0,0,0,0.6)]  hover:animate-hoverShadowSecondary"
+                ? "z-10  flex align-center    shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] rounded-xl hover:shadow-sky-500 duration-200  cursor-zoom-in  "
+                : " hidden    lg:block   rounded-xl  self-center   shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]  hover:shadow-sky-200 duration-200"
             }
             id={index}
           >
@@ -87,8 +87,8 @@ function Carousel() {
               data-id={index}
               className={
                 index === 1
-                  ? "opacity-100 w-52 h-52 object-fill rounded-xl "
-                  : "opacity-30 w-44 h-44 object-fill rounded-xl shrink "
+                  ? "opacity-100  w-[40vmax] object-contain w-full rounded-xl "
+                  : "opacity-30  w-[20vmax]  object-contain w-full  rounded-xl  "
               }
               src={card.url}
               alt=""
@@ -99,8 +99,8 @@ function Carousel() {
         className="flex items-center md:text-xl cursor-pointer"
         onClick={(e) => handleLeftClick(e)}
       >
-        <div className="w-5 h-5 hover:scale-150 ease-in duration-150">
-          {">"}
+        <div className="   w-6 h-6 rounded-full border-2 border-green-100 hover:border-2 hover:border-white  hover:scale-150 duration-200">
+          <img className=" rotate-180 object-fill rounded-full"  src="../img/ar.png" alt=""/>
         </div>
       </div>
     </div>

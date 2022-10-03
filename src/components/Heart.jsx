@@ -1,6 +1,5 @@
 
 function Heart(props) {
-console.log(props.animationState)
 
   return props.animationState? (
     <div className={` ${

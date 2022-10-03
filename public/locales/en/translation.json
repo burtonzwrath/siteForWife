@@ -1,0 +1,34 @@
+{
+  "name": {
+    "1": "Dr.Svetlana Saray"
+  },
+  "navBar":{
+    "about": "About me",
+    "book": "Book an appointment",
+    "mainPage": "Main page",
+    "calculator": "Calculator BMI",
+    "contacts": "Contacts",
+    "achievement": "Achievement",
+    "chat": "Chat"
+  },
+  "form": {
+    "book": "Book an appointment",
+    "email": "Email",
+    "name": "Name",
+    "surname":"Surname",
+    "phone": "Phone",
+    "text": "Write briefly the reason for your appeal...",
+    "button": "Send"
+  },
+  "calculator": {
+    "calc": "Body mass index calculator",
+    "height": "Height",
+    "weight": "Weight",
+    "bmi": "Your mass index:",
+    "reset": "Reset"
+  },
+  "achievement": {
+    "text": "Certificates and courses"
+  }
+
+}

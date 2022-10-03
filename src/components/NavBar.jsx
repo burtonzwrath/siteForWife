@@ -5,18 +5,21 @@ import {
   MAIN_ROUTE,
   CALC_ROUTE,
   DOSYAGNENYA_ROUTE,
+    CONTACTS_ROUTE
 } from "../constants/consts";
 import {useLocation} from "react-router";
 import Clock from "./Clock";
 import { useNavigate } from "react-router";
+import {useTranslation} from "react-i18next";
 
-function NavBar({ nav, setNav }) {
+function NavBar(props) {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location=useLocation()
-  console.log(location.pathname)
+  console.log (props.showModal)
 
   function showMenu (){
-    setNav(!nav)
+    props.setNav(!props.nav)
     const menu=document.querySelector('.burgerMenu')
     const cross=document.querySelector('.cross')
     menu.style.display="none"
@@ -25,7 +28,7 @@ function NavBar({ nav, setNav }) {
 
   }
   function hideMenu(){
-    setNav(!nav)
+    props.setNav(!props.nav)
     const menu=document.querySelector('.burgerMenu')
     const cross=document.querySelector('.cross')
     setTimeout(()=>{
@@ -51,7 +54,7 @@ function NavBar({ nav, setNav }) {
     <div
       onKeyPress={(e) => {
         if (e.key === "Enter") {
-          setNav(!nav);
+          props.setNav(!props.nav);
         }
       }}
       tabIndex="7"
@@ -62,7 +65,7 @@ function NavBar({ nav, setNav }) {
       <div>
         <div
           className={
-            nav === true
+            props.nav === true
               ? "opacity-100 ease-in duration-500 absolute top-4 "
               : "opacity-0 ease-in duration-500  absolute top-4  "
           }
@@ -71,9 +74,9 @@ function NavBar({ nav, setNav }) {
       <div className="flex gap-2 ">
         <div
           className={
-            nav === true
-              ? "opacity-100 ease-in duration-500 nav pl-3  gap-7  grid grid-cols-1 w-40 lg:w-32 h-[90vmin]  items-center self-start    "
-              : "opacity-0 ease-in duration-500  nav pl-3  gap-7 grid grid-cols-1  w-40  lg:w-32 h-[90vmin] items-center  self-start     "
+            props.nav === true
+              ? "opacity-100 ease-in duration-500 nav pl-3 gap-7 md:gap-5 xl:gap-7  grid grid-cols-1 w-40 lg:w-32 h-[90vmin]  items-center self-start    "
+              : "opacity-0 ease-in duration-500  nav pl-3 gap-7 md:gap-5 xl:gap-7 grid grid-cols-1  w-40  lg:w-32 h-[90vmin] items-center  self-start     "
           }
         >
           <div className="">
@@ -83,66 +86,79 @@ function NavBar({ nav, setNav }) {
           <div
               id="/about"
               data-name={ABOUT_ROUTE}
-            tabIndex="1"
+            tabIndex="7"
               role="button"
             onKeyPress={(e) => onKeyPressEnter(e)}
             onClick={(e) =>{ switchRoutes(e)}}
-            className=" navButtons  items-center flex bg-white justify-center border-2 border-green-100 text-teal-900 rounded-tl-2xl  rounded-br-2xl h-14 w-32 text-center   hover:animate-hoverColor shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 hover:border-white  "
+            className=" navButtons  items-center flex bg-white justify-center border-2 border-green-100 text-teal-900 rounded-tl-2xl  rounded-br-2xl h-12 xl:h-14 w-32 text-center   hover:animate-hoverColor shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  "
           >
-            Обо мне
+            {t("navBar.about")}
           </div>
           <div
               id="/form"
               data-name={FORM_ROUTE}
               role="button"
-            tabIndex="2"
+            tabIndex="8"
               onKeyPress={(e) => onKeyPressEnter(e)}
             onClick={(e) =>switchRoutes(e)}
-            className="navButtons  items-center flex justify-center text-teal-900 h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl    hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 hover:border-white"
+            className="navButtons  items-center flex justify-center text-teal-900  h-12 xl:h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl    hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 "
           >
-            Записаться на прием
+            {t("navBar.book")}
           </div>
           <div
               id="/"
               data-name={MAIN_ROUTE}
-            tabIndex="3"
+            tabIndex="9"
               role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-            className="navButtons   items-center flex justify-center text-teal-900 h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl   hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 hover:border-white"
+            className="navButtons   items-center flex justify-center text-teal-900  h-12 xl:h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl   hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 "
           >
-            на главную
+            {t("navBar.mainPage")}
           </div>
           <div
               id="/calc"
               data-name={CALC_ROUTE}
-            tabIndex="4"
+            tabIndex="10"
               role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-
-            className="navButtons items-center flex justify-center text-teal-900 h-14   text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 hover:border-white hover:animate-hoverColor"
+            className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14   text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
           >
-            калькулятор
+            {t("navBar.calculator")}
           </div>
           <div
               id="/dosyagnenya"
               data-name={DOSYAGNENYA_ROUTE}
-            tabIndex="5"
+            tabIndex="11"
             role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-            className="navButtons items-center flex justify-center text-teal-900 h-14    text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2   border-green-100  bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 hover:border-white hover:animate-hoverColor"
+            className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14    text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2   border-green-100  bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
           >
-            достижения
+            {t("navBar.achievement")}
           </div>
+          <div
+              id="/contacts"
+              data-name={CONTACTS_ROUTE}
+              tabIndex="12"
+              role="button"
+              onKeyPress={(e) => onKeyPressEnter(e)}
+              onClick={(e) =>switchRoutes(e)}
+              className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14    text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2   border-green-100  bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
+          >
+            {t("navBar.contacts")}
+          </div>
+
+
         </div>
+
         <div
-          onClick={() => setNav(!nav)}
+          onClick={() => props.setNav(!props.nav)}
           className=" lg:ml-3 hidden lg:block lg:self-center lg:h-screen lg:w-9 lg:flex lg:items-center lg:justify-center   "
         >
-          <div className="   w-6 h-6 rounded-full border-2 border-green-100 hover:border-2 hover:border-white text-xl  text-sky-700 ">
-            {nav === false ? <img className=" rotate-180 object-fill rounded-full"  src="../img/ar.png" alt=""/> :  <img className="  object-fill rounded-full" src="../img/ar.png" alt=""/>}
+          <div className="   w-6 h-6 rounded-full border-2 border-green-100 hover:border-2 hover:border-white hover:scale-125 duration-200 ">
+            {props.nav === false ? <img className=" rotate-180 object-fill rounded-full"  src="../img/ar.png" alt=""/> :  <img className="  object-fill rounded-full" src="../img/ar.png" alt=""/>}
           </div>
         </div>
       </div>

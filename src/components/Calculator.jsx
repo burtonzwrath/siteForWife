@@ -6,8 +6,11 @@ import img4 from "../../src/img/4fat.png";
 import img5 from "../../src/img/5.png";
 import image from "../img/calc5.jpg";
 import NavBar from "./NavBar";
+import {useTranslation} from "react-i18next";
 
 function Calculator(props) {
+
+  const { t} = useTranslation();
 
   const [result, setResult] = useState(0);
   const [weight, setWeight] = useState(0);
@@ -120,7 +123,7 @@ function Calculator(props) {
           className="  h-[90vmax]   sm:h-[90vmin] flex flex-col  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]"
         >
           <h1 className="inline-block font-bold italic m-4 text-[3vmin] sm:text-[1.2vmax] text-sky-800">
-            Калькулятор индекса массы тела
+            {t("calculator.calc")}
           </h1>
 
           <div className="flex  flex-col gap-2 items-center ">
@@ -128,7 +131,7 @@ function Calculator(props) {
               className="italic text-[3vmin] sm:text-[1.2vmax] text-sky-700 font-semibold"
               htmlFor="height"
             >
-              Рост
+              {t("calculator.height")}
             </label>
 
             <input
@@ -154,7 +157,7 @@ function Calculator(props) {
               className="italic text-[3vmin] sm:text-[1.2vmax] text-sky-700 font-semibold"
               htmlFor="weightNumber"
             >
-              Масса
+              {t("calculator.weight")}
             </label>
             <input
               className="w-12 border-2 rounded border-sky-300 pl-1"
@@ -182,7 +185,7 @@ function Calculator(props) {
             </button>
             <div className="flex items-end">
               <h2 className=" text-[3vmin] sm:text-[1.2vmax]  italic text-sky-700 font-semibold ">
-                Ваш индекс массы:
+                {t("calculator.bmi")}
               </h2>
               <div className="">
               {h3}

@@ -39,12 +39,10 @@ module.exports = {
           "100%": { opacity: "100" },
 
       },
-
         sun2: {
           "0%": { opacity: "0" },
           "100%": { opacity: "100" },
         },
-
         sun3: {
           "0%": { opacity: "0" },
           "100%": { opacity: "100" },
@@ -89,7 +87,7 @@ module.exports = {
         },
         hoverShadow: {
           "0%": { boxShadow: "0 0 20px 10px rgba(0,0,0,0.6)" },
-          "100%": { boxShadow: "0 0 20px 10px rgba(255,250,250,0.6)",},
+          "100%": { boxShadow: "0 0 20px 10px rgba(255,250,255,0.6)",},
         },
         hoverShadowSecondary: {
           "0%": { boxShadow: "0 0 20px 10px rgba(0,0,0,0.6)" },
@@ -125,7 +123,7 @@ module.exports = {
         sun6: "sun6 1.5s 3s   linear forwards",
         blur: "blur 1.3s linear ",
         hide: "hide 2s linear",
-        hoverColor: "hoverColor 0.2s linear forwards",
+        hoverColor: "hoverColor 0.16s linear forwards",
         hoverShadow: "hoverShadow 0.15s linear forwards",
         heartBeat: "heartBeat 7s  linear infinite",
         hoverShadowSecondary: "hoverShadowSecondary 0.15s linear forwards",

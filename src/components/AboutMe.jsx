@@ -15,11 +15,11 @@ function AboutMe(props) {
 
       </div>
 
-      <div className="  z-20 rounded-tl-3xl  rounded-br-3xl   mx-auto p-[2vmax] w-5/6 sm:w-1/2 m-10 bg-white  shadow-shadow-[0_0_20px_10px_rgba(0,0,0,0.6) shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)]">
+      <div className="  z-20 rounded-tl-3xl   rounded-br-3xl   mx-auto p-[2vmax] w-5/6 sm:w-1/2 m-10 bg-white  shadow-shadow-[0_0_20px_10px_rgba(0,0,0,0.6) shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)]">
         <div>
           <h1 className="text-center">Давайте знакомиться )</h1>
         </div>
-        <div className="flex w-full gap-10 mt-[1vmax]">
+        <div className="flex w-full flex flex-col lg:flex-row gap-10 mt-[1vmax]">
           <div className="grow ">
             <div className="max-w-xl">
               <p className="first-letter:ml-3">Я Светлана Александровна</p>
@@ -36,8 +36,8 @@ function AboutMe(props) {
           </div>
 
 
-            <div className="" >
-              <img  className="rounded-xl object-cover  w-[40vmax] h-[30vmax] " src="img/about2.jpg" alt="" />
+            <div className=" flex justify-end" >
+              <img  className="rounded-xl object-cover  h-[40vmax]   sm:h-[60vmin] " src="img/about2.jpg" alt="" />
             </div>
 
         </div>

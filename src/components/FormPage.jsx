@@ -1,6 +1,22 @@
 import NavBar from "./NavBar";
 import image from "../img/form.jpg"
+import {useTranslation} from "react-i18next";
+
 function Form(props) {
+  const form=document.querySelector('form')
+  const dialog=document.querySelector('dialog')
+  const { t } = useTranslation();
+
+  function formSend(e){
+    e.preventDefault()
+    dialog.showModal()
+    form.reset()
+  }
+
+  function closeModalWindow () {
+dialog.close()
+  }
+
   return (
     <div className="h-screen w-screen flex justify-center bg-green-50">
       <img className="w-screen h-screen absolute" src={image} alt=""/>
@@ -16,40 +32,44 @@ function Form(props) {
           <div className="w-full"></div>
         </div>
       </div>
-      <div className="h-3/4 w-3/4 md:w-2/5 self-center">
+      <div className="w-3/4 md:w-2/5 self-center">
         <div className=" container bg-white  z-40    ">
-          <div className="p-5 space-y-5 ">
+          <div className="space-y-5 ">
             <h4 className="text-center text-[6vmin] sm:text-[2.3vmax] text-[#b9d4b3] font-semibold italic drop-shadow-lg ">
-              Записаться на прием
+              {t("form.book")}
             </h4>
 
-            <form>
+            <form >
+              <dialog  className=" max-w-52 rounded-2xl text-orange-500 text-xl  ">
+                <div onClick={()=>closeModalWindow()} className=" closeModal absolute right-2 top-0 text-black">x</div>
+                <h1 className="pt-2">Ваше сообщение успешно отправлено</h1>
+              </dialog>
               <div className="grid grid-cols-2 gap-[1vmax]">
                 <input
                   type="text"
                   className="  drop-shadow-lg italic border-4  px-4 py-2  bg-stone-100  focus:outline-none transition duration-190 ease-out hover:ease-in  border-[#b9d4b3]  hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 rounded-tl-3xl  rounded-br-3xl "
-                  placeholder="Имя"
+                  placeholder={t("form.name")}
                 />
                 <input
                   type="text"
                   className=" drop-shadow-lg  italic border-4  px-4 py-2 bg-stone-100  focus:outline-none transition duration-190 ease-out hover:ease-in  border-[#b9d4b3]  hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 rounded-tl-3xl  rounded-br-3xl"
-                  placeholder="Фамилия"
+                  placeholder= {t("form.surname")}
                 />
                 <input
                   type="email"
                   className=" drop-shadow-lg   italic border-4 px-4 py-2 bg-stone-100  focus:outline-none  transition duration-190 ease-out hover:ease-in   border-[#b9d4b3]   hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300  col-span-2 rounded-tl-3xl  rounded-br-3xl"
-                  placeholder="Email"
+                  placeholder={t("form.email")}
                 />
                 <input
                   type="tel"
                   className=" drop-shadow-lg  italic border-4  px-4 py-2  bg-stone-100  focus:outline-none transition duration-190 ease-out hover:ease-in   border-[#b9d4b3]   hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 col-span-2 rounded-tl-3xl  rounded-br-3xl"
-                  placeholder="Телефон"
+                  placeholder={t("form.phone")}
                 />
                 <textarea
                   cols="10"
                   rows="5"
                   className=" drop-shadow-lg  italic border-4 border-[#b9d4b3] px-4 py-2 bg-stone-100  focus:outline-none transition duration-190 ease-out hover:ease-in    hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 col-span-2 rounded-tl-3xl  rounded-br-3xl"
-                  placeholder="Опишите вкратце причину вашего обращения..."
+                  placeholder={t("form.text")}
                 ></textarea>
 
                   <input
@@ -60,9 +80,9 @@ function Form(props) {
 
               </div>
 
-              <input
+              <input onClick={(e)=>formSend(e)}
                 type="submit"
-                value="Отправить"
+                value={t("form.button")}
                 className=" drop-shadow-lg  italic focus:outline-none mt-5 bg-[#b9d4b3] border-4 border-[#b9d4b3] px-4 py-2 text-black font-bold w-full rounded-tl-3xl  rounded-br-3xl   hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 "
               />
             </form>

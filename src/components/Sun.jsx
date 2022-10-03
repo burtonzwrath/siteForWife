@@ -4,16 +4,19 @@ import {
   CALC_ROUTE,
   ABOUT_ROUTE,
   DOSYAGNENYA_ROUTE,
-    FORM_ROUTE
+    FORM_ROUTE,
+    CONTACTS_ROUTE
 } from "../constants/consts";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Heart from "./Heart";
+import {useTranslation} from "react-i18next";
 
 
 function Sun(props) {
 
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
+    const { t} = useTranslation();
 
   function chatEnter() {
     if (!user) {
@@ -31,7 +34,7 @@ function Sun(props) {
     e.target.closest(".links-icon").style.transition = "transform 0.1s linear";
   }
   function onMouseLeave(e) {
-    e.target.closest(".links-icon").nextSibling.style.opacity = "0.3";
+    e.target.closest(".links-icon").nextSibling.style.opacity = "0.5";
     e.target.closest(".links-icon").style.transform = "scale(1)";
     e.target.closest(".links-icon").style.transition = "transform 0.1s linear";
   }
@@ -47,10 +50,10 @@ function Sun(props) {
             `
             <div
                 tabIndex="1"
-                onKeyPress={(e=>{if(e.key==="Enter"){ props.setShowModal(true)}})}
+                onKeyPress={(e=>{if(e.key==="Enter"){  navigate(CONTACTS_ROUTE)}})}
+                onClick={() =>   navigate(CONTACTS_ROUTE)}
                 onMouseLeave={(e) => onMouseLeave(e)}
                 onMouseEnter={(e) => onMouseEnter(e)}
-                onClick={() => props.setShowModal(true)}
                 className=" modalClass  links-icon w-14 h-14 lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax] rounded-full overflow-hidden  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow "
             >
                 <img
@@ -59,8 +62,8 @@ function Sun(props) {
                     alt=""
                 />
             </div>
-            <div className=" text-green-50   opacity-40   lg:opacity-30 top-24 lg:top-[8.5vmax] 2xl:top-[7vmax]   link-text text-[1vmax]  pills-text  text-white absolute ">
-               Контакти
+            <div className=" text-green-50   opacity-40 left-3  xl:-left-0  lg:opacity-50 top-24 md:top-[10vmax] lg:top-[8.5vmax] 2xl:top-[7vmax]   link-text text-[1vmax]  pills-text  text-white absolute ">
+                {t("navBar.contacts")}
             </div>
         </div>
 
@@ -86,8 +89,8 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50   text-end w-20  xl:w-24 2xl:w-40  opacity-40   lg:opacity-30 top-24 md:top-[7vmax] xl:right-[6vmax]  md:right-[6vmax] 2xl:top-[5vmax]  link-text text-[1vmax]  pills-text  text-white absolute ">
-   Про мене
+        <div className=" text-green-50  w-12 left-[15%] md:-left-[5vmax] md:text-end md:w-20  xl:w-24 2xl:w-48  lg:opacity-50   lg:opacity-30 top-24 md:top-[10vmax] xl:top-[9vmax] xl:right-[6vmax] 2xl:text-center md:right-[6vmax] 2xl:right-[4vmax]  2xl:top-[6.5vmax]  link-text text-[1vmax]  pills-text  text-white absolute ">
+            {t("navBar.about")}
         </div>
       </div>
 
@@ -110,8 +113,8 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50   opacity-40 lg:opacity-30 top-20 md:top-[2vmax] md:right-[7.5vmax]   link-text text-[1vmax] pills-text  text-white absolute ">
-          Чат
+        <div className=" text-green-50 left-4  md:-left-[3vmax] opacity-40 lg:opacity-50 top-20 md:top-[2vmax] md:right-[7.5vmax]   link-text text-[1vmax] pills-text  text-white absolute ">
+            {t("navBar.chat")}
         </div>
       </div>
 
@@ -134,8 +137,8 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50   opacity-40 lg:opacity-30 bottom-20 md:right-[3vmax] md:bottom-[5.5vmax]  link-text text-[1vmax]  pills-text  text-white absolute ">
-       Розрахувати IMT
+        <div className=" text-green-50   opacity-40 lg:opacity-50 bottom-20 md:right-[3vmax] md:bottom-[5.5vmax]  link-text text-[1vmax]  pills-text  text-white absolute ">
+            {t("navBar.calculator")}
         </div>
       </div>
 
@@ -158,8 +161,8 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50 opacity-40 lg:opacity-30 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax]  link-text text-[1vmax]   pills-text  text-white absolute  ">
-          Досягнення
+        <div className=" text-green-50 opacity-40 right-2 lg:opacity-50 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax]  link-text text-[1vmax]   pills-text  text-white absolute  ">
+            {t("navBar.achievement")}
         </div>
       </div>
 
@@ -182,8 +185,8 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50  md:w-32 lg:w-52 opacity-40 lg:opacity-30 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax] link-text text-[1vmax]   pills-text  text-white absolute  ">
-          Записатися на прийом
+        <div className=" text-green-50  md:w-32 lg:w-52 opacity-50 lg:opacity-60 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax] link-text text-[1vmax]   pills-text  text-white absolute  ">
+            {t("navBar.book")}
         </div>
       </div>
     </div>

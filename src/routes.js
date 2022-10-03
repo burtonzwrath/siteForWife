@@ -1,7 +1,6 @@
 import {
   ABOUT_ROUTE,
   CALC_ROUTE,
-  CHAT_ROUTE,
   FORM_ROUTE,
   MAIN_ROUTE,
   HEART_ROUTE,
@@ -11,9 +10,8 @@ import {
 } from "./constants/consts";
 
 import AboutMe from "./components/AboutMe";
-import Form from "./components/Form";
+import Form from "./components/FormPage";
 import MainPage from "./components/MainPage";
-import ChatOnline from "./components/ChatOnline";
 import Calculator from "./components/Calculator";
 import Heart from "./components/Heart";
 import Clock from "./components/Clock";
@@ -33,10 +31,7 @@ export const navRoutes = [
     path: MAIN_ROUTE,
     Component: MainPage,
   },
-  // {
-  //   path: CHAT_ROUTE,
-  //   Component: ChatOnline,
-  // },
+
   {
     path: CALC_ROUTE,
     Component: Calculator,
