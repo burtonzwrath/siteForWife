@@ -181,7 +181,7 @@ function Calculator(props) {
               className=" text-[3vmin] text-[4vmin] sm:text-[1vmax] text-blue-300 font-semibold border-2 border-sky-700 rounded-tl-lg  rounded-br-lg   bg-green-200 hover:bg-orange-400 mt-4 transition duration-150 ease-out hover:ease-in"
               onClick={handleReset}
             >
-              Сброс
+              {t("calculator.reset")}
             </button>
             <div className="flex items-end">
               <h2 className=" text-[3vmin] sm:text-[1.2vmax]  italic text-sky-700 font-semibold ">

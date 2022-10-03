@@ -33,7 +33,10 @@ module.exports = {
         cog: {
           "100%": { transform: "rotate(360deg)" },
         },
-
+leng:{
+  "0%": { opacity: "0" },
+  "100%": { opacity: "0.6" },
+},
         sun1: {
           "0%": { opacity: "0" },
           "100%": { opacity: "100" },
@@ -128,7 +131,8 @@ module.exports = {
         heartBeat: "heartBeat 7s  linear infinite",
         hoverShadowSecondary: "hoverShadowSecondary 0.15s linear forwards",
         navBarOpen: "navBarOpen 3s 1s linear forwards",
-        nameShow:"nameShow 2s 4s linear forwards"
+        nameShow:"nameShow 2s 4s linear forwards",
+        lengShow:"leng 2s 4s linear forwards"
       },
     },
   },

@@ -10,11 +10,20 @@ import { auth } from "./firebase";
 
 function MainPage(props) {
   const [showChat, setShowChat] = useState(false);
+  const [lengEn,setLengEn] =useState(true)
+  const [lengUkr,setLengUkr] =useState(false)
   const [animationState, setAnimationstate] = useState("true");
   const {  i18n } = useTranslation();
 
-  function languageSwitcher(leng) {
+
+  function languageSwitcher(e,leng) {
+    e.preventDefault()
     i18n.changeLanguage(leng);
+    if(e.target.className.includes("false")){
+      setLengEn(!lengEn)
+      setLengUkr(!lengUkr)
+    }
+
   }
 
   useEffect(() => {
@@ -53,10 +62,8 @@ function MainPage(props) {
         />
         <div className="w-full"></div>
       </div>
-      <div className="absolute z-50 left-80 top-10 flex gap-5">
-        <div onClick={() => languageSwitcher("en")}>En</div>
-        <div onClick={() => languageSwitcher("ukr")}>Укр</div>
-      </div>
+
+
       <div
         className={` ${
           animationState === "true" ? "animate-nameShow" : "opacity-95 z-10"
@@ -64,7 +71,12 @@ function MainPage(props) {
       >
       Dr.Svetlana Saray
       </div>
+
       <div className="w-screen overflow-hidden relative flex justify-center ">
+        <div className=" z-50 absolute top-5 right-10  flex gap-5 animate-lengShow opacity-0">
+          <div   role="button" className={` ${lengEn===false? "bg-green-100  ":"bg-green-300"  } ${lengEn}  border rounded-2xl w-10 h-6 text-center h-6 bg-green-100 hover:bg-sky-200 duration-100 focus:outline-none `} onClick={(e) => languageSwitcher(e,"en")}>En</div>
+          <div   role="button" className={` ${lengUkr===false? "bg-green-100 ":"bg-green-300 "  } ${lengUkr}   border rounded-2xl w-10 h-6 text-center h-6 bg-green-100 hover:bg-sky-200 duration-100 focus:outline-none `} onClick={(e) => languageSwitcher(e,"ukr")}>Укр</div>
+        </div>
         <div className="absolute h-screen w-screen flex justify-center items-center ">
           <ChatOnline setShowChat={setShowChat} showChat={showChat} />
         </div>

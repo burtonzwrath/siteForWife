@@ -29,6 +29,10 @@
   },
   "achievement": {
     "text": "Certificates and courses"
+  },
+  "aboutMe": {
+    "intro": "Let's get acquainted )",
+    "name": "My name is Svetlana Saray"
   }
 
 }

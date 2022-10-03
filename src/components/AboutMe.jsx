@@ -1,5 +1,7 @@
 import NavBar from "./NavBar";
+import {useTranslation} from "react-i18next";
 function AboutMe(props) {
+  const { t} = useTranslation();
   return (
     <div className="flex h-screen w-screen absolute bg-green-50 ">
 
@@ -17,12 +19,12 @@ function AboutMe(props) {
 
       <div className="  z-20 rounded-tl-3xl   rounded-br-3xl   mx-auto p-[2vmax] w-5/6 sm:w-1/2 m-10 bg-white  shadow-shadow-[0_0_20px_10px_rgba(0,0,0,0.6) shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)]">
         <div>
-          <h1 className="text-center">Давайте знакомиться )</h1>
+          <h1 className="text-center">   {t("aboutMe.intro")} </h1>
         </div>
         <div className="flex w-full flex flex-col lg:flex-row gap-10 mt-[1vmax]">
           <div className="grow ">
             <div className="max-w-xl">
-              <p className="first-letter:ml-3">Я Светлана Александровна</p>
+              <p className="first-letter:ml-3">{t("aboutMe.name")}</p>
               <br/>
               <div className="min-w-fit">
               <p className=" text-[1vmax] first-letter:ml-3">
