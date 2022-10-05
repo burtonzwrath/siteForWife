@@ -1,8 +1,8 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    fontFamily:{
-      'sans':['"Italianno"','cursive']
+    fontFamily: {
+      sans: ['"Italianno"', "cursive"],
     },
     extend: {
       backgroundImage: {
@@ -33,15 +33,11 @@ module.exports = {
         cog: {
           "100%": { transform: "rotate(360deg)" },
         },
-leng:{
-  "0%": { opacity: "0" },
-  "100%": { opacity: "0.6" },
-},
+
         sun1: {
           "0%": { opacity: "0" },
           "100%": { opacity: "100" },
-
-      },
+        },
         sun2: {
           "0%": { opacity: "0" },
           "100%": { opacity: "100" },
@@ -66,18 +62,25 @@ leng:{
           "100%": { opacity: "100" },
         },
 
-        navBarOpen:{
-          "0%": { left:"-100px" },
-          "100%": { left:"0"},
-
+        navBarOpen: {
+          "0%": { left: "-100px" },
+          "100%": { left: "0" },
         },
-        nameShow:{
+        lengShow: {
+          "0%": { opacity: "0",transform: "translateX(100px)"  },
+          "100%": { opacity: "0.6", },
+        },
+        nameShow: {
           "0%": { opacity: "0" },
+          "100%": { opacity: "100" },
+        },
+        menuShow: {
+          "0%": { opacity: "0",transform: "translateX(-100px)" },
           "100%": { opacity: "100" },
         },
 
         blur: {
-          "0%": { filter: "blur(70px)" },
+          "0%": { filter: "blur(70px)", },
           "100%": { filter: "blur(0px)" },
         },
         hide: {
@@ -86,11 +89,11 @@ leng:{
         },
         hoverColor: {
           "0%": {},
-          "100%": { backgroundColor: "rgba(187,247,208,0.3)"  },
+          "100%": { backgroundColor: "rgba(187,247,208,0.3)" },
         },
         hoverShadow: {
           "0%": { boxShadow: "0 0 20px 10px rgba(0,0,0,0.6)" },
-          "100%": { boxShadow: "0 0 20px 10px rgba(255,250,255,0.6)",},
+          "100%": { boxShadow: "0 0 20px 10px rgba(255,250,255,0.6)" },
         },
         hoverShadowSecondary: {
           "0%": { boxShadow: "0 0 20px 10px rgba(0,0,0,0.6)" },
@@ -114,7 +117,7 @@ leng:{
         "ping-slow6": "ping 5.1s 2.2s linear infinite",
         "ping-slow7": "ping 5.1s 2.2s linear infinite",
         "ping-slow8": "ping 5.1s 2.2s linear infinite",
-        move: "x 4s 1s linear infinite",
+        move: "x 4s 3.2s linear infinite",
         moveSec: "x s  linear infinite ",
         cogAnimation: "cog 6s linear infinite",
         cogAnimationReverse: "cog 6s linear infinite reverse",
@@ -131,8 +134,10 @@ leng:{
         heartBeat: "heartBeat 7s  linear infinite",
         hoverShadowSecondary: "hoverShadowSecondary 0.15s linear forwards",
         navBarOpen: "navBarOpen 3s 1s linear forwards",
-        nameShow:"nameShow 2s 4s linear forwards",
-        lengShow:"leng 2s 4s linear forwards"
+        nameShow: "nameShow 1.5s 4.5s linear forwards",
+        lengShow: "lengShow 1.1s 3.5s linear forwards",
+        menuShow: "menuShow 1.1s 3.5s linear forwards",
+
       },
     },
   },

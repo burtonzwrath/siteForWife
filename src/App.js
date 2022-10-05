@@ -14,7 +14,7 @@ function App() {
     useEffect(() => {
         setTimeout(() => {
             setAnimationstate("false");
-        }, 6000);
+        }, 8000);
     }, []);
     setTimeout(() => {
       setLoading(false);

@@ -17,7 +17,7 @@ function NavBar(props) {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location=useLocation()
-  console.log (props.showModal)
+  console.log (props.animationState)
 
   function showMenu (){
     props.setNav(!props.nav)
@@ -51,7 +51,9 @@ function NavBar(props) {
 
   return (
       <div className="h-screen  ">
-          <div role="button" onClick={(e) => showMenu(e)} className=" burgerMenu text-center absolute lg:hidden w-14 h-7 bg-green-100 top-5 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10">{t("menu.1")}< /div>
+          <div role="button" onClick={(e) => showMenu(e)}  className={`${
+              props.animationState === "true" ? "animate-menuShow" : "opacity-95 z-10"
+          } burgerMenu flex justify-center  absolute lg:hidden w-14 h-7 bg-green-100 top-5 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10  font-['Italianno','cursive']  opacity-0`} ><span className="h-5 self-center ">{t("menu.1")}</span>< /div>
     <div
       onKeyPress={(e) => {
         if (e.key === "Enter") {
@@ -59,7 +61,7 @@ function NavBar(props) {
         }
       }}
       tabIndex="7"
-      className=" z-50   sm:block flex flex-row h-screen pl-3 bg-neutral-200  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]  "
+      className=" z-50   sm:block flex flex-row h-screen pl-3 2xl:pl-[1.7vmax] bg-neutral-200  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]  "
     >
       <div role="button" onClick={(e)=>hideMenu(e)} className=" flex  justify-center   text-sm cross  lg:hidden w-5 h-5 absolute top-1 right-0">
         <img className=" object-fill opacity-40 bg-white rounded-full w-4 h-4 " src="../img/crossPng2.png" alt=""/></div>
@@ -158,7 +160,7 @@ function NavBar(props) {
 
         <div
           onClick={() => props.setNav(!props.nav)}
-          className="  hidden lg:block    lg:self-center lg:h-screen w-8 2xl:w-[2.3vmax]  lg:flex lg:items-center lg:justify-center   "
+          className="  hidden lg:block  lg:ml-0 2xl:ml-1   lg:self-center lg:h-screen w-8 2xl:w-[2.3vmax]  lg:flex lg:items-center lg:justify-center   "
         >
           <div className=" overflow-hidden w-6  2xl:w-[1.5vmax] 2xl:h-[1.5vmax] rounded-full border-2 border-green-100 hover:border-2 hover:border-white hover:scale-125 duration-200 ">
             {props.nav === false ? <img className=" rotate-180  2xl:w-[1.5vmax] object-fill object-cover overflow-hidden    rounded-full"  src="../img/ar.png" alt=""/> :  <img className="  object-cover     2xl:w-[1.5vmax]   rounded-full" src="../img/ar.png" alt=""/>}

@@ -31,7 +31,7 @@ function MainPage(props) {
         className={
           props.nav === true
             ? "nav flex absolute h-screen  z-40  left-0  ease-in duration-700  "
-            : "nav flex absolute h-screen z-40 -left-44 lg:-left-40 2xl:-left-[10vmax]  w-32 opacity-100     ease-in duration-700   "
+            : "nav flex absolute h-screen z-40 -left-44 lg:-left-40 2xl:-left-[11.4vmax]  w-32 opacity-100     ease-in duration-700   "
         }
       >
         <NavBar
@@ -39,6 +39,7 @@ function MainPage(props) {
           setNav={props.setNav}
           showModal={props.showModal}
           setShowModal={props.setShowModal}
+          animationState={props.animationState}
         />
         <div className="w-full"></div>
       </div>
@@ -55,7 +56,7 @@ function MainPage(props) {
 
 
       <div className="w-screen overflow-hidden relative flex justify-center ">
-        <div className=" z-50 absolute top-5 right-10  flex gap-5 ">
+        <div className="z-50 absolute top-5 right-10  flex gap-5">
      <LengSwitcher animationState={props.animationState}  />
         </div>
         <div className="absolute h-screen w-screen flex justify-center items-center ">
