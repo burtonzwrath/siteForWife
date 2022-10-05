@@ -12,7 +12,7 @@ function Dosyagnenya(props) {
           className={
             props.nav === true
                 ? "nav flex absolute h-screen  z-40  left-0    ease-in duration-500   "
-                : "nav flex absolute h-screen z-40 -left-44 lg:-left-40 w-32 top-100 opacity-100     ease-in duration-500   "
+                : "nav flex absolute h-screen z-40 -left-44 lg:-left-40 2xl:-left-[11.4vmax] w-32 top-100 opacity-100     ease-in duration-500   "
           }
       >
         <NavBar nav={props.nav} setNav={props.setNav} />
@@ -22,9 +22,9 @@ function Dosyagnenya(props) {
         <div className=" z-50 absolute top-5 right-10  flex gap-5 ">
             <LengSwitcher animationState={props.animationState} />
         </div>
-      <div className=" h-[80vmax] sm:h-[80vmin] w-5/6 relative p-5  sm:w-1/2 rounded-tl-3xl  rounded-br-3xl  z-10 bg-white  flex justify-center items-center shadow-[0_0_20px_10px_rgba(0,0,0,0.6)  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]">
-          <div className="pb-5 absolute top-10">
-              <h1 className="text-center text-xl">{t("achievement.text")}</h1>
+      <div className=" h-[65vmax] sm:h-[80vmin] w-5/6 relative p-5 2xl:p-[2vmax]  sm:w-1/2 rounded-tl-3xl  rounded-br-3xl  z-10 bg-white  flex justify-center items-center shadow-[0_0_20px_10px_rgba(0,0,0,0.6)  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]">
+          <div className="pb-5 absolute top-10 2xl:top-[3vmax]">
+              <h1 className="text-center text-xl 2xl:text-[1.5vmax]">{t("achievement.text")}</h1>
           </div>
           <div className=" flex flex-col w-full align-center justify-center ">
 

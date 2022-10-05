@@ -18,7 +18,8 @@
     "surname":"Surname",
     "phone": "Phone",
     "text": "Write briefly the reason for your appeal...",
-    "button": "Send"
+    "button": "Send",
+    "send" : "Your message was successful sent"
   },
   "calculator": {
     "calc": "Body mass index calculator",

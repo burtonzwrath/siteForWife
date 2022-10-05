@@ -68,7 +68,7 @@ module.exports = {
         },
         lengShow: {
           "0%": { opacity: "0",transform: "translateX(100px)"  },
-          "100%": { opacity: "0.6", },
+          "100%": { opacity: "0.7", },
         },
         nameShow: {
           "0%": { opacity: "0" },
@@ -76,7 +76,7 @@ module.exports = {
         },
         menuShow: {
           "0%": { opacity: "0",transform: "translateX(-100px)" },
-          "100%": { opacity: "100" },
+          "100%": { opacity: "0.6" },
         },
 
         blur: {
@@ -134,9 +134,9 @@ module.exports = {
         heartBeat: "heartBeat 7s  linear infinite",
         hoverShadowSecondary: "hoverShadowSecondary 0.15s linear forwards",
         navBarOpen: "navBarOpen 3s 1s linear forwards",
-        nameShow: "nameShow 1.5s 4.5s linear forwards",
-        lengShow: "lengShow 1.1s 3.5s linear forwards",
-        menuShow: "menuShow 1.1s 3.5s linear forwards",
+        nameShow: "nameShow 1.4s 4.5s linear forwards",
+        lengShow: "lengShow 1s 3.5s linear forwards",
+        menuShow: "menuShow 1s 3.5s linear forwards",
 
       },
     },

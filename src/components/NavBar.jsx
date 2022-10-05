@@ -33,7 +33,7 @@ function NavBar(props) {
     const menu=document.querySelector('.burgerMenu')
     const cross=document.querySelector('.cross')
     setTimeout(()=>{
-      menu.style.display="block"
+      menu.style.display="flex"
     },800)
     cross.style.opacity="0"
     menu.style.transition="0s"
@@ -52,8 +52,8 @@ function NavBar(props) {
   return (
       <div className="h-screen  ">
           <div role="button" onClick={(e) => showMenu(e)}  className={`${
-              props.animationState === "true" ? "animate-menuShow" : "opacity-95 z-10"
-          } burgerMenu flex justify-center  absolute lg:hidden w-14 h-7 bg-green-100 top-5 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10  font-['Italianno','cursive']  opacity-0`} ><span className="h-5 self-center ">{t("menu.1")}</span>< /div>
+              props.animationState === "true" ? "animate-menuShow" : "opacity-60 z-10"
+          } burgerMenu flex justify-center items-center absolute lg:hidden w-14 h-7 bg-green-100 top-5 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10  font-['Italianno','cursive']  opacity-0`} ><span className="h-5  ">{t("menu.1")}</span>< /div>
     <div
       onKeyPress={(e) => {
         if (e.key === "Enter") {

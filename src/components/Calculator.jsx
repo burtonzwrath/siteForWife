@@ -110,7 +110,7 @@ function Calculator(props) {
             className={
               props.nav === true
                   ? "nav flex absolute h-screen  z-20  left-0    ease-in duration-500   "
-                  : "nav flex absolute h-screen z-20 -left-44 lg:-left-40 w-32 top-100 opacity-100     ease-in duration-500   "
+                  : "nav flex absolute h-screen z-20 -left-44 lg:-left-40  2xl:-left-[11.4vmax] w-32 top-100 opacity-100     ease-in duration-500   "
             }
         >
           <NavBar nav={props.nav} setNav={props.setNav} />
@@ -126,13 +126,13 @@ function Calculator(props) {
           id="calcContainer"
           className="  h-[80vmax] w-full sm:w-1/3 sm:h-[80vmin] grid grid-col  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]"
         >
-          <h1 className="inline-block font-bold italic  place-self-center m-4 text-[3vmin] sm:text-[1.2vmax] text-sky-800">
+          <h1 className="inline-block font-bold italic  place-self-center m-4 text-[4vmin] sm:text-[1.5vmax] text-sky-800">
             {t("calculator.calc")}
           </h1>
 
           <div className="grid  grid-col gap-2 sm:gap-3 place-self-center self-start  place-items-center  ">
             <label
-              className="italic text-[3vmin] sm:text-[1.2vmax] text-sky-700 font-semibold"
+              className="italic text-[4vmin] sm:text-[1.2vmax] text-sky-700 font-semibold"
               htmlFor="height"
             >
               {t("calculator.height")}
@@ -158,7 +158,7 @@ function Calculator(props) {
             />
 
             <label
-              className="italic text-[3vmin] sm:text-[1.2vmax] text-sky-700 font-semibold"
+              className="italic text-[4vmin] sm:text-[1.2vmax] text-sky-700 font-semibold"
               htmlFor="weightNumber"
             >
               {t("calculator.weight")}
@@ -188,7 +188,7 @@ function Calculator(props) {
               {t("calculator.reset")}
             </button>
             <div className="flex items-end ">
-              <h2 className=" text-[3vmin] sm:text-[1.2vmax]  italic text-sky-700 font-semibold ">
+              <h2 className=" text-[4vmin] sm:text-[1.2vmax]  italic text-sky-700 font-semibold ">
                 {t("calculator.bmi")}
               </h2>
               <div className="">

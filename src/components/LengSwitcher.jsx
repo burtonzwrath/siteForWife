@@ -17,9 +17,7 @@ function LengSwitcher(props) {
   }
   return (
     <div
-      className={`${
-        props.animationState === "true" ? "animate-lengShow" : "opacity-50"
-      } flex gap-3  opacity-0  z-50   `}
+      className="flex gap-3 opacity-70"
     >
       <div
         role="button"

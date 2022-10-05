@@ -44,11 +44,11 @@ function MainPage(props) {
         <div className="w-full"></div>
       </div>
 
-<div className="w-full absolute flex justify-center top-[10vmax] md:right-[3vmax] md:top-[0.3vmax]  sm:mt-0">
+<div className="w-full absolute flex justify-center top-[10vmax] md:right-[3vmax] md:top-[2.3vmax]  sm:mt-0">
     <div
         className={` ${
             props.animationState === "true" ? "animate-nameShow" : "opacity-95 z-10"
-        } text-green-100 text-4xl md:text-[3vmin]   sm:h-40 font-['Italianno','cursive']  opacity-0`}
+        } text-green-100 text-4xl md:text-[6vmin]     font-['Italianno','cursive']  opacity-0`}
     >
         Dr.Svetlana Saray
     </div>
@@ -56,7 +56,9 @@ function MainPage(props) {
 
 
       <div className="w-screen overflow-hidden relative flex justify-center ">
-        <div className="z-50 absolute top-5 right-10  flex gap-5">
+        <div       className={`${
+            props.animationState === "true" ? "animate-lengShow" : "opacity-70"
+        }  opacity-0  z-50 absolute top-6 right-10 `}   >
      <LengSwitcher animationState={props.animationState}  />
         </div>
         <div className="absolute h-screen w-screen flex justify-center items-center ">

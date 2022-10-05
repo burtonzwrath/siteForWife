@@ -65,8 +65,8 @@ function Carousel() {
         className=" md:text-xl cursor-pointer flex items-center "
         onClick={(e) => handleRightClick(e)}
       >
-        <div className="   w-6 h-6 rounded-full border-2 border-green-100 hover:border-2 hover:border-white  hover:scale-150 duration-200 ">
-           <img className="  object-fill rounded-full" src="../img/ar.png" alt=""/>
+        <div className="   w-6 h-6   rounded-full 2xl:w-[1.6vmax] hover:scale-150 duration-200 ">
+           <img className="  2xl:w-[1.6vmax]   rounded-full" src="../img/ar.png" alt=""/>
         </div>
       </div>
       {cards
@@ -99,8 +99,8 @@ function Carousel() {
         className="flex items-center md:text-xl cursor-pointer"
         onClick={(e) => handleLeftClick(e)}
       >
-        <div className="   w-6 h-6 rounded-full border-2 border-green-100 hover:border-2 hover:border-white  hover:scale-150 duration-200">
-          <img className=" rotate-180 object-fill rounded-full"  src="../img/ar.png" alt=""/>
+        <div className=" w-6 h-6 rounded-full 2xl:w-[1.6vmax]   hover:scale-150 duration-200">
+          <img className=" rotate-180 2xl:w-[1.6vmax] rounded-full"  src="../img/ar.png" alt=""/>
         </div>
       </div>
     </div>

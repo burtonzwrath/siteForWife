@@ -62,7 +62,7 @@ function Sun(props) {
                     alt=""
                 />
             </div>
-            <div className=" text-green-50   opacity-40 left-4 md:left-2 xl:-left-0  lg:opacity-50 top-20 md:top-[7.5vmax] 2xl:top-[6.5vmax]  xl:left-3   2xl:left-0 link-text text-[1vmax]  pills-text  text-white absolute ">
+            <div className=" text-green-50   opacity-40 left-4 md:left-2 xl:-left-0  lg:opacity-50 top-20 md:top-[7.5vmax] 2xl:top-[6.5vmax]  xl:left-3   2xl:left-0 link-text text-[2.2vmax] md:text-[1.3vmax]  pills-text  text-white absolute ">
                 {t("navBar.contacts")}
             </div>
         </div>
@@ -89,7 +89,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50  w-12  top-20 left-[15%] md:-left-[5vmax] md:text-end md:w-20  xl:w-24 2xl:w-48  lg:opacity-50   lg:opacity-30  md:top-[7.5vmax]   xl:right-[6vmax] 2xl:text-center md:right-[6vmax] 2xl:right-[4vmax]  2xl:top-[6vmax]  link-text text-[1vmax]  pills-text  text-white absolute ">
+        <div className=" text-green-50  w-12  top-20 left-[15%] md:-left-[5vmax] md:text-end md:w-20  xl:w-24 2xl:w-48  lg:opacity-50   lg:opacity-30  md:top-[7.5vmax]   xl:right-[6vmax] 2xl:text-center md:right-[6vmax] 2xl:right-[4vmax]  2xl:top-[6vmax]  link-text text-[2.2vmax] md:text-[1.3vmax] pills-text  text-white absolute ">
             {t("navBar.about")}
         </div>
       </div>
@@ -113,7 +113,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50 left-4  md:-left-[3.7vmax] opacity-40 lg:opacity-50 top-20 md:top-[2vmax]    link-text text-[1vmax] pills-text  text-white absolute ">
+        <div className=" text-green-50 left-4  md:-left-[5vmax] opacity-40 lg:opacity-50 top-20 md:top-[2vmax]    link-text text-[2.2vmax] md:text-[1.3vmax]  pills-text  text-white absolute ">
             {t("navBar.chat")}
         </div>
       </div>
@@ -137,7 +137,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50   opacity-40 lg:opacity-50 bottom-20 md:right-[3vmax] md:bottom-[5.5vmax]  link-text text-[1vmax]  pills-text  text-white absolute ">
+        <div className=" text-green-50   opacity-40 lg:opacity-50 bottom-20 md:right-[3vmax] md:bottom-[5.5vmax]  link-text text-[2.2vmax] md:text-[1.3vmax]  pills-text  text-white absolute ">
             {t("navBar.calculator")}
         </div>
       </div>
@@ -161,7 +161,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50 opacity-40 right-2 lg:opacity-50 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax]  link-text text-[1vmax]   pills-text  text-white absolute  ">
+        <div className=" text-green-50 opacity-40 right-2 lg:opacity-50 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax]  link-text text-[2.2vmax] md:text-[1.3vmax]   pills-text  text-white absolute  ">
             {t("navBar.achievement")}
         </div>
       </div>
@@ -185,7 +185,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50  md:w-32 lg:w-52 opacity-50 lg:opacity-60 left-1 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax] link-text text-[1vmax]   pills-text  text-white absolute  ">
+        <div className=" text-green-50  md:w-32 lg:w-52 opacity-50 lg:opacity-60 left-1 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax] link-text text-[2.2vmax] md:text-[1.3vmax]    pills-text  text-white absolute  ">
             {t("navBar.book")}
         </div>
       </div>
