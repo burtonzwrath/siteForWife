@@ -7,6 +7,7 @@ import img5 from "../../src/img/5.png";
 import image from "../img/calc5.jpg";
 import NavBar from "./NavBar";
 import {useTranslation} from "react-i18next";
+import LengSwitcher from "./LengSwitcher";
 
 function Calculator(props) {
 
@@ -63,11 +64,11 @@ function Calculator(props) {
   }, [weight, height]);
 
   if (result < 0.2) {
-    img = <img className=" object-contain  h-[50vmin]  sm:h-[13vmax] sm:w-[10vmax]" src={img5} alt=""  />;
+    img = <img className="     w-24  xl:w-[14vmin] " src={img5} alt=""  />;
     h3 = <h3 className="block w-7 ml-2 text-[3vmin] sm:text-[1.5vmax]">{result === 0 ? "" : result}</h3>;
   } else if (result < 18.5) {
     img = (
-      <img className=" object-contain  h-[50vmin]  sm:h-[13vmax]  " src={img1} alt="" />
+      <img className="  w-24 sm:w-[10vmin] xl:w-[12vmin]  " src={img1} alt="" />
     );
     h3 = (
       <h3 className="block w-7 ml-2 text-sky-600 font-semibold text-[3vmin] sm:text-[1.5vmax] italic">
@@ -76,7 +77,7 @@ function Calculator(props) {
     );
   } else if (result >= 18 && result <= 24.9) {
     img = (
-      <img className=" object-contain   h-[50vmin]  sm:h-[13vmax]  " src={img2} alt=""  />
+      <img className="  w-24 sm:w-[10vmin] xl:w-[12vmin]" src={img2} alt=""  />
     );
     h3 = (
       <h3 className=" block w-7 ml-2 text-green-600 font-semibold text-[3vmin] sm:text-[1.5vmax] italic">
@@ -85,7 +86,7 @@ function Calculator(props) {
     );
   } else if (result >= 25 && result <= 29.9) {
     img = (
-      <img className="object-contain   h-[50vmin]  sm:h-[13vmax]   " src={img3} alt=""  />
+      <img className="  w-24 sm:w-[10vmin] xl:w-[12vmin]   " src={img3} alt=""  />
     );
     h3 = (
       <h3 className="block w-7 ml-2 text-blue-600 font-semibold text-[3vmin] sm:text-[1.5vmax] italic">
@@ -94,7 +95,7 @@ function Calculator(props) {
     );
   } else if (result >= 30) {
     img = (
-      <img className=" object-contain  h-[50vmin]  sm:h-[13vmax]   " src={img4} alt=""  />
+      <img className="  w-24 sm:w-[10vmin] xl:w-[12vmin] " src={img4} alt=""  />
     );
     h3 = (
       <h3 className="block w-7 ml-2 text-red-600 font-semibold text-[3vmin] sm:text-[1.5vmax] italic">
@@ -115,18 +116,21 @@ function Calculator(props) {
           <NavBar nav={props.nav} setNav={props.setNav} />
           <div className="w-full"></div>
         </div>
+        <div className=" z-50 absolute top-5 right-10  ">
+          <LengSwitcher animationState={props.animationState} />
+        </div>
 
-    <div className=" z-10">
-      <div id="calc" className=" h-screen  w-full justify-center  flex items-center ">
+
+      <div id="calc" className=" h-screen z-10 w-5/6 sm:w-full sm:justify-center  flex items-center ">
         <div
           id="calcContainer"
-          className="  h-[90vmax]   sm:h-[90vmin] flex flex-col  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]"
+          className="  h-[80vmax] w-full sm:w-1/3 sm:h-[80vmin] grid grid-col  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]"
         >
-          <h1 className="inline-block font-bold italic m-4 text-[3vmin] sm:text-[1.2vmax] text-sky-800">
+          <h1 className="inline-block font-bold italic  place-self-center m-4 text-[3vmin] sm:text-[1.2vmax] text-sky-800">
             {t("calculator.calc")}
           </h1>
 
-          <div className="flex  flex-col gap-2 items-center ">
+          <div className="grid  grid-col gap-2 sm:gap-3 place-self-center self-start  place-items-center  ">
             <label
               className="italic text-[3vmin] sm:text-[1.2vmax] text-sky-700 font-semibold"
               htmlFor="height"
@@ -142,7 +146,7 @@ function Calculator(props) {
               ref={heightRefNumber}
               onChange={handleChangeNumberHeight}
             />
-            <input
+            <input className=""
               id="heightRange"
               defaultValue="0"
               type="range"
@@ -183,7 +187,7 @@ function Calculator(props) {
             >
               {t("calculator.reset")}
             </button>
-            <div className="flex items-end">
+            <div className="flex items-end ">
               <h2 className=" text-[3vmin] sm:text-[1.2vmax]  italic text-sky-700 font-semibold ">
                 {t("calculator.bmi")}
               </h2>
@@ -191,13 +195,12 @@ function Calculator(props) {
               {h3}
               </div>
             </div>
-            <div className=" h-[20em] sm:h-full  flex items-center    ">
+            <div className="    flex items-center   ">
               {img}
             </div>
-          </div>
         </div>
       </div>
-    </div>
+    </div  >
         <img className=" blur-[3px] absolute z-0 w-screen h-screen" src={image} alt=""/>
       </div>
   );

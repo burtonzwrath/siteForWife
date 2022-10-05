@@ -91,7 +91,7 @@ export { useState, useEffect } from "react";
   const mes = useFireStore();
 
   return (
-    <div className=" bg-white z-[105] h-full  chat flex flex-col w-[95vmin] relative md:w-80 shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)] rounded-xl ">
+    <div className=" bg-white z-[105] h-full rounded-tl-2xl    chat flex flex-col w-[95vmin] relative md:w-80  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)] ">
       <SignOut />
       <button
         onClick={() => setShowChat(false)}
@@ -132,7 +132,7 @@ export { useState, useEffect } from "react";
       <div className="h-24  w-full relative  ">
         <form className=" relative" onSubmit={(e) => sendMessage(e)}>
           <div className="w-full bg-gray-50 rounded-lg border border-gray-200 rounded-xl">
-            <div className=" px-4 bg-white rounded-b-lg shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_10px_1px_rgba(0,0,0,0.6)] ">
+            <div className=" px-4 bg-white rounded-b-lg  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)] ">
             <div className="p-3">
               <textarea required='false'
                 id="editor"

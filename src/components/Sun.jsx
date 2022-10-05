@@ -40,14 +40,14 @@ function Sun(props) {
   }
 
   return (
-    <div className=" ml-2 relative  linksRef  w-10 h-10 rounded-3xl relative flex  items-center justify-center   ">
+    <div className=" ml-2 mt-4 relative  linksRef  w-10 h-10 rounded-3xl relative flex  items-center justify-center   ">
       <Heart animationState={props.animationState}/>
         <div
             className={`${
                 props.animationState === "true" ? "animate-sun1 " : "opacity-95"
-            } links opacity-0  z-20  absolute    top-5 left-20  md:top-[10vmax] md:-left-[1vmax] `}
+            } links opacity-0  z-20  absolute    top-10 left-20  md:top-[10vmax] md:-left-[1vmax] `}
         >
-            `
+
             <div
                 tabIndex="1"
                 onKeyPress={(e=>{if(e.key==="Enter"){  navigate(CONTACTS_ROUTE)}})}
@@ -62,7 +62,7 @@ function Sun(props) {
                     alt=""
                 />
             </div>
-            <div className=" text-green-50   opacity-40 left-3  xl:-left-0  lg:opacity-50 top-24 md:top-[10vmax] lg:top-[8.5vmax] 2xl:top-[7vmax]   link-text text-[1vmax]  pills-text  text-white absolute ">
+            <div className=" text-green-50   opacity-40 left-4 md:left-2 xl:-left-0  lg:opacity-50 top-20 md:top-[7.5vmax] 2xl:top-[6.5vmax]  xl:left-3   2xl:left-0 link-text text-[1vmax]  pills-text  text-white absolute ">
                 {t("navBar.contacts")}
             </div>
         </div>
@@ -70,9 +70,9 @@ function Sun(props) {
       <div
         className={`${
           props.animationState === "true" ? "animate-sun2 " : "opacity-95"
-        } links opacity-0  z-20  absolute    right-0 top-28  md:top-[5vmax] md:right-[9vmax]    `}
+        } links opacity-0  z-20  absolute    right-0 top-28  md:top-[6vmax] md:right-[8vmax]    `}
       >
-        `
+
         <div
             tabIndex="2"
             onKeyPress={(e=>{if(e.key==="Enter"){ navigate(ABOUT_ROUTE)}})}
@@ -89,7 +89,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50  w-12 left-[15%] md:-left-[5vmax] md:text-end md:w-20  xl:w-24 2xl:w-48  lg:opacity-50   lg:opacity-30 top-24 md:top-[10vmax] xl:top-[9vmax] xl:right-[6vmax] 2xl:text-center md:right-[6vmax] 2xl:right-[4vmax]  2xl:top-[6.5vmax]  link-text text-[1vmax]  pills-text  text-white absolute ">
+        <div className=" text-green-50  w-12  top-20 left-[15%] md:-left-[5vmax] md:text-end md:w-20  xl:w-24 2xl:w-48  lg:opacity-50   lg:opacity-30  md:top-[7.5vmax]   xl:right-[6vmax] 2xl:text-center md:right-[6vmax] 2xl:right-[4vmax]  2xl:top-[6vmax]  link-text text-[1vmax]  pills-text  text-white absolute ">
             {t("navBar.about")}
         </div>
       </div>
@@ -97,7 +97,7 @@ function Sun(props) {
       <div
         className={`${
           props.animationState === "true" ? "animate-sun3 " : "opacity-95 "
-        } links opacity-0   pills z-20  absolute   right-24 top-10 md:right-[14vmax] md:-top-[1vmax] `}
+        } links opacity-0   pills z-20  absolute   right-24 top-10 md:right-[14vmax] md:-top-[1.5vmax] `}
       >
         <div
             tabIndex="3"
@@ -113,7 +113,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50 left-4  md:-left-[3vmax] opacity-40 lg:opacity-50 top-20 md:top-[2vmax] md:right-[7.5vmax]   link-text text-[1vmax] pills-text  text-white absolute ">
+        <div className=" text-green-50 left-4  md:-left-[3.7vmax] opacity-40 lg:opacity-50 top-20 md:top-[2vmax]    link-text text-[1vmax] pills-text  text-white absolute ">
             {t("navBar.chat")}
         </div>
       </div>
@@ -185,7 +185,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50  md:w-32 lg:w-52 opacity-50 lg:opacity-60 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax] link-text text-[1vmax]   pills-text  text-white absolute  ">
+        <div className=" text-green-50  md:w-32 lg:w-52 opacity-50 lg:opacity-60 left-1 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax] link-text text-[1vmax]   pills-text  text-white absolute  ">
             {t("navBar.book")}
         </div>
       </div>

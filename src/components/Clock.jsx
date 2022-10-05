@@ -101,8 +101,8 @@ function Clock() {
   }
 
   return (
-    <div className="h-[130px] w-[130px] rounded-tl-2xl  rounded-br-2xl  from-blue-500  mt-4  relative shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_10px_2px_rgba(0,0,0,0.6)]" >
-      <img className="h-[130px] w-[130px] opacity-20  rounded-2xl object-fill" src="/img/medIcon.jpg" alt=""   />
+    <div className="h-[130px] w-[130px] 2xl:h-[8vmax] 2xl:w-[8vmax] rounded-tl-2xl  rounded-br-2xl  from-blue-500  mt-7  relative shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_10px_2px_rgba(0,0,0,0.6)]" >
+      <img className="h-[130px] w-[130px] 2xl:h-[8vmax] 2xl:w-[8vmax] opacity-20  rounded-2xl object-fill" src="/img/medIcon.jpg" alt=""   />
 
       <div className="cogs overflow-hidden " style={clockStyles.cogs}>
         <div

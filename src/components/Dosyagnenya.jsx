@@ -2,6 +2,7 @@ import Carousel from "./Carousel";
 import NavBar from "./NavBar";
 import image from "../img/dost2.jpg"
 import {useTranslation} from "react-i18next";
+import LengSwitcher from "./LengSwitcher";
 function Dosyagnenya(props) {
     const { t} = useTranslation();
   return (
@@ -18,7 +19,10 @@ function Dosyagnenya(props) {
         <div className="w-full"></div>
 
       </div>
-      <div className=" h-3/4 w-3/4 relative p-5  sm:w-1/2 rounded-tl-3xl  rounded-br-3xl  z-10 bg-green-50   flex justify-center items-center shadow-[0_0_20px_10px_rgba(0,0,0,0.6) shadow-[inset_0_0_30px_rgba(84,205,213,0.7),0_0_20px_10px_rgba(0,0,0,0.6)]">
+        <div className=" z-50 absolute top-5 right-10  flex gap-5 ">
+            <LengSwitcher animationState={props.animationState} />
+        </div>
+      <div className=" h-[80vmax] sm:h-[80vmin] w-5/6 relative p-5  sm:w-1/2 rounded-tl-3xl  rounded-br-3xl  z-10 bg-white  flex justify-center items-center shadow-[0_0_20px_10px_rgba(0,0,0,0.6)  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]">
           <div className="pb-5 absolute top-10">
               <h1 className="text-center text-xl">{t("achievement.text")}</h1>
           </div>

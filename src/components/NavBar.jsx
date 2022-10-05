@@ -12,6 +12,7 @@ import Clock from "./Clock";
 import { useNavigate } from "react-router";
 import {useTranslation} from "react-i18next";
 
+
 function NavBar(props) {
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ function NavBar(props) {
 
   return (
       <div className="h-screen  ">
-          <div role="button" onClick={(e) => showMenu(e)} className=" burgerMenu text-center absolute lg:hidden w-20 h-10 bg-green-50 top-1 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10">menu</div>
+          <div role="button" onClick={(e) => showMenu(e)} className=" burgerMenu text-center absolute lg:hidden w-14 h-7 bg-green-100 top-5 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10">{t("menu.1")}< /div>
     <div
       onKeyPress={(e) => {
         if (e.key === "Enter") {
@@ -71,18 +72,19 @@ function NavBar(props) {
           }
         ></div>
       </div>
-      <div className="flex gap-2 ">
+      <div className="flex gap-[1.5vmax]">
         <div
           className={
             props.nav === true
-              ? "opacity-100 ease-in duration-500 nav pl-3 gap-7 md:gap-5 xl:gap-7  grid grid-cols-1 w-40 lg:w-32 h-[90vmin]  items-center self-start    "
-              : "opacity-0 ease-in duration-500  nav pl-3 gap-7 md:gap-5 xl:gap-7 grid grid-cols-1  w-40  lg:w-32 h-[90vmin] items-center  self-start     "
+              ? "opacity-100 ease-in duration-500 nav pl-3 gap-7 md:gap-5 xl:gap-7  grid grid-cols-1 h-screen w-40 lg:w-32 2xl:w-[8vmax]   items-center self-start    "
+              : "opacity-0 ease-in duration-500  nav pl-3 gap-7 md:gap-5 xl:gap-7 grid grid-cols-1 h-screen  w-40 lg:w-32 2xl:w-[8vmax] items-center  self-start     "
           }
         >
-          <div className="">
+          <div className="self-start">
             <Clock />
           </div>
 
+          <div className="h-[60vmax] sm:h-[60vmin]  self-start grid">
           <div
               id="/about"
               data-name={ABOUT_ROUTE}
@@ -90,7 +92,7 @@ function NavBar(props) {
               role="button"
             onKeyPress={(e) => onKeyPressEnter(e)}
             onClick={(e) =>{ switchRoutes(e)}}
-            className=" navButtons  items-center flex bg-white justify-center border-2 border-green-100 text-teal-900 rounded-tl-2xl  rounded-br-2xl h-12 xl:h-14 w-32 text-center   hover:animate-hoverColor shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  "
+            className=" navButtons  items-center flex bg-white justify-center border-2 border-green-100 text-teal-900 w-32  rounded-tl-2xl  rounded-br-2xl h-12 xl:h-14 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax] text-center   hover:animate-hoverColor shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  "
           >
             {t("navBar.about")}
           </div>
@@ -101,7 +103,7 @@ function NavBar(props) {
             tabIndex="8"
               onKeyPress={(e) => onKeyPressEnter(e)}
             onClick={(e) =>switchRoutes(e)}
-            className="navButtons  items-center flex justify-center text-teal-900  h-12 xl:h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl    hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 "
+            className="navButtons  items-center flex justify-center text-teal-900  h-12 xl:h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax]   hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 "
           >
             {t("navBar.book")}
           </div>
@@ -112,7 +114,7 @@ function NavBar(props) {
               role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-            className="navButtons   items-center flex justify-center text-teal-900  h-12 xl:h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl   hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 "
+            className="navButtons   items-center flex justify-center text-teal-900  h-12 xl:h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl  2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax] hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 "
           >
             {t("navBar.mainPage")}
           </div>
@@ -123,7 +125,7 @@ function NavBar(props) {
               role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-            className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14   text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
+            className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14   text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax] border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
           >
             {t("navBar.calculator")}
           </div>
@@ -134,7 +136,7 @@ function NavBar(props) {
             role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-            className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14    text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2   border-green-100  bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
+            className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14    text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2 xl:text-[1vmax] 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax]  border-green-100  bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
           >
             {t("navBar.achievement")}
           </div>
@@ -145,9 +147,10 @@ function NavBar(props) {
               role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-              className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14    text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2   border-green-100  bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
+              className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14    text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax]  border-green-100  bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
           >
             {t("navBar.contacts")}
+          </div>
           </div>
 
 
@@ -155,10 +158,10 @@ function NavBar(props) {
 
         <div
           onClick={() => props.setNav(!props.nav)}
-          className=" lg:ml-3 hidden lg:block lg:self-center lg:h-screen lg:w-9 lg:flex lg:items-center lg:justify-center   "
+          className="  hidden lg:block    lg:self-center lg:h-screen w-8 2xl:w-[2.3vmax]  lg:flex lg:items-center lg:justify-center   "
         >
-          <div className="   w-6 h-6 rounded-full border-2 border-green-100 hover:border-2 hover:border-white hover:scale-125 duration-200 ">
-            {props.nav === false ? <img className=" rotate-180 object-fill rounded-full"  src="../img/ar.png" alt=""/> :  <img className="  object-fill rounded-full" src="../img/ar.png" alt=""/>}
+          <div className=" overflow-hidden w-6  2xl:w-[1.5vmax] 2xl:h-[1.5vmax] rounded-full border-2 border-green-100 hover:border-2 hover:border-white hover:scale-125 duration-200 ">
+            {props.nav === false ? <img className=" rotate-180  2xl:w-[1.5vmax] object-fill object-cover overflow-hidden    rounded-full"  src="../img/ar.png" alt=""/> :  <img className="  object-cover     2xl:w-[1.5vmax]   rounded-full" src="../img/ar.png" alt=""/>}
           </div>
         </div>
       </div>

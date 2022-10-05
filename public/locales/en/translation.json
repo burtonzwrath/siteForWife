@@ -33,6 +33,9 @@
   "aboutMe": {
     "intro": "Let's get acquainted )",
     "name": "My name is Svetlana Saray"
+  },
+  "menu": {
+    "1": "Menu"
   }
 
 }

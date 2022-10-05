@@ -4,12 +4,18 @@ import i18n from "./i18next";
 import "./App.css";
 
 import AppRouter from "./components/AppRouter";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import Heart from "./components/Heart";
 
 function App() {
   const [loading, setLoading] = useState(true);
     const [nav, setNav] = useState(false);
+    const [animationState, setAnimationstate] = useState("true");
+    useEffect(() => {
+        setTimeout(() => {
+            setAnimationstate("false");
+        }, 6000);
+    }, []);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -17,7 +23,7 @@ function App() {
   return loading?<Heart/>: (
       <I18nextProvider i18n={i18n}>
           <BrowserRouter>
-              <AppRouter nav={nav} setNav={setNav}  />
+              <AppRouter nav={nav} setNav={setNav} animationState={animationState}  />
           </BrowserRouter>
       </I18nextProvider>
       )
