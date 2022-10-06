@@ -161,7 +161,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" text-green-50 opacity-40 right-2 lg:opacity-50 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax]  link-text text-[2.2vmax] md:text-[1.3vmax]   pills-text  text-white absolute  ">
+        <div className=" text-green-50 opacity-40  -left-[14px] lg:opacity-50 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax]  link-text text-[2.2vmax] md:text-[1.3vmax]   pills-text  text-white absolute  ">
             {t("navBar.achievement")}
         </div>
       </div>

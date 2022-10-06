@@ -26,7 +26,6 @@ function NavBar(props) {
     menu.style.display="none"
     menu.style.transition="0s"
     cross.style.opacity="1"
-
   }
   function hideMenu(){
     props.setNav(!props.nav)
@@ -50,10 +49,10 @@ function NavBar(props) {
 }
 
   return (
-      <div className="h-screen  ">
+      <div className="navBar_wrapper">
           <div role="button" onClick={(e) => showMenu(e)}  className={`${
               props.animationState === "true" ? "animate-menuShow" : "opacity-60 z-10"
-          } burgerMenu flex justify-center items-center absolute lg:hidden w-14 h-7 bg-green-100 top-5 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10  font-['Italianno','cursive']  opacity-0`} ><span className="h-5  ">{t("menu.1")}</span>< /div>
+          }  burgerMenu navBar_menuButton`} ><span className="h-5  ">{t("menu.1")}</span>< /div>
     <div
       onKeyPress={(e) => {
         if (e.key === "Enter") {
@@ -61,32 +60,25 @@ function NavBar(props) {
         }
       }}
       tabIndex="7"
-      className=" z-50   sm:block flex flex-row h-screen pl-3 2xl:pl-[1.7vmax] bg-neutral-200  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]  "
+      className=" navBar_contentBox  "
     >
-      <div role="button" onClick={(e)=>hideMenu(e)} className=" flex  justify-center   text-sm cross  lg:hidden w-5 h-5 absolute top-1 right-0">
-        <img className=" object-fill opacity-40 bg-white rounded-full w-4 h-4 " src="../img/crossPng2.png" alt=""/></div>
+      <div role="button" onClick={(e)=>hideMenu(e)} className="  cross navBar_crossDiv">
+        <img className=" navBar_crossImage " src="../img/crossPng2.png" alt=""/></div>
       <div>
-        <div
-          className={
-            props.nav === true
-              ? "opacity-100 ease-in duration-500 absolute top-4 "
-              : "opacity-0 ease-in duration-500  absolute top-4  "
-          }
-        ></div>
       </div>
-      <div className="flex gap-[1.5vmax]">
+      <div className="navBarContent_wrapper">
         <div
           className={
             props.nav === true
-              ? "opacity-100 ease-in duration-500 nav pl-3 gap-7 md:gap-5 xl:gap-7  grid grid-cols-1 h-screen w-40 lg:w-32 2xl:w-[8vmax]   items-center self-start    "
-              : "opacity-0 ease-in duration-500  nav pl-3 gap-7 md:gap-5 xl:gap-7 grid grid-cols-1 h-screen  w-40 lg:w-32 2xl:w-[8vmax] items-center  self-start     "
+              ? "opacity-100 navBar_contentDiv "
+              : "opacity-0 navBar_contentDiv  "
           }
         >
           <div className="self-start">
             <Clock />
           </div>
 
-          <div className="h-[60vmax] sm:h-[60vmin]  self-start grid">
+          <div className="navBar_itemsWrapper">
           <div
               id="/about"
               data-name={ABOUT_ROUTE}
@@ -94,7 +86,7 @@ function NavBar(props) {
               role="button"
             onKeyPress={(e) => onKeyPressEnter(e)}
             onClick={(e) =>{ switchRoutes(e)}}
-            className=" navButtons  items-center flex bg-white justify-center border-2 border-green-100 text-teal-900 w-32  rounded-tl-2xl  rounded-br-2xl h-12 xl:h-14 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax] text-center   hover:animate-hoverColor shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  "
+            className="  navBar_button "
           >
             {t("navBar.about")}
           </div>
@@ -105,7 +97,7 @@ function NavBar(props) {
             tabIndex="8"
               onKeyPress={(e) => onKeyPressEnter(e)}
             onClick={(e) =>switchRoutes(e)}
-            className="navButtons  items-center flex justify-center text-teal-900  h-12 xl:h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax]   hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 "
+            className="navBar_button"
           >
             {t("navBar.book")}
           </div>
@@ -116,7 +108,7 @@ function NavBar(props) {
               role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-            className="navButtons   items-center flex justify-center text-teal-900  h-12 xl:h-14  text-center w-32 rounded-tl-2xl  rounded-br-2xl  2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax] hover:animate-hoverColor border-2   border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2 "
+            className="navBar_button "
           >
             {t("navBar.mainPage")}
           </div>
@@ -127,7 +119,7 @@ function NavBar(props) {
               role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-            className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14   text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax] border-green-100 bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
+            className="navBar_button"
           >
             {t("navBar.calculator")}
           </div>
@@ -138,7 +130,7 @@ function NavBar(props) {
             role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-            className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14    text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2 xl:text-[1vmax] 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax]  border-green-100  bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
+            className="navBar_button"
           >
             {t("navBar.achievement")}
           </div>
@@ -149,7 +141,7 @@ function NavBar(props) {
               role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}
               onClick={(e) =>switchRoutes(e)}
-              className="navButtons items-center flex justify-center text-teal-900  h-12 xl:h-14    text-center w-32 rounded-tl-2xl  rounded-br-2xl  border-2 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax]  border-green-100  bg-white shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2  hover:animate-hoverColor"
+              className="navBar_button"
           >
             {t("navBar.contacts")}
           </div>
@@ -160,10 +152,10 @@ function NavBar(props) {
 
         <div
           onClick={() => props.setNav(!props.nav)}
-          className="  hidden lg:block  lg:ml-0 2xl:ml-1   lg:self-center lg:h-screen w-8 2xl:w-[2.3vmax]  lg:flex lg:items-center lg:justify-center   "
+          className="  navBar_hiddenDiv  "
         >
-          <div className=" overflow-hidden w-6  2xl:w-[1.5vmax] 2xl:h-[1.5vmax] rounded-full border-2 border-green-100 hover:border-2 hover:border-white hover:scale-125 duration-200 ">
-            {props.nav === false ? <img className=" rotate-180  2xl:w-[1.5vmax] object-fill object-cover overflow-hidden    rounded-full"  src="../img/ar.png" alt=""/> :  <img className="  object-cover     2xl:w-[1.5vmax]   rounded-full" src="../img/ar.png" alt=""/>}
+          <div className=" navBar_arrowDiv">
+            {props.nav === false ? <img className=" rotate-180  navBar_arrow"  src="../img/ar.png" alt=""/> :  <img className=" navBar_arrow" src="../img/ar.png" alt=""/>}
           </div>
         </div>
       </div>

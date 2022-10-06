@@ -7,17 +7,12 @@
   .main_wrapper {
     @apply h-screen flex w-screen  bg-orange-50 absolute -z-20;
   }
-  .navBar_Hide {
-    @apply flex absolute h-screen z-40 -left-44 lg:-left-40 2xl:-left-[11.4vmax]  w-32 opacity-100     ease-in duration-700;
-  }
-  .navBar_Show {
-    @apply flex absolute h-screen  z-40  left-0  ease-in duration-700;
-  }
+
   .main_nameWrapper {
-    @apply w-full absolute flex justify-center top-[10vmax] md:right-[3vmax] md:top-[2.3vmax]  sm:mt-0;
+    @apply w-full  absolute flex  items-end justify-center md:block  top-[10vmax] md:right-[3vmax] md:bottom-[1vmax]  sm:mt-0;
   }
   .main_nameStyle {
-    @apply text-green-100 text-4xl md:text-[6vmin]   font-['Italianno','cursive']  opacity-0;
+    @apply text-green-100 md:absolute h-20 text-4xl md:text-[6vmin] md:bottom-0 md:left-[18vmax]  font-['Italianno','cursive']  opacity-0;
   }
   .main_contentWrapper {
     @apply w-screen overflow-hidden relative flex justify-center;
@@ -43,7 +38,7 @@
     @apply flex h-screen w-screen  justify-center absolute bg-green-50;
   }
   .aboutMeContent_wrapper {
-    @apply p-[4vmin] 2xl:p-[2vmax]  z-20 rounded-tl-3xl   rounded-br-3xl self-center      w-5/6 lg:w-[60vmax] bg-white   shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+    @apply p-[4vmin] 2xl:p-[2vmax]  z-20 rounded-tl-3xl   rounded-br-3xl self-center  h-[80vmax] sm:h-[80vmin]     w-5/6 lg:w-[60vmax] bg-white   shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
   }
   .aboutMe_h1 {
     @apply 2xl:text-[1.5vmax];
@@ -55,7 +50,7 @@
     @apply flex justify-center;
   }
   .aboutMe_image {
-    @apply object-cover rounded-tl-3xl  rounded-br-3xl  w-80;
+    @apply object-cover rounded-tl-3xl  w-52 rounded-br-3xl  lg:w-80;
   }
 
   /*CALCULATOR STYLES*/
@@ -66,7 +61,7 @@
     @apply h-screen z-10 w-5/6 sm:w-full sm:justify-center  flex items-center;
   }
   .calculatorMainContent_wrapper {
-    @apply h-[80vmax] w-full sm:w-1/3 sm:h-[80vmin] grid grid-cols-1  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+    @apply  w-full sm:w-1/3 h-[80vmax] sm:h-[80vmin] grid grid-cols-1  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
   }
   .calculator_h1 {
     @apply inline-block font-bold italic  place-self-center m-4 text-[4vmin] sm:text-[1.5vmax] text-sky-800;
@@ -198,6 +193,87 @@
   .form_button {
     @apply 2xl:h-[3vmax] text-[1vmax]  text-center  drop-shadow-lg  duration-150 italic focus:outline-none mt-5 bg-[#b9d4b3] border-4 border-[#b9d4b3] px-4 py-2 text-black font-bold w-full rounded-tl-3xl  rounded-br-3xl   hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300;
   }
+
+  /*CONTACTS STYLES*/
+  .contacts_wrapper {
+    @apply h-screen  w-full flex justify-center   items-center;
+  }
+  .contactsContent_wrapper {
+    @apply h-[80vmax] w-5/6 flex flex-col sm:h-[80vmin] sm:w-1/3 sm:flex justify-center  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .contacts_image {
+    @apply w-48 sm:w-80 rounded-tl-3xl  rounded-br-3xl;
+  }
+  .contactsMainContent_wrapper {
+    @apply flex p-[2vmax] flex-col md:flex-row;
+  }
+  .contacts_info {
+    @apply p-4 flex flex-col gap-3 pl-[2vmax];
+  }
+  .contacts_div {
+    @apply flex gap-2 text-lg;
+  }
+  .contacts_imageIcon {
+    @apply h-6 w-6;
+  }
+  .contacts_text {
+    @apply text-[1vmax];
+  }
+
+  /*NAVBAR STYLES*/
+  .navBar_Hide {
+    @apply flex absolute h-screen z-40 -left-44 lg:-left-40 2xl:-left-[11.4vmax]  w-32 opacity-100     ease-in duration-700;
+  }
+  .navBar_Show {
+    @apply flex absolute h-screen  z-40  left-0  ease-in duration-700;
+  }
+  .navBar_wrapper {
+    @apply h-screen
+  }
+  .navBarContent_wrapper {
+    @apply flex gap-[1.5vmax]
+  }
+  .navBar_contentDiv {
+    @apply ease-in duration-500  pl-3 gap-7 md:gap-5 xl:gap-7  grid grid-cols-1 h-screen w-40 lg:w-32 2xl:w-[8vmax]   items-center self-start
+  }
+  .navBar_itemsWrapper {
+    @apply h-[60vmax] sm:h-[60vmin]  self-start grid
+  }
+  .navBar_button {
+    @apply  items-center flex bg-white justify-center border-2 border-green-100 text-teal-900 w-32  rounded-tl-2xl  rounded-br-2xl h-12 xl:h-14 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax] text-center   hover:animate-hoverColor shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2
+  }
+  .navBar_hiddenDiv {
+    @apply hidden lg:block  lg:ml-0 2xl:ml-1   lg:self-center lg:h-screen w-8 2xl:w-[2.3vmax]  lg:flex lg:items-center lg:justify-center
+  }
+  .navBar_arrowDiv {
+    @apply overflow-hidden w-6  2xl:w-[1.5vmax] 2xl:h-[1.5vmax] rounded-full border-2 border-green-100 hover:border-2 hover:border-white hover:scale-125 duration-200
+  }
+  .navBar_arrow {
+    @apply 2xl:w-[1.5vmax] object-fill object-cover overflow-hidden    rounded-full
+  }
+  .navBar_menuButton {
+    @apply flex justify-center items-center absolute lg:hidden w-14 h-7 bg-green-100 top-5 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10  font-['Italianno','cursive']  opacity-0
+  }
+  .navBarBox_wrapper{
+    @apply  z-50   sm:block flex flex-row h-screen pl-3 2xl:pl-[1.7vmax] bg-neutral-200  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]
+  }
+  .navBar_crossDiv{
+    @apply flex  justify-center opacity-50  text-sm   lg:hidden w-5 h-5 absolute top-1 right-0
+  }
+  .navBar_crossImage{
+    @apply object-fill opacity-40 bg-white rounded-full w-4 h-4
+  }
+  .navBar_contentBox{
+    @apply  z-50   sm:block flex flex-row h-screen pl-3 2xl:pl-[1.7vmax] bg-neutral-200  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)]
+  }
+
+
+
+
+
+
+
+
 
   /*HEAR STYLES*/
   .heart_wrapper {
