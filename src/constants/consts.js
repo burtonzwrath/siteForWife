@@ -5,7 +5,7 @@ export const MAIN_ROUTE='/'
 export const CALC_ROUTE='/calc'
 export const HEART_ROUTE='/heart'
 export const CLOCK_ROUTE='/clock'
-export const DOSYAGNENYA_ROUTE='/dosyagnenya'
+export const ACHIEVEMENT_ROUTE='/achievement'
 export const CONTACTS_ROUTE='/contacts'
 
 export const initalState = [

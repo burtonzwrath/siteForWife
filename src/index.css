@@ -2,20 +2,232 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  /*MAIN PAGE STYLES*/
+  .main_wrapper {
+    @apply h-screen flex w-screen  bg-orange-50 absolute -z-20;
+  }
+  .navBar_Hide {
+    @apply flex absolute h-screen z-40 -left-44 lg:-left-40 2xl:-left-[11.4vmax]  w-32 opacity-100     ease-in duration-700;
+  }
+  .navBar_Show {
+    @apply flex absolute h-screen  z-40  left-0  ease-in duration-700;
+  }
+  .main_nameWrapper {
+    @apply w-full absolute flex justify-center top-[10vmax] md:right-[3vmax] md:top-[2.3vmax]  sm:mt-0;
+  }
+  .main_nameStyle {
+    @apply text-green-100 text-4xl md:text-[6vmin]   font-['Italianno','cursive']  opacity-0;
+  }
+  .main_contentWrapper {
+    @apply w-screen overflow-hidden relative flex justify-center;
+  }
+  .lengSwitcher_wrapper {
+    @apply z-50 absolute top-6 right-10;
+  }
+  .chat_wrapper {
+    @apply absolute h-screen w-screen flex justify-center items-center;
+  }
+  .sun_wrapper {
+    @apply md:mr-[10vmax]  container absolute items-center  justify-center  h-screen flex;
+  }
+  .main_image {
+    @apply hidden md:block md:w-screen sm:absolute sm:h-screen sm:bg-contain;
+  }
+  .main_imageMobile {
+    @apply w-screen h-screen bg-contain bg-no-repeat -z-10;
+  }
+
+  /*ABOUT ME STYLES*/
+  .aboutMe_wrapper {
+    @apply flex h-screen w-screen  justify-center absolute bg-green-50;
+  }
+  .aboutMeContent_wrapper {
+    @apply p-[4vmin] 2xl:p-[2vmax]  z-20 rounded-tl-3xl   rounded-br-3xl self-center      w-5/6 lg:w-[60vmax] bg-white   shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .aboutMe_h1 {
+    @apply 2xl:text-[1.5vmax];
+  }
+  .aboutMeText_wrapper {
+    @apply flex w-full flex flex-col lg:flex-row gap-10 mt-[1vmax];
+  }
+  .aboutMeImage_wrapper {
+    @apply flex justify-center;
+  }
+  .aboutMe_image {
+    @apply object-cover rounded-tl-3xl  rounded-br-3xl  w-80;
+  }
+
+  /*CALCULATOR STYLES*/
+  .calculator_wrapper {
+    @apply w-screen h-screen flex justify-center;
+  }
+  .calculator_contentWrapper {
+    @apply h-screen z-10 w-5/6 sm:w-full sm:justify-center  flex items-center;
+  }
+  .calculatorMainContent_wrapper {
+    @apply h-[80vmax] w-full sm:w-1/3 sm:h-[80vmin] grid grid-cols-1  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .calculator_h1 {
+    @apply inline-block font-bold italic  place-self-center m-4 text-[4vmin] sm:text-[1.5vmax] text-sky-800;
+  }
+  .calculatorContentStyle_wrapper {
+    @apply grid  grid-cols-1 gap-2 sm:gap-3 place-self-center self-start  place-items-center;
+  }
+  .calculator_heightLabel {
+    @apply italic text-[4vmin] sm:text-[1.2vmax] text-sky-700 font-semibold;
+  }
+  .calculator_heightNumber {
+    @apply w-12 border-2 rounded border-sky-300 pl-1 w-[10vmin] sm:w-[4vmax] text-[4vmin] sm:text-[1.2vmax];
+  }
+  .calculator_weightLabel {
+    @apply italic text-[4vmin] sm:text-[1.2vmax] text-sky-700 font-semibold;
+  }
+  .calculator_weightNumber {
+    @apply w-12 border-2 rounded border-sky-300 pl-1 w-[10vmin] sm:w-[4vmax] text-[4vmin] sm:text-[1.2vmax];
+  }
+  .calculator_buttonReset {
+    @apply text-[3vmin] text-[4vmin] sm:text-[1vmax] text-blue-300 font-semibold border-2 border-sky-700 rounded-tl-lg  rounded-br-lg   bg-green-200 hover:bg-orange-400 mt-4 transition duration-150 ease-out hover:ease-in;
+  }
+  .calculator_bmi {
+    @apply text-[4vmin] sm:text-[1.2vmax]  italic text-sky-700 font-semibold;
+  }
+  .calculator_mainImage {
+    @apply blur-[3px] absolute z-0 w-screen h-screen;
+  }
+  .calculator_noIndexImage {
+    @apply w-24  xl:w-[14vmin];
+  }
+  .calculator_result {
+    @apply block w-7 ml-2 text-sky-600 font-semibold text-[3vmin] sm:text-[1.5vmax] italic;
+  }
+  .calculator_image {
+    @applt w-24 sm:w-[10vmin] xl:w-[12vmin];
+  }
+
+  /*ACHIEVEMENT STYLES*/
+
+  .achievement_wrapper {
+    @apply flex h-screen  justify-center items-center;
+  }
+  .achievement_contentWrapper {
+    @apply h-[65vmax] sm:h-[80vmin] w-5/6 relative p-5 2xl:p-[2vmax]  sm:w-1/2 rounded-tl-3xl  rounded-br-3xl  z-10 bg-white  flex justify-center items-center  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .achievement_mainImage {
+    @apply absolute w-screen h-screen;
+  }
+  .achievement_textWrapper {
+    @apply pb-5 absolute top-10 2xl:top-[3vmax];
+  }
+  .achievement_h1 {
+    @apply text-center  italic text-green-600 text-xl 2xl:text-[1.5vmax];
+  }
+  .achievement_carouselWrapper {
+    @apply flex flex-col w-full items-center justify-center;
+  }
+
+  /*CAROUSEL STYLES */
+  .carousel_wrapper {
+    @apply flex gap-6 w-full;
+  }
+  .carouselRightArrow_wrapper {
+    @apply md:text-xl cursor-pointer flex items-center;
+  }
+  .carouselRightArrow_div {
+    @apply w-6 h-6   rounded-full 2xl:w-[1.6vmax] hover:scale-150 duration-200;
+  }
+  .carouselRightArrow_image {
+    @apply 2xl:w-[1.6vmax]   rounded-full;
+  }
+  .carousel_midDiv {
+    @apply z-10  flex     shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] rounded-xl hover:shadow-sky-500 duration-200  cursor-zoom-in;
+  }
+  .carousel_sideDivs {
+    @apply hidden    lg:block   rounded-xl  self-center   shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]  hover:shadow-sky-200 duration-200;
+  }
+  .carousel_midImage {
+    @apply opacity-100  w-[40vmax] object-contain w-full rounded-xl;
+  }
+  .carousel_sideImages {
+    @apply opacity-30  w-[20vmax]  object-contain w-full  rounded-xl;
+  }
+  .carouselLeftArrow_wrapper {
+    @apply flex items-center md:text-xl cursor-pointer;
+  }
+  .carouselLeftArrow_div {
+    @apply w-6 h-6 rounded-full 2xl:w-[1.6vmax]   hover:scale-150 duration-200;
+  }
+  .carouselLefttArrow_image {
+    @apply rotate-180 2xl:w-[1.6vmax] rounded-full;
+  }
+
+  /*FORM PAGE STYLES */
+  .form_wrapper {
+    @apply h-screen w-screen flex justify-center bg-green-50;
+  }
+  .form_mainImage {
+    @apply w-screen h-screen absolute;
+  }
+  .formContent_wrapper {
+    @apply w-3/4 md:w-2/5 self-center  items-center;
+  }
+  .form_mainText {
+    @apply text-center text-[6vmin]  sm:text-[2.3vmax] text-[#b9d4b3] font-semibold italic drop-shadow-lg;
+  }
+  .form_dialog {
+    @apply justify-center items-center w-[50vmax] lg:w-[35vmax]  rounded-2xl text-orange-500 text-xl;
+  }
+  .form_dialogClose {
+    @apply text-[2vmax]   absolute right-2 top-0 text-black;
+  }
+  .form_dialogSendText {
+    @apply text-[3vmin]  md:text-[1.5vmax]  text-center;
+  }
+  .formMainContent_wrapper {
+    @apply grid grid-cols-2 gap-[1vmax] 2xl:gap-[1.5vmax];
+  }
+  .form_input {
+    @apply 2xl:h-[3vmax] text-[1vmax]   drop-shadow-lg italic border-4  px-4 py-2  bg-stone-100  focus:outline-none transition duration-150 ease-out hover:ease-in  border-[#b9d4b3]  hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 rounded-tl-3xl  rounded-br-3xl;
+  }
+  .form_textArea {
+    @apply drop-shadow-lg text-[1vmax]  italic border-4 border-[#b9d4b3] px-4 py-2 bg-stone-100  focus:outline-none transition duration-150 ease-out hover:ease-in    hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 col-span-2 rounded-tl-3xl  rounded-br-3xl;
+  }
+  .form_date {
+    @apply 2xl:h-[3vmax] 2xl:w-[10vmax]  text-[1vmax]  w-40  drop-shadow-lg  border-4 border-[#b9d4b3] bg-stone-100  px-4 mt-2 py-2 transition duration-150 ease-out hover:ease-in focus:outline-none   hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 rounded-tl-3xl  rounded-br-3xl;
+  }
+  .form_button {
+    @apply 2xl:h-[3vmax] text-[1vmax]  text-center  drop-shadow-lg  duration-150 italic focus:outline-none mt-5 bg-[#b9d4b3] border-4 border-[#b9d4b3] px-4 py-2 text-black font-bold w-full rounded-tl-3xl  rounded-br-3xl   hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300;
+  }
+
+  /*HEAR STYLES*/
+  .heart_wrapper {
+    @apply opacity-0 mr-3 sm:hidden mt-10   absolute w-screen h-screen flex justify-center items-center z-0;
+  }
+  .heart_contentWrapper {
+    @apply w-[13vmin] h-[12vmax] bg-black mb-20  absolute overflow-hidden relative flex items-center  justify-center rounded-full;
+  }
+  .hear_contentWrapper {
+    @apply;
+  }
+  .heart_contentDiv {
+    @apply flex h-20 -ml-96 absolute gap-32 justify-between animate-move;
+  }
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-dialog::backdrop{
-  background-color: rgba(0,0,0,0.5);
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
 }

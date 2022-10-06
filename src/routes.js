@@ -5,7 +5,7 @@ import {
   MAIN_ROUTE,
   HEART_ROUTE,
   CLOCK_ROUTE,
-  DOSYAGNENYA_ROUTE,
+  ACHIEVEMENT_ROUTE,
   CONTACTS_ROUTE,
 } from "./constants/consts";
 
@@ -15,7 +15,7 @@ import MainPage from "./components/MainPage";
 import Calculator from "./components/Calculator";
 import Heart from "./components/Heart";
 import Clock from "./components/Clock";
-import Dosyagnenya from "./components/Dosyagnenya";
+import Achievement from "./components/Achievement";
 import Contacts from "./components/Contacts";
 
 export const navRoutes = [
@@ -45,8 +45,8 @@ export const navRoutes = [
     Component: Clock,
   },
   {
-    path: DOSYAGNENYA_ROUTE,
-    Component: Dosyagnenya,
+    path: ACHIEVEMENT_ROUTE,
+    Component: Achievement,
   },
   {
     path: CONTACTS_ROUTE,

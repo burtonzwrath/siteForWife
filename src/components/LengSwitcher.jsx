@@ -23,19 +23,24 @@ function LengSwitcher(props) {
         role="button"
         className={` ${
           lengEn === false ? "bg-green-100  " : "bg-green-300"
-        } ${lengEn}  border rounded-2xl w-8 h-6 text-md  md:w-[3vmax] md:h-[3vmin] md:text-[1vmax] text-center bg-green-100 hover:bg-sky-200 duration-100 focus:outline-none `}
+        } ${lengEn}  border flex justify-center items-center rounded-2xl w-8 h-6 text-md  md:w-[3vmax] md:h-[3vmin] md:text-[1vmax] text-center bg-green-100 hover:bg-sky-200 duration-100 focus:outline-none `}
         onClick={(e) => languageSwitcher(e, "en")}
       >
-        En
+        <div>
+          En
+        </div>
+
       </div>
       <div
         role="button"
         className={` ${
           lengUkr === false ? "bg-green-100 " : "bg-green-300 "
-        } ${lengUkr}   border rounded-2xl w-8 h-6 text-md  md:w-[3vmax] md:h-[3vmin] md:text-[1vmax]  text-center h-6 bg-green-100 hover:bg-sky-200 duration-100 focus:outline-none `}
+        } ${lengUkr}   border flex justify-center items-center rounded-2xl w-8 h-6 text-md  md:w-[3vmax] md:h-[3vmin] md:text-[1vmax]  text-center h-6 bg-green-100 hover:bg-sky-200 duration-100 focus:outline-none `}
         onClick={(e) => languageSwitcher(e, "ukr")}
       >
-        Укр
+        <div>
+          Укр
+        </div>
       </div>
     </div>
   );

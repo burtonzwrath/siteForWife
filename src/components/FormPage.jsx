@@ -19,74 +19,73 @@ e.preventDefault()
   }
 
   return (
-    <div className="h-screen w-screen flex justify-center bg-green-50">
-      <img className="w-screen h-screen absolute" src={image} alt="" />
+    <div className="form_wrapper">
+      <img className="form_mainImage" src={image} alt="" />
       <div>
         <div
           className={
             props.nav === true
-              ? "nav flex absolute h-screen  z-20  left-0    ease-in duration-500   "
-              : "nav flex absolute h-screen z-20 -left-44 lg:-left-40 2xl:-left-[11.4vmax] w-32 top-100 opacity-100     ease-in duration-500   "
+              ? "navBar_Show  "
+              : "navBar_Hide   "
           }
         >
           <NavBar nav={props.nav} setNav={props.setNav} />
-          <div className="w-full"></div>
         </div>
       </div>
-      <div className=" z-50 absolute top-5 right-10  flex gap-5 ">
+      <div className=" lengSwitcher_wrapper ">
         <LengSwitcher animationState={props.animationState} />
       </div>
-      <div className="w-3/4 md:w-2/5 self-center">
-        <div className=" container bg-white  z-40    ">
+      <div className="formContent_wrapper">
+        <div className="  bg-white  z-40    ">
           <div className="space-y-5 ">
-            <h4 className="text-center text-[6vmin] 2xl:text-[ sm:text-[2.3vmax] text-[#b9d4b3] font-semibold italic drop-shadow-lg ">
+            <h4 className="form_mainText ">
               {t("form.book")}
             </h4>
 
             <form   >
 
-              <dialog className="   justify-center items-center w-[50vmax] lg:w-[35vmax]  rounded-2xl text-orange-500 text-xl  ">
+              <dialog className="form_dialog ">
                 <div
                   onClick={() => closeModalWindow()}
-                  className="  text-[2vmax] form closeModal absolute right-2 top-0 text-black"
+                  className="  form_dialogClose"
                 >
                   x
                 </div>
-                  <div className="p-[2vmax]">  <h1 className=" text-[3vmin]  md:text-[1.5vmax]  text-center">Ваше сообщение успешно отправлено</h1></div>
+                  <div className="p-[2vmax]">  <h1 className=" form_dialogSendText">{t("form.send")}</h1></div>
 
               </dialog>
-              <div className="grid grid-cols-2 gap-[1vmax] 2xl:gap-[1.5vmax]">
+              <div className="formMainContent_wrapper">
                 <input
                   type="text"
-                  className=" 2xl:h-[3vmax] text-[1vmax]   drop-shadow-lg italic border-4  px-4 py-2  bg-stone-100  focus:outline-none transition duration-190 ease-out hover:ease-in  border-[#b9d4b3]  hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 rounded-tl-3xl  rounded-br-3xl "
+                  className=" form_input"
                   placeholder={t("form.name")}
                 />
                 <input
                   type="text"
-                  className=" 2xl:h-[3vmax] text-[1vmax]  drop-shadow-lg  italic border-4  px-4 py-2 bg-stone-100  focus:outline-none transition duration-190 ease-out hover:ease-in  border-[#b9d4b3]  hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 rounded-tl-3xl  rounded-br-3xl"
+                  className=" form_input"
                   placeholder={t("form.surname")}
                 />
                 <input
                   type="email"
-                  className="2xl:h-[3vmax] text-[1vmax]  drop-shadow-lg   italic border-4 px-4 py-2 bg-stone-100  focus:outline-none  transition duration-190 ease-out hover:ease-in   border-[#b9d4b3]   hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300  col-span-2 rounded-tl-3xl  rounded-br-3xl"
+                  className="form_input"
                   placeholder={t("form.email")}
                 />
                 <input
                   type="tel"
-                  className=" 2xl:h-[3vmax] text-[1vmax]   drop-shadow-lg  italic border-4  px-4 py-2  bg-stone-100  focus:outline-none transition duration-190 ease-out hover:ease-in   border-[#b9d4b3]   hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 col-span-2 rounded-tl-3xl  rounded-br-3xl"
+                  className=" form_input"
                   placeholder={t("form.phone")}
                 />
                 <textarea
                   cols="10"
                   rows="5"
-                  className=" drop-shadow-lg text-[1vmax]  italic border-4 border-[#b9d4b3] px-4 py-2 bg-stone-100  focus:outline-none transition duration-190 ease-out hover:ease-in    hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 col-span-2 rounded-tl-3xl  rounded-br-3xl"
+                  className=" form_textArea"
                   placeholder={t("form.text")}
                 ></textarea>
 
                 <input
                   id="date"
                   type="datetime-local"
-                  className="2xl:h-[3vmax] 2xl:w-[10vmax]  text-[1vmax]  w-40  drop-shadow-lg  border-4 border-[#b9d4b3] bg-stone-100  px-4 mt-2 py-2 transition duration-190 ease-out hover:ease-in focus:outline-none   hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 rounded-tl-3xl  rounded-br-3xl"
+                  className="form_date"
                 />
               </div>
 
@@ -94,7 +93,7 @@ e.preventDefault()
                   role="button"
                 onClick={(e) => formSend(e)}
                 value={t("form.button")}
-                className="2xl:h-[3vmax] text-[1vmax]  text-center submit drop-shadow-lg  italic focus:outline-none mt-5 bg-[#b9d4b3] border-4 border-[#b9d4b3] px-4 py-2 text-black font-bold w-full rounded-tl-3xl  rounded-br-3xl   hover:border-b-orange-300 hover:border-r-orange-300 focus:border-orange-300 "
+                className="form_button"
               />
             </form>
           </div>

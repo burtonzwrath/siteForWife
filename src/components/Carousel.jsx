@@ -60,13 +60,13 @@ function Carousel() {
   };
 
   return (
-    <div className="flex gap-6 w-full ">
+    <div className="carousel_wrapper">
       <div
-        className=" md:text-xl cursor-pointer flex items-center "
+        className=" carouselRightArrow_wrapper "
         onClick={(e) => handleRightClick(e)}
       >
-        <div className="   w-6 h-6   rounded-full 2xl:w-[1.6vmax] hover:scale-150 duration-200 ">
-           <img className="  2xl:w-[1.6vmax]   rounded-full" src="../img/ar.png" alt=""/>
+        <div className=" carouselRightArrow_div  ">
+           <img className=" carosusel_rightArrowImage" src="../img/ar.png" alt=""/>
         </div>
       </div>
       {cards
@@ -78,8 +78,8 @@ function Carousel() {
             onClick={(e) => choosePhoto(e)}
             className={
               index === 1
-                ? "z-10  flex align-center    shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] rounded-xl hover:shadow-sky-500 duration-200  cursor-zoom-in  "
-                : " hidden    lg:block   rounded-xl  self-center   shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]  hover:shadow-sky-200 duration-200"
+                ? "carousel_midDiv  "
+                : " carousel_sideDivs"
             }
             id={index}
           >
@@ -87,8 +87,8 @@ function Carousel() {
               data-id={index}
               className={
                 index === 1
-                  ? "opacity-100  w-[40vmax] object-contain w-full rounded-xl "
-                  : "opacity-30  w-[20vmax]  object-contain w-full  rounded-xl  "
+                  ? "carousel_midImage "
+                  : " carousel_sideImages  "
               }
               src={card.url}
               alt=""
@@ -96,11 +96,11 @@ function Carousel() {
           </div>
         ))}
       <div
-        className="flex items-center md:text-xl cursor-pointer"
+        className="carouselLeftArrow_wrapper"
         onClick={(e) => handleLeftClick(e)}
       >
-        <div className=" w-6 h-6 rounded-full 2xl:w-[1.6vmax]   hover:scale-150 duration-200">
-          <img className=" rotate-180 2xl:w-[1.6vmax] rounded-full"  src="../img/ar.png" alt=""/>
+        <div className=" carouselLeftArrow_div">
+          <img className="carouselLefttArrow_image"  src="../img/ar.png" alt=""/>
         </div>
       </div>
     </div>

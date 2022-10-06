@@ -1,8 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { navRoutes } from "../routes";
 
-const AppRouter = ( props) => {
-
+const AppRouter = (props) => {
   return (
     <Routes>
       {navRoutes.map(({ path, Component }) => (

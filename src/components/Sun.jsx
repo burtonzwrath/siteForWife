@@ -3,7 +3,7 @@ import { auth } from "./firebase";
 import {
   CALC_ROUTE,
   ABOUT_ROUTE,
-  DOSYAGNENYA_ROUTE,
+    ACHIEVEMENT_ROUTE,
     FORM_ROUTE,
     CONTACTS_ROUTE
 } from "../constants/consts";
@@ -149,10 +149,10 @@ function Sun(props) {
       >
         <div
             tabIndex="5"
-            onKeyPress={(e=>{if(e.key==="Enter"){ navigate(DOSYAGNENYA_ROUTE)}})}
+            onKeyPress={(e=>{if(e.key==="Enter"){ navigate(ACHIEVEMENT_ROUTE)}})}
           onMouseLeave={(e) => onMouseLeave(e)}
           onMouseEnter={(e) => onMouseEnter(e)}
-          onClick={() => navigate(DOSYAGNENYA_ROUTE)}
+          onClick={() => navigate(ACHIEVEMENT_ROUTE)}
           className="links-icon w-14 h-14 lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax]    rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)] hover:animate-hoverShadow"
         >
           <img

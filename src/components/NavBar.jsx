@@ -4,7 +4,7 @@ import {
   FORM_ROUTE,
   MAIN_ROUTE,
   CALC_ROUTE,
-  DOSYAGNENYA_ROUTE,
+  ACHIEVEMENT_ROUTE,
     CONTACTS_ROUTE
 } from "../constants/consts";
 import {useLocation} from "react-router";
@@ -132,8 +132,8 @@ function NavBar(props) {
             {t("navBar.calculator")}
           </div>
           <div
-              id="/dosyagnenya"
-              data-name={DOSYAGNENYA_ROUTE}
+              id="/achievement"
+              data-name={ACHIEVEMENT_ROUTE}
             tabIndex="11"
             role="button"
               onKeyPress={(e) => onKeyPressEnter(e)}

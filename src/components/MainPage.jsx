@@ -26,14 +26,8 @@ function MainPage(props) {
   }, []);
 
   return (
-    <div className=" h-screen flex w-screen  bg-orange-50 absolute -z-20 ">
-      <div
-        className={
-          props.nav === true
-            ? "nav flex absolute h-screen  z-40  left-0  ease-in duration-700  "
-            : "nav flex absolute h-screen z-40 -left-44 lg:-left-40 2xl:-left-[11.4vmax]  w-32 opacity-100     ease-in duration-700   "
-        }
-      >
+    <div className="main_wrapper">
+      <div className={props.nav === true ? "navBar_Show " : "navBar_Hide   "}>
         <NavBar
           nav={props.nav}
           setNav={props.setNav}
@@ -41,31 +35,33 @@ function MainPage(props) {
           setShowModal={props.setShowModal}
           animationState={props.animationState}
         />
-        <div className="w-full"></div>
       </div>
 
-<div className="w-full absolute flex justify-center top-[10vmax] md:right-[3vmax] md:top-[2.3vmax]  sm:mt-0">
-    <div
-        className={` ${
-            props.animationState === "true" ? "animate-nameShow" : "opacity-95 z-10"
-        } text-green-100 text-4xl md:text-[6vmin]     font-['Italianno','cursive']  opacity-0`}
-    >
-        Dr.Svetlana Saray
-    </div>
-</div>
-
-
-      <div className="w-screen overflow-hidden relative flex justify-center ">
-        <div       className={`${
-            props.animationState === "true" ? "animate-lengShow" : "opacity-70"
-        }  opacity-0  z-50 absolute top-6 right-10 `}   >
-     <LengSwitcher animationState={props.animationState}  />
+      <div className="main_nameWrapper">
+        <div
+          className={` ${
+            props.animationState === "true"
+              ? "animate-nameShow"
+              : "opacity-95 z-10"
+          } main_nameStyle`}
+        >
+          Dr.Svetlana Saray
         </div>
-        <div className="absolute h-screen w-screen flex justify-center items-center ">
+      </div>
+
+      <div className="main_contentWrapper ">
+        <div
+          className={`${
+            props.animationState === "true" ? "animate-lengShow" : "opacity-70"
+          }  lengSwitcher_wrapper opacity-0  `}
+        >
+          <LengSwitcher animationState={props.animationState} />
+        </div>
+        <div className="chat_wrapper ">
           <ChatOnline setShowChat={setShowChat} showChat={showChat} />
         </div>
 
-        <div className=" md:mr-[10vmax]  container absolute items-center  justify-center  h-screen flex ">
+        <div className=" sun_wrapper ">
           <div className="w-10 h-10 ">
             <Sun
               animationState={props.animationState}
@@ -76,7 +72,7 @@ function MainPage(props) {
           </div>
         </div>
         <img
-          className={`hidden md:block md:w-screen sm:absolute sm:h-screen sm:bg-contain ${
+          className={`main_image ${
             props.animationState === "true" ? "animate-[blur_1.3s_linear]" : " "
           }  bg-no-repeat -z-10`}
           src={img}
@@ -86,7 +82,7 @@ function MainPage(props) {
         <img
           className={`md:hidden ${
             props.animationState === "true" ? "animate-[blur_1.3s_linear]" : " "
-          } w-screen h-screen bg-contain bg-no-repeat -z-10`}
+          } main_imageMobile`}
           src={img2}
           alt=""
         />
