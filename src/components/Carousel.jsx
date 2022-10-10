@@ -66,7 +66,11 @@ function Carousel() {
         onClick={(e) => handleRightClick(e)}
       >
         <div className=" carouselRightArrow_div  ">
-           <img className=" carosusel_rightArrowImage" src="../img/ar.png" alt=""/>
+          <img
+            className=" carosusel_rightArrowImage"
+            src="../img/ar.png"
+            alt=""
+          />
         </div>
       </div>
       {cards
@@ -76,19 +80,13 @@ function Carousel() {
           <div
             key={index}
             onClick={(e) => choosePhoto(e)}
-            className={
-              index === 1
-                ? "carousel_midDiv  "
-                : " carousel_sideDivs"
-            }
+            className={index === 1 ? "carousel_midDiv  " : " carousel_sideDivs"}
             id={index}
           >
             <img
               data-id={index}
               className={
-                index === 1
-                  ? "carousel_midImage "
-                  : " carousel_sideImages  "
+                index === 1 ? "carousel_midImage " : " carousel_sideImages  "
               }
               src={card.url}
               alt=""
@@ -100,7 +98,11 @@ function Carousel() {
         onClick={(e) => handleLeftClick(e)}
       >
         <div className=" carouselLeftArrow_div">
-          <img className="carouselLefttArrow_image"  src="../img/ar.png" alt=""/>
+          <img
+            className="carouselLefttArrow_image"
+            src="../img/ar.png"
+            alt=""
+          />
         </div>
       </div>
     </div>

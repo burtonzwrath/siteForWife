@@ -2,8 +2,10 @@ import { auth } from "./firebase";
 
 function SignOut() {
   return (
-    <div className=" bg-white absolute border rounded-full text-orange-300 w-16   left-1 top-1 flex justify-center">
-      <button className="text-sm" onClick={() => auth.signOut()}>log out</button>
+    <div className=" bg-green-100 absolute border rounded-full text-orange-300 w-14 lg:w-24   hover:text-white   flex justify-center hover:bg-orange-400">
+      <button className="text-sm 2xl:text-2xl " onClick={() => auth.signOut()}>
+        log out
+      </button>
     </div>
   );
 }

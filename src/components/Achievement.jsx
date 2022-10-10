@@ -8,7 +8,7 @@ function Achievement(props) {
   return (
     <div className="achievement_wrapper  ">
       <img className="achievement_mainImage" src={image} alt="" />
-      <div className={props.nav === true ? "navBar_Show  " : "navBar_Hide  "}>
+      <div className={props.nav === true ? "navBar_Show  " : "navBar_Hide "}>
         <NavBar nav={props.nav} setNav={props.setNav} />
       </div>
       <div className=" lengSwitcher_wrapper">

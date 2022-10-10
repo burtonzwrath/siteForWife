@@ -7,11 +7,11 @@ function Form(props) {
   const { t } = useTranslation();
 
   function formSend(e) {
-e.preventDefault()
+    e.preventDefault();
     const form = document.querySelector("form");
-    const dialog = document.querySelector("dialog")
+    const dialog = document.querySelector("dialog");
     dialog.showModal();
-     form.reset();
+    form.reset();
   }
   function closeModalWindow() {
     const dialog = document.querySelector("dialog");
@@ -23,11 +23,7 @@ e.preventDefault()
       <img className="form_mainImage" src={image} alt="" />
       <div>
         <div
-          className={
-            props.nav === true
-              ? "navBar_Show  "
-              : "navBar_Hide   "
-          }
+          className={props.nav === true ? "navBar_Show  " : "navBar_Hide   "}
         >
           <NavBar nav={props.nav} setNav={props.setNav} />
         </div>
@@ -38,12 +34,9 @@ e.preventDefault()
       <div className="formContent_wrapper">
         <div className="  bg-white  z-40    ">
           <div className="space-y-5 ">
-            <h4 className="form_mainText ">
-              {t("form.book")}
-            </h4>
+            <h4 className="form_mainText ">{t("form.book")}</h4>
 
-            <form   >
-
+            <form>
               <dialog className="form_dialog ">
                 <div
                   onClick={() => closeModalWindow()}
@@ -51,8 +44,9 @@ e.preventDefault()
                 >
                   x
                 </div>
-                  <div className="p-[2vmax]">  <h1 className=" form_dialogSendText">{t("form.send")}</h1></div>
-
+                <div className="p-[2vmax]">
+                  <h1 className=" form_dialogSendText">{t("form.send")}</h1>
+                </div>
               </dialog>
               <div className="formMainContent_wrapper">
                 <input
@@ -81,16 +75,11 @@ e.preventDefault()
                   className=" form_textArea"
                   placeholder={t("form.text")}
                 ></textarea>
-
-                <input
-                  id="date"
-                  type="datetime-local"
-                  className="form_date"
-                />
+                <input id="date" type="datetime-local" className="form_date" />
               </div>
 
               <input
-                  role="button"
+                role="button"
                 onClick={(e) => formSend(e)}
                 value={t("form.button")}
                 className="form_button"

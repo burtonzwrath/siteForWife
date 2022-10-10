@@ -3,14 +3,11 @@ import clock from "../img/clockMax2.png";
 
 function Clock() {
   const clockStyles = {
-
-
     min: {
       top: "calc(50% - 55px)",
       left: " calc(50% - 55px)",
     },
     hour: {
-
       top: "calc(50% - 45px)",
       left: " calc(50% - 45px)",
     },
@@ -22,7 +19,6 @@ function Clock() {
       background: "rgba(84,205,213,0.7)",
       borderRadius: "4px 4px 0 0",
       boxShadow: "2px 2px 5px rgba(0,0,0,0.5)",
-
     },
     secArr: {
       borderRadius: "4px 4px 0 0",
@@ -57,32 +53,35 @@ function Clock() {
   }
 
   return (
-    <div className="h-[130px] w-[130px] 2xl:h-[8vmax] 2xl:w-[8vmax] rounded-tl-2xl  rounded-br-2xl  from-blue-500  mt-7  relative shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_10px_2px_rgba(0,0,0,0.6)]">
-      <img
-        className="h-[130px] w-[130px] 2xl:h-[8vmax] 2xl:w-[8vmax] opacity-20  rounded-2xl object-fill"
-        src="/img/medIcon.jpg"
-        alt=""
-      />
+    <div className=" clock_wrapper">
+      <img className="clock_image" src="/img/medIcon.jpg" alt="" />
 
-      <div className="cogs overflow-hidden absolute left-[60%] bottom-[10%] w-[27px] h-[35px] 2xl:w-[2vmax] 2xl:h-[2.5vmax] rounded-md bg-stone-400  ">
-        <div className="cog1  w-[40px] h-[40px] absolute -left-[25px] -top-[10px] 2xl:w-[2.5vmax]  2xl:h-[2.5vmax] 2xl:-left-[1vmax] 2xl:top-[1.4vmax] animate-[cog_6s_linear_infinite]">
+      <div className="cogs clock_cogs ">
+        <div className="cog1  clock_cog1">
           <img src="/img/cog.png" alt="" />
         </div>
-        <div className="cog2 w-[50px] h-[50px]  absolute left-[11px] -top-[10px] 2xl:w-[2vmax]  2xl:h-[2vmax] 2xl:top-[0vmax] animate-[cog_6s_linear_infinite_reverse]">
+        <div className="cog2 clock_cog2">
           <img src="/img/cog.png" alt="" />
         </div>
       </div>
 
-      <div className="hour absolute flex justify-center w-[90px] h-[90px] " style={clockStyles.hour}>
-        <div className="hourArr  w-[8px] h-[55px] 2xl:w-[0.4vmax] "
-       style={clockStyles.hourArr}></div>
+      <div className="hour clock_hourDiv" style={clockStyles.hour}>
+        <div
+          className="hourArr clock_hourArrow "
+          style={clockStyles.hourArr}
+        ></div>
       </div>
-      <div className="min absolute flex justify-center w-[110px] h-[110px] " style={clockStyles.min}>
-        <div className="minArr  w-[2px] h-[60px] 2xl:w-[0.3vmax]" style={clockStyles.minArr}></div>
+      <div className="min clock_minDiv" style={clockStyles.min}>
+        <div
+          className="minArr  clock_minArrow"
+          style={clockStyles.minArr}
+        ></div>
       </div>
-      <div className="sec  absolute flex justify-center w-[120px] h-[120px] " style={clockStyles.sec}>
-        <div className="secArr    w-[2px] h-[70px] 2xl:w-[0.25vmax]"
-       style={clockStyles.secArr}></div>
+      <div className="sec  clock_secDiv" style={clockStyles.sec}>
+        <div
+          className="secArr    clock_secArrow"
+          style={clockStyles.secArr}
+        ></div>
       </div>
     </div>
   );

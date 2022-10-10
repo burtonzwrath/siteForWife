@@ -14,23 +14,31 @@ function Contacts(props) {
       <div className="contactsContent_wrapper">
         <div className="contactsMainContent_wrapper">
           <div>
-            <img
-              className="  contacts_image "
-              src={img}
-              alt=""
-            />
+            <img className="  contacts_image " src={img} alt="" />
           </div>
           <div className="contacts_info">
             <div className="contacts_div ">
-              <img className="contacts_imageIcon" src="icons/viber2.png" alt="" />
+              <img
+                className="contacts_imageIcon"
+                src="icons/viber2.png"
+                alt=""
+              />
               <span className="contacts_text">+380988842079</span>
             </div>
             <div className="contacts_div">
-              <img className="contacts_imageIcon" src="icons/insta.png" alt="" />
+              <img
+                className="contacts_imageIcon"
+                src="icons/insta.png"
+                alt=""
+              />
               <span className="contacts_text">@dr_svetlana_saray</span>
             </div>
             <div className="contacts_div">
-              <img className="contacts_imageIcon" src="icons/telegram.png" alt="" />
+              <img
+                className="contacts_imageIcon"
+                src="icons/telegram.png"
+                alt=""
+              />
               <span className="contacts_text">+380988842079</span>
             </div>
           </div>
