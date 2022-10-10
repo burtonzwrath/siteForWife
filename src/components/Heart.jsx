@@ -7,7 +7,6 @@ function Heart(props) {
     >
       <div className=" heart_contentWrapper   ">
         <div className="h-20 w-20">
-          {" "}
           <img className="  h-20 w-20  bg-cover" src="img/heartBlue2.jpg" />
         </div>
         <div className="heart_contentDiv ">

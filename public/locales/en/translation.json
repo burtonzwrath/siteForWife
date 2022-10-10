@@ -2,7 +2,7 @@
   "name": {
     "1": "Dr.Svetlana Saray"
   },
-  "navBar":{
+  "navBar": {
     "about": "About me",
     "book": "Book an appointment",
     "mainPage": "Main page",
@@ -15,11 +15,11 @@
     "book": "Book an appointment",
     "email": "Email",
     "name": "Name",
-    "surname":"Surname",
+    "surname": "Surname",
     "phone": "Phone",
     "text": "Write briefly the reason for your appeal...",
     "button": "Send",
-    "send" : "Your message was successful sent"
+    "send": "Your message was successful sent"
   },
   "calculator": {
     "calc": "Body mass index calculator",
@@ -37,6 +37,8 @@
   },
   "menu": {
     "1": "Menu"
+  },
+  "contacts": {
+    "h1": "Contacts"
   }
-
 }

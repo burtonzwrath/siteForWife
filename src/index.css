@@ -23,10 +23,6 @@
     @apply z-50 absolute top-6 right-10;
   }
 
-  .chat_wrapper {
-    @apply absolute h-screen w-screen flex justify-center items-center;
-  }
-
   .sun_wrapper {
     @apply md:mr-[10vmax]  container absolute items-center  justify-center  h-screen flex;
   }
@@ -49,19 +45,19 @@
   }
 
   .aboutMe_h1 {
-    @apply 2xl:text-[1.5vmax];
+    @apply italic font-bold text-green-600 text-xl 2xl:text-[2vmax];
   }
 
   .aboutMeText_wrapper {
-    @apply flex w-full flex flex-col lg:flex-row gap-10 mt-[1vmax];
+    @apply flex w-full flex flex-col lg:flex-row gap-10 mt-[3vmax];
   }
 
   .aboutMeImage_wrapper {
-    @apply flex justify-center;
+    @apply flex justify-center lg:w-[20vmin];
   }
 
   .aboutMe_image {
-    @apply object-cover rounded-tl-3xl  w-52 rounded-br-3xl  lg:w-80;
+    @apply object-cover rounded-tl-3xl  w-52 lg:w-[20vmin] rounded-br-3xl;
   }
 
   /*CALCULATOR STYLES*/
@@ -75,7 +71,7 @@
     @apply w-full sm:w-1/3 h-[80vmax] sm:h-[80vmin] grid grid-cols-1  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
   }
   .calculator_h1 {
-    @apply inline-block font-bold italic  place-self-center m-4 text-[4vmin] sm:text-[1.5vmax] text-sky-800;
+    @apply inline-block font-bold italic  text-green-600 text-xl  place-self-center m-4 text-[4vmin] sm:text-[1.5vmax];
   }
   .calculatorContentStyle_wrapper {
     @apply grid  grid-cols-1 gap-2 sm:gap-3 place-self-center self-start  place-items-center;
@@ -125,7 +121,7 @@
     @apply pb-5 absolute top-10 2xl:top-[3vmax];
   }
   .achievement_h1 {
-    @apply text-center  italic text-green-600 text-xl 2xl:text-[1.5vmax];
+    @apply text-center  italic font-bold text-green-600 text-xl 2xl:text-[1.5vmax];
   }
   .achievement_carouselWrapper {
     @apply flex flex-col w-full items-center justify-center;
@@ -177,7 +173,7 @@
     @apply w-3/4 md:w-2/5 self-center  items-center;
   }
   .form_mainText {
-    @apply text-center text-[6vmin]  sm:text-[2.3vmax] text-[#b9d4b3] font-semibold italic drop-shadow-lg;
+    @apply text-center font-bold  text-[6vmin]  sm:text-[2.3vmax] text-green-600 font-semibold italic drop-shadow-lg;
   }
   .form_dialog {
     @apply justify-center items-center w-[50vmax] lg:w-[35vmax]  rounded-2xl text-orange-500 text-xl;
@@ -209,16 +205,19 @@
     @apply h-screen  w-full flex justify-center bg-green-50   items-center;
   }
   .contactsContent_wrapper {
-    @apply h-[80vmax] w-5/6 flex flex-col sm:h-[80vmin] sm:w-1/3 sm:flex justify-center  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+    @apply h-[80vmax] w-5/6 flex flex-col sm:h-[60vmin] sm:w-1/3 sm:flex justify-center  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
   }
   .contacts_image {
-    @apply w-48 sm:w-80 rounded-tl-3xl  rounded-br-3xl;
+    @apply w-48 sm:w-80 lg:w-[30vmin] rounded-tl-3xl  rounded-br-3xl;
   }
   .contactsMainContent_wrapper {
     @apply flex p-[2vmax] flex-col md:flex-row;
   }
   .contacts_info {
     @apply p-4 flex flex-col gap-3 pl-[2vmax];
+  }
+  .contacts_h1 {
+    @apply absolute top-2 lg:top-4 font-bold italic text-green-600 text-xl 2xl:text-[1.5vmax];
   }
   .contacts_div {
     @apply flex gap-2 text-lg;
@@ -262,7 +261,7 @@
     @apply 2xl:w-[1.5vmax] object-fill object-cover overflow-hidden    rounded-full;
   }
   .navBar_menuButton {
-    @apply flex justify-center items-center absolute lg:hidden w-14 h-7 bg-green-100 top-5 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10  font-['Italianno','cursive']  opacity-0;
+    @apply flex justify-center items-center absolute lg:hidden w-14 h-7 bg-orange-200 top-5 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10  font-['Italianno','cursive']  opacity-0;
   }
   .navBarBox_wrapper {
     @apply z-50   sm:block flex flex-row h-screen pl-3 2xl:pl-[1.7vmax] bg-neutral-200  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
@@ -315,7 +314,7 @@
     @apply decoration-red-500 object-fill lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax];
   }
   .sun_aboutText {
-    @apply text-green-50  w-12  top-20 left-[15%] md:-left-[5vmax] md:text-end md:w-20  xl:w-24 2xl:w-48  lg:opacity-50   lg:opacity-30  md:top-[7.5vmax]   xl:right-[6vmax] 2xl:text-center md:right-[6vmax] 2xl:right-[4vmax]  2xl:top-[6vmax]   text-[2.2vmax] md:text-[1.3vmax]   text-white absolute;
+    @apply text-green-50  w-24 top-20 -left-3 md:-left-[5vmax] md:text-end md:w-20  xl:w-24 2xl:w-48  lg:opacity-50   lg:opacity-30  md:top-[7.5vmax]   xl:right-[6vmax] 2xl:text-center md:right-[6vmax] 2xl:right-[4vmax]  2xl:top-[6vmax]   text-[2.2vmax] md:text-[1.3vmax]   text-white absolute;
   }
   .about_animation {
     @apply opacity-0  z-20  absolute    right-0 top-28  md:top-[6vmax] md:right-[8vmax];
@@ -339,7 +338,7 @@
     @apply object-fill lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax];
   }
   .sun_calculatorText {
-    @apply text-green-50   opacity-40 lg:opacity-50 bottom-20 md:right-[3vmax] md:bottom-[5.5vmax]   text-[2.2vmax] md:text-[1.3vmax]    text-white absolute;
+    @apply text-green-50 text-center  opacity-40 lg:opacity-50 bottom-20 -left-[6vmin] lg:-left-[5vmax]  md:right-[3vmax] md:bottom-[5.5vmax]   text-[2.2vmax] md:text-[1.3vmax]    text-white absolute;
   }
   .calculator_animation {
     @apply opacity-0  absolute z-20  right-24 bottom-10 md:right-[14vmax] md:bottom-[8vmax];
@@ -415,6 +414,41 @@
   }
   .clock_secArrow {
     @apply w-[2px] h-[70px] 2xl:w-[0.25vmax];
+  }
+
+  /*CHAT*/
+  .chat_wr {
+    @apply bg-white z-[105] h-full  rounded-tl-2xl     flex flex-col  relative   shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .chat_singOut {
+    @apply absolute left-5 top-2 pr-1 pl-1 z-50;
+  }
+  .chat_hideChat {
+    @apply z-50 text-sm 2xl:text-xl border border-sky-200 bg-green-100 hover:bg-sky-500 hover:text-white absolute duration-150 right-5  top-2  text-sky-600 rounded-xl pr-1 pl-1;
+  }
+  .chat_wrapper {
+    @apply absolute h-screen w-screen flex justify-center items-center;
+  }
+  .chat_leftMssg {
+    @apply w-[35vmin] md:w-[12vmax] h-auto flex  bg-sky-200   rounded-tl-3xl mr-4  rounded-br-3xl border-purple-500 overflow-hidden flex flex-col;
+  }
+  .chat_rightMssg {
+    @apply w-[35vmin] md:w-[12vmax] h-auto flex  bg-purple-200  rounded-tr-3xl ml-4  rounded-bl-3xl border-purple-500 overflow-hidden flex flex-col;
+  }
+  .chat_icon {
+    @apply border rounded-full border-white w-10 h-10  lg:w-[3vmax] lg:h-[3vmax] m-1 overflow-hidden;
+  }
+  .chat_textAreaDiv {
+    @apply bg-white h-full rounded-b-lg  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .chat_textArea {
+    @apply block   p-2  h-24 w-full text-sm  2xl:text-2xl  text-gray-800 bg-white border-0 h-full;
+  }
+  .chat_buttonSubmit {
+    @apply text-sm 2xl:text-2xl  absolute bottom-2 right-4 inline-flex items-center px-2 py-2.5 text-sm font-medium text-center text-white bg-green-600 opacity-70 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800;
+  }
+  .chat_ {
+    @apply;
   }
 }
 

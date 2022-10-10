@@ -19,21 +19,17 @@ import {
 export { useState, useEffect } from "react";
 
 function Chat({ setShowChat }) {
+  useEffect(() => {
+    setTimeout(() => {
+      scroll.current.scrollIntoView({ behavior: "smooth" });
+    }, 3000);
+  }, []);
   const [msg, setMsg] = useState("");
   const [imageList, setImageList] = useState(null);
   const imageListRef = ref(storage, "images/");
   const scroll = useRef(null);
   const [progress, setProgress] = useState(0);
   const setImg = document.querySelector("#setImg");
-
-  useEffect(() => {
-    console.log("useEffect", scroll);
-    scroll.current.scrollIntoView(false);
-    console.log("useEffect", scroll.current);
-    //const scroll = document.querySelector('.chat-wrapper');
-    //console.log('useEffect', scroll);
-    //scroll.scrollTop = 1000;
-  }, []);
 
   const uploadImage = (e) => {
     const imageUpload = e.target.files[0];
@@ -53,26 +49,9 @@ function Chat({ setShowChat }) {
     });
   };
 
-  const sendMessage = async (e) => {
-    e.preventDefault();
-    const { uid, photoURL } = auth.currentUser;
-    await setDoc(doc(db, "messages", msg), {
-      text: msg,
-      photoURL,
-      uid,
-      imgURL: imageList,
-      createdAt: serverTimestamp(),
-    });
-
-    setMsg("");
-    setImageList("");
-
-    scroll.current.scrollIntoView({ behavior: "smooth" });
-    setImg.value = "";
-  };
-
   const useFireStore = () => {
     const [messages, setMessages] = useState([]);
+
     useEffect(() => {
       const fetch = async () => {
         const q = query(collection(db, "messages"), orderBy("createdAt"));
@@ -86,29 +65,43 @@ function Chat({ setShowChat }) {
       };
       fetch();
     }, []);
+
     return messages;
   };
+
   const mes = useFireStore();
 
+  const sendMessage = async (e) => {
+    e.preventDefault();
+    const { uid, photoURL } = auth.currentUser;
+    await setDoc(doc(db, "messages", msg), {
+      text: msg,
+      photoURL,
+      uid,
+      imgURL: imageList,
+      createdAt: serverTimestamp(),
+    });
+
+    setMsg("");
+    setImageList("");
+    scroll.current.scrollIntoView({ behavior: "smooth" });
+    setImg.value = "";
+    setProgress(0);
+  };
+
   return (
-    <div className=" bg-white z-[105] h-full  rounded-tl-2xl    chat flex flex-col  relative   shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)] ">
-      <div className="absolute left-5 top-2 pr-1 pl-1 z-50">
+    <div className="chat chat_wr">
+      <div className="chat_singOut">
         <SignOut />
       </div>
 
-      <button
-        onClick={() => setShowChat(false)}
-        className=" z-50 text-sm 2xl:text-2xl border border-sky-200 bg-green-100 hover:bg-sky-500 hover:text-white absolute duration-150 right-5  top-2  text-sky-600 rounded-xl pr-1 pl-1  "
-      >
+      <button onClick={() => setShowChat(false)} className=" chat_hideChat ">
         hide chat
       </button>
       <div className="h-full relative flex flex-col justify-end ">
-        <div className="h-[95%] ">
+        <div className="h-[93%] ">
           <div className="overflow-hidden mb-3 h-[70%] ">
-            <div
-              className="chat-wrapper m-4 h-full border-2    overflow-y-scroll mt-4 rounded-xl flex flex-col gap-2 shadow-[0_0_20px_10px_rgba(0,0,0,0.6) "
-              ref={scroll}
-            >
+            <div className="chat-wrapper m-4  h-full border-2    overflow-y-scroll mt-4 rounded-xl flex flex-col gap-2 ">
               {mes.map(({ id, text, photoURL, uid, imgURL }) => (
                 <div
                   className={` pt-2 flex  msg ${
@@ -121,11 +114,11 @@ function Chat({ setShowChat }) {
                     key={id}
                     className={`msg ${
                       uid === auth?.currentUser?.uid
-                        ? " w-[35vmin] md:w-[12vmax] h-auto flex  bg-sky-200   rounded-tl-3xl mr-4  rounded-br-3xl border-purple-500 overflow-hidden flex flex-col"
-                        : "  w-[35vmin] md:w-[12vmax] h-auto flex  bg-purple-200  rounded-tr-3xl ml-4  rounded-bl-3xl border-purple-500 overflow-hidden flex flex-col "
+                        ? " chat_rightMssg"
+                        : "  chat_leftMssg "
                     }`}
                   >
-                    <div className="border rounded-full border-white w-10 h-10  lg:w-[3vmax] lg:h-[3vmax] m-1 overflow-hidden ">
+                    <div className="chat_icon">
                       <img
                         className="w-10 h-10  lg:w-[3vmax] lg:h-[3vmax]"
                         referrerPolicy="no-referrer"
@@ -142,12 +135,13 @@ function Chat({ setShowChat }) {
                   </div>
                 </div>
               ))}
+              <div ref={scroll}></div>
             </div>
           </div>
           <div className="w-full   h-[30%] ">
             <form className=" h-full" onSubmit={(e) => sendMessage(e)}>
               <div className="w-full h-full    bg-gray-50 rounded-lg border border-gray-200 rounded-xl">
-                <div className=" bg-white h-full rounded-b-lg  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)] ">
+                <div className=" chat_textAreaDiv ">
                   <div className=" p-2 ">
                     <textarea
                       required="false"
@@ -155,7 +149,7 @@ function Chat({ setShowChat }) {
                       rows="2"
                       value={msg}
                       onChange={(e) => setMsg(e.target.value)}
-                      className="block   p-2  h-24 w-full text-sm  2xl:text-2xl  text-gray-800 bg-white border-0 h-full"
+                      className="chat_textArea"
                       placeholder="Write an article..."
                       required
                     ></textarea>
@@ -174,10 +168,7 @@ function Chat({ setShowChat }) {
                   Uploaded {progress} %
                 </h2>
               </div>
-              <button
-                type="submit"
-                className="  text-sm 2xl:text-2xl  absolute bottom-2 right-4 inline-flex items-center px-2 py-2.5 text-sm font-medium text-center text-white bg-green-600 opacity-70 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
-              >
+              <button type="submit" className="  chat_buttonSubmit">
                 Вiдправити
               </button>
             </form>
