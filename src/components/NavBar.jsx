@@ -15,7 +15,7 @@ function NavBar(props) {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(props.animationState);
+
 
   function showMenu() {
     props.setNav(!props.nav);

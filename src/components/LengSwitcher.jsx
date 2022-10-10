@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-function LengSwitcher(props) {
-  console.log(props.animationState);
+function LengSwitcher() {
   const [lengEn, setLengEn] = useState(true);
   const [lengUkr, setLengUkr] = useState(false);
   const { i18n } = useTranslation();
