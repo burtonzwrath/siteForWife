@@ -61,8 +61,8 @@ function MainPage(props) {
           <ChatOnline setShowChat={setShowChat} showChat={showChat} />
         </div>
 
-        <div className=" sun_wrapper ">
-          <div className="w-10 h-10 ">
+        <div className=" sun_wrapper  ">
+          <div className="w-10 h-10  ">
             <Sun
               animationState={props.animationState}
               signWithGoogle={signWithGoogle}

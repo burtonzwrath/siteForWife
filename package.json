@@ -16,7 +16,6 @@
     "firebase": "^9.9.2",
     "firebase-admin": "^11.0.1",
     "firebase-functions": "^3.22.0",
-    "flowbite": "^1.5.3",
     "i": "^0.3.7",
     "i18next": "^21.9.2",
     "i18next-browser-languagedetector": "^6.1.5",
@@ -39,7 +38,7 @@
     "sweetalert2": "^11.4.37",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://github.com/burtonzwrath.io/siteForWife",
+
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

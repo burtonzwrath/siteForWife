@@ -28,11 +28,11 @@
   }
 
   .main_image {
-    @apply hidden md:block md:w-screen sm:absolute sm:h-screen sm:bg-contain;
+    @apply hidden md:block absolute md:w-screen sm:absolute sm:h-screen sm:bg-contain;
   }
 
   .main_imageMobile {
-    @apply w-screen h-screen bg-contain bg-no-repeat -z-10;
+    @apply w-screen absolute h-screen bg-contain bg-no-repeat -z-10;
   }
 
   /*ABOUT ME STYLES*/
@@ -53,11 +53,11 @@
   }
 
   .aboutMeImage_wrapper {
-    @apply flex justify-center lg:w-[20vmin];
+    @apply flex justify-center 2xl:w-[15vmax];
   }
 
   .aboutMe_image {
-    @apply object-cover rounded-tl-3xl  w-52 lg:w-[20vmin] rounded-br-3xl;
+    @apply object-cover rounded-tl-3xl w-52 md:w-64 2xl:w-[15vmax] rounded-br-3xl;
   }
 
   /*CALCULATOR STYLES*/
@@ -278,22 +278,19 @@
 
   /*HEAR STYLES*/
   .heart_wrapper {
-    @apply opacity-0 mr-3 sm:hidden mt-10   absolute w-screen h-screen flex justify-center items-center z-0;
+    @apply opacity-0 pb-4 pr-4 sm:hidden   absolute w-screen h-screen flex justify-center items-center z-0;
   }
   .heart_contentWrapper {
-    @apply w-[13vmin] h-[12vmax] bg-black mb-20  absolute overflow-hidden relative flex items-center  justify-center rounded-full;
+    @apply w-[13vmin] h-[12vmax]  bg-black   absolute overflow-hidden relative flex items-center  justify-center rounded-full;
   }
-  .hear_contentWrapper {
-    @apply;
-  }
+
   .heart_contentDiv {
-    @apply flex h-20 -ml-96 absolute gap-32 justify-between animate-move;
+    @apply flex h-20  -ml-96 absolute gap-32 justify-between animate-move;
   }
   /*SUN STYLES*/
-  .sun_wrapper {
-  }
+
   .sunContent_wrapper {
-    @apply ml-2 mt-4 relative    w-10 h-10 rounded-3xl relative flex  items-center justify-center;
+    @apply ml-2 relative   w-10 h-10 rounded-3xl relative flex  items-center justify-center;
   }
   .contacts_animation {
     @apply opacity-0  z-20  absolute    top-10 left-20  md:top-[10vmax] md:-left-[1vmax];
