@@ -77,13 +77,13 @@
     @apply grid  grid-cols-1 gap-2 sm:gap-3 place-self-center self-start  place-items-center;
   }
   .calculator_heightLabel {
-    @apply italic text-[4vmin] sm:text-[1.2vmax] text-sky-700 font-semibold;
+    @apply italic text-[4vmin] sm:text-[1.2vmax] text-green-700 font-semibold;
   }
   .calculator_heightNumber {
-    @apply w-12 border-2 rounded border-sky-300 pl-1 w-[10vmin] sm:w-[4vmax] text-[4vmin] sm:text-[1.2vmax];
+    @apply w-12 border-2 rounded border-sky-300  pl-1 w-[10vmin] sm:w-[4vmax] text-[4vmin] sm:text-[1.2vmax];
   }
   .calculator_weightLabel {
-    @apply italic text-[4vmin] sm:text-[1.2vmax] text-sky-700 font-semibold;
+    @apply italic text-[4vmin] sm:text-[1.2vmax] text-green-700 font-semibold;
   }
   .calculator_weightNumber {
     @apply w-12 border-2 rounded border-sky-300 pl-1 w-[10vmin] sm:w-[4vmax] text-[4vmin] sm:text-[1.2vmax];
@@ -92,7 +92,7 @@
     @apply text-[3vmin] text-[4vmin] sm:text-[1vmax] text-blue-300 font-semibold border-2 border-sky-700 rounded-tl-lg  rounded-br-lg   bg-green-200 hover:bg-orange-400 mt-4 transition duration-150 ease-out hover:ease-in;
   }
   .calculator_bmi {
-    @apply text-[4vmin] sm:text-[1.2vmax]  italic text-sky-700 font-semibold;
+    @apply text-[4vmin] sm:text-[1.2vmax]  italic text-green-700 font-semibold;
   }
   .calculator_mainImage {
     @apply blur-[3px] absolute z-0 w-screen h-screen;
