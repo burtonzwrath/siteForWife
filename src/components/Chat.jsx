@@ -16,20 +16,24 @@ import {
   uploadBytes,
   uploadBytesResumable,
 } from "firebase/storage";
+import {useTranslation} from "react-i18next";
 export { useState, useEffect } from "react";
 
 function Chat({ setShowChat }) {
-  useEffect(() => {
-    setTimeout(() => {
-      scroll.current.scrollIntoView({ behavior: "smooth" });
-    }, 3000);
-  }, []);
+
+  const { t } = useTranslation();
   const [msg, setMsg] = useState("");
   const [imageList, setImageList] = useState(null);
   const imageListRef = ref(storage, "images/");
   const scroll = useRef(null);
   const [progress, setProgress] = useState(0);
   const setImg = document.querySelector("#setImg");
+
+  useEffect(() => {
+    setTimeout(() => {
+      scroll.current.scrollIntoView({ behavior: "smooth" });
+    }, 1000);
+  }, []);
 
   const uploadImage = (e) => {
     const imageUpload = e.target.files[0];
@@ -96,7 +100,7 @@ function Chat({ setShowChat }) {
       </div>
 
       <button onClick={() => setShowChat(false)} className=" chat_hideChat ">
-        hide chat
+        {t("chat.hide")}
       </button>
       <div className="h-full relative flex flex-col justify-end ">
         <div className="h-[93%] ">
@@ -150,7 +154,7 @@ function Chat({ setShowChat }) {
                       value={msg}
                       onChange={(e) => setMsg(e.target.value)}
                       className="chat_textArea"
-                      placeholder="Write an article..."
+                      placeholder={t('chat.placeholder')}
                       required
                     ></textarea>
                   </div>
@@ -158,18 +162,18 @@ function Chat({ setShowChat }) {
               </div>
               <div className=" absolute bottom-0 left-4">
                 <input
-                  className="text-[13px] 2xl:text-2xl "
+                  className=" text-xs  md:text-[1vmax]  "
                   type="file"
                   name="select image"
                   id="setImg"
                   onChange={uploadImage}
                 />
-                <h2 className="text-sm 2xl:text-2xl   ">
-                  Uploaded {progress} %
+                <h2 className="text-xs  md:text-[1vmax]   ">
+                  {t('chat.uploaded')} {progress} %
                 </h2>
               </div>
               <button type="submit" className="  chat_buttonSubmit">
-                Вiдправити
+                {t("chat.send")}
               </button>
             </form>
           </div>

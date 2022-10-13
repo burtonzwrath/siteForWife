@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import img1 from "../../src/img/1fat.png";
-import img2 from "../../src/img/2fat.png";
-import img3 from "../../src/img/3fat.png";
-import img4 from "../../src/img/4fat.png";
+import img1 from "../../src/img/bmi1.png";
+import img2 from "../../src/img/bmi2.png";
+import img3 from "../../src/img/bmi3.png";
+import img4 from "../../src/img/bmi4.png";
 import img5 from "../../src/img/5.png";
 import image from "../img/calc5.jpg";
 import NavBar from "./NavBar";
@@ -66,16 +66,16 @@ function Calculator(props) {
     img = <img className="calculator_noIndexImage " src={img5} alt="" />;
     h3 = <h3 className="calculator_result">{result === 0 ? "" : result}</h3>;
   } else if (result < 18.5) {
-    img = <img className="  calculator_image  " src={img1} alt="" />;
+    img = <img className="  calculator_noIndexImage   " src={img1} alt="" />;
     h3 = <h3 className="calculator_result">{result}</h3>;
   } else if (result >= 18 && result <= 24.9) {
-    img = <img className="  calculator_image" src={img2} alt="" />;
+    img = <img className="  calculator_noIndexImage " src={img2} alt="" />;
     h3 = <h3 className=" calculator_result">{result}</h3>;
   } else if (result >= 25 && result <= 29.9) {
-    img = <img className=" calculator_image   " src={img3} alt="" />;
+    img = <img className=" calculator_noIndexImage    " src={img3} alt="" />;
     h3 = <h3 className="calculator_result">{result}</h3>;
   } else if (result >= 30) {
-    img = <img className=" calculator_image " src={img4} alt="" />;
+    img = <img className=" calculator_noIndexImage  " src={img4} alt="" />;
     h3 = <h3 className="calculator_result">{result}</h3>;
   }
 
@@ -143,11 +143,11 @@ function Calculator(props) {
             <button className="calculator_buttonReset" onClick={handleReset}>
               {t("calculator.reset")}
             </button>
-            <div className="flex items-end ">
-              <h2 className=" calculator_bmi ">{t("calculator.bmi")}</h2>
+            <div className="flex items-end h-10 content-center">
+              <h2 className=" calculator_bmi  align-bottom">{t("calculator.bmi")}</h2>
               <div className="">{h3}</div>
             </div>
-            <div className="    flex items-center   ">{img}</div>
+            <div className=" h-40 md:h-28  xl:h-[14vmax] flex justify-center  ">{img}</div>
           </div>
         </div>
       </div>

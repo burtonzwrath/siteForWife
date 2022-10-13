@@ -40,5 +40,12 @@
   },
   "contacts": {
     "h1": "Contacts"
+  },
+  "chat": {
+    "send": "Send",
+    "logout": "log out",
+    "hide": "hide chat",
+    "uploaded": "Uploaded",
+    "placeholder":"Write an article..."
   }
 }

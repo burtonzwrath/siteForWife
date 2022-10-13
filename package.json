@@ -38,7 +38,7 @@
     "sweetalert2": "^11.4.37",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://burtonzwrath.github.io/siteForWife",
+
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

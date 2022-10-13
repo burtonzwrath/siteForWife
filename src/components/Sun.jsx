@@ -62,7 +62,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" sun_contactsText link-text ">
+        <div className=" sun_contactsText sun_text link-text ">
           {t("navBar.contacts")}
         </div>
       </div>
@@ -92,7 +92,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className="  sun_aboutText  ">{t("navBar.about")}</div>
+        <div className="  sun_aboutText sun_text ">{t("navBar.about")}</div>
       </div>
 
       <div
@@ -118,7 +118,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" sun_chatText ">{t("navBar.chat")}</div>
+        <div className=" sun_chatText sun_text">{t("navBar.chat")}</div>
       </div>
 
       <div
@@ -144,7 +144,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" sun_calculatorText ">{t("navBar.calculator")}</div>
+        <div className=" sun_calculatorText sun_text ">{t("navBar.calculator")}</div>
       </div>
 
       <div
@@ -170,7 +170,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" sun_achievementText  ">{t("navBar.achievement")}</div>
+        <div className=" sun_achievementText sun_text ">{t("navBar.achievement")}</div>
       </div>
 
       <div
@@ -196,7 +196,7 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className="sun_bookText ">{t("navBar.book")}</div>
+        <div className="sun_bookText sun_text ">{t("navBar.book")}</div>
       </div>
     </div>
   );
