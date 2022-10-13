@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import clock from "../img/clockMax2.png";
+
 
 function Clock() {
   const clockStyles = {
@@ -54,7 +54,7 @@ function Clock() {
 
   return (
     <div className=" clock_wrapper">
-      <img className="clock_image" src="/img/medIcon.jpg" alt="" />
+      <img className="clock_image" src="/img/medIcon5.jpg" alt="" />
 
       <div className="cogs clock_cogs ">
         <div className="cog1  clock_cog1">
