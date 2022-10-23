@@ -1,5 +1,5 @@
-import { auth } from "./firebase";
-import {useTranslation} from "react-i18next";
+import { auth } from "../../firebase/firebase";
+import { useTranslation } from "react-i18next";
 
 function SignOut() {
     const { t } = useTranslation();

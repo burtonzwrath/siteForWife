@@ -1,0 +1,18 @@
+.achievement_wrapper {
+  @apply flex h-screen  justify-center items-center;
+}
+.achievement_contentWrapper {
+  @apply h-[65vmax] sm:h-[80vmin] w-5/6 relative p-5 2xl:p-[2vmax]  sm:w-1/2 rounded-tl-3xl  rounded-br-3xl  z-10 bg-white  flex justify-center items-center  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+}
+.achievement_mainImage {
+  @apply absolute w-screen h-screen;
+}
+.achievement_textWrapper {
+  @apply pb-5 absolute top-10 2xl:top-[3vmax];
+}
+.achievement_h1 {
+  @apply text-center  italic font-bold text-green-600 text-xl 2xl:text-[1.5vmax];
+}
+.achievement_carouselWrapper {
+  @apply flex flex-col w-full items-center justify-center;
+}

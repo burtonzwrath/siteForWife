@@ -1,0 +1,33 @@
+.carousel_wrapper {
+  @apply flex gap-6 w-full;
+}
+.carouselRightArrow_wrapper {
+  @apply md:text-xl cursor-pointer flex items-center;
+}
+.carouselRightArrow_div {
+  @apply w-6 h-6   rounded-full 2xl:w-[1.6vmax] hover:scale-150 duration-200;
+}
+.carouselRightArrow_image {
+  @apply 2xl:w-[1.6vmax]   rounded-full;
+}
+.carousel_midDiv {
+  @apply z-10  flex     shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] rounded-xl hover:shadow-sky-500 duration-200  cursor-zoom-in;
+}
+.carousel_sideDivs {
+  @apply hidden    lg:block   rounded-xl  self-center   shadow-[0_0_10px_2px_rgba(0,0,0,0.6)]  hover:shadow-sky-200 duration-200;
+}
+.carousel_midImage {
+  @apply opacity-100   object-contain  rounded-xl;
+}
+.carousel_sideImages {
+  @apply opacity-30  object-contain w-full  rounded-xl;
+}
+.carouselLeftArrow_wrapper {
+  @apply flex items-center md:text-xl cursor-pointer;
+}
+.carouselLeftArrow_div {
+  @apply w-6 h-6 rounded-full 2xl:w-[1.6vmax]   hover:scale-150 duration-200;
+}
+.carouselLefttArrow_image {
+  @apply rotate-180 2xl:w-[1.6vmax] rounded-full;
+}

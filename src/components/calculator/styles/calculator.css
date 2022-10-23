@@ -1,0 +1,42 @@
+.calculator_wrapper {
+  @apply w-screen h-screen flex justify-center;
+}
+.calculator_contentWrapper {
+  @apply h-screen z-10 w-5/6 sm:w-full sm:justify-center  flex items-center;
+}
+.calculatorMainContent_wrapper {
+  @apply w-full sm:w-1/3 h-[80vmax] sm:h-[80vmin] grid grid-cols-1  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+}
+.calculator_h1 {
+  @apply inline-block font-bold italic  text-green-600 text-xl  place-self-center m-4 text-[4vmin] sm:text-[1.5vmax];
+}
+.calculatorContentStyle_wrapper {
+  @apply grid  grid-cols-1 gap-2 sm:gap-3 place-self-center self-start  place-items-center;
+}
+.calculator_heightLabel {
+  @apply italic text-[4vmin] sm:text-[1.2vmax] text-green-700 font-semibold;
+}
+.calculator_heightNumber {
+  @apply w-12 border-2 rounded border-sky-300  pl-1 w-[10vmin] sm:w-[4vmax] text-[4vmin] sm:text-[1.2vmax];
+}
+.calculator_weightLabel {
+  @apply italic text-[4vmin] sm:text-[1.2vmax] text-green-700 font-semibold;
+}
+.calculator_weightNumber {
+  @apply w-12 border-2 rounded border-sky-300 pl-1 w-[10vmin] sm:w-[4vmax] text-[4vmin] sm:text-[1.2vmax];
+}
+.calculator_buttonReset {
+  @apply text-[3vmin] text-[4vmin] sm:text-[1vmax] text-blue-300 font-semibold border-2 border-sky-700 rounded-tl-lg  rounded-br-lg   bg-green-200 hover:bg-orange-400 mt-4 transition duration-150 ease-out hover:ease-in;
+}
+.calculator_bmi {
+  @apply text-[4vmin] sm:text-[1.2vmax]  italic text-green-700 font-semibold;
+}
+.calculator_mainImage {
+  @apply blur-[3px] absolute z-0 w-screen h-screen;
+}
+.calculator_noIndexImage {
+  @apply w-24  xl:w-[14vmin] h-[52];
+}
+.calculator_result {
+  @apply w-7 ml-2 inline-block align-bottom   text-sky-600 font-semibold text-[5vmin] sm:text-[1.5vmax] italic;
+}

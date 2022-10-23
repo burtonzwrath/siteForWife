@@ -1,6 +1,8 @@
-import SignOut from "./SignOut";
 import React, { useEffect, useState, useRef } from "react";
-import { auth, storage, db } from "./firebase";
+import { useTranslation } from "react-i18next";
+import SignOut from "../mainPage/SignOut";
+import { auth, storage, db } from "../../firebase/firebase";
+
 import {
   query,
   orderBy,
@@ -10,22 +12,21 @@ import {
   onSnapshot,
   collection,
 } from "firebase/firestore";
+
 import {
   getDownloadURL,
   ref,
   uploadBytes,
   uploadBytesResumable,
 } from "firebase/storage";
-import {useTranslation} from "react-i18next";
-export { useState, useEffect } from "react";
+import ChatContent from "./ChatContent";
 
 function Chat({ setShowChat }) {
-
+  const scroll = useRef(null);
   const { t } = useTranslation();
   const [msg, setMsg] = useState("");
   const [imageList, setImageList] = useState(null);
   const imageListRef = ref(storage, "images/");
-  const scroll = useRef(null);
   const [progress, setProgress] = useState(0);
   const setImg = document.querySelector("#setImg");
 
@@ -73,7 +74,7 @@ function Chat({ setShowChat }) {
     return messages;
   };
 
-  const mes = useFireStore();
+  const recievedMessages = useFireStore();
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -105,42 +106,7 @@ function Chat({ setShowChat }) {
       <div className="h-full relative flex flex-col justify-end ">
         <div className="h-[93%] ">
           <div className="overflow-hidden mb-3 h-[70%] ">
-            <div className="chat-wrapper m-4  h-full border-2    overflow-y-scroll mt-4 rounded-xl flex flex-col gap-2 ">
-              {mes.map(({ id, text, photoURL, uid, imgURL }) => (
-                <div
-                  className={` pt-2 flex  msg ${
-                    uid === auth?.currentUser?.uid
-                      ? "justify-end"
-                      : "justify-start "
-                  }`}
-                >
-                  <div
-                    key={id}
-                    className={`msg ${
-                      uid === auth?.currentUser?.uid
-                        ? " chat_rightMssg"
-                        : "  chat_leftMssg "
-                    }`}
-                  >
-                    <div className="chat_icon">
-                      <img
-                        className="w-10 h-10  lg:w-[3vmax] lg:h-[3vmax]"
-                        referrerPolicy="no-referrer"
-                        src={photoURL}
-                        alt=""
-                      />
-                    </div>
-                    <div className="border rounded-md m-1">
-                      <p className="break-words text-xs w-full 2xl:text-2xl  p-2">
-                        {text}
-                      </p>
-                    </div>
-                    <img className="m-3 rounded" src={imgURL} alt="" />
-                  </div>
-                </div>
-              ))}
-              <div ref={scroll}></div>
-            </div>
+            <ChatContent recievedMessages={recievedMessages} scroll={scroll} />
           </div>
           <div className="w-full   h-[30%] ">
             <form className=" h-full" onSubmit={(e) => sendMessage(e)}>
@@ -154,7 +120,7 @@ function Chat({ setShowChat }) {
                       value={msg}
                       onChange={(e) => setMsg(e.target.value)}
                       className="chat_textArea"
-                      placeholder={t('chat.placeholder')}
+                      placeholder={t("chat.placeholder")}
                       required
                     ></textarea>
                   </div>
@@ -169,7 +135,7 @@ function Chat({ setShowChat }) {
                   onChange={uploadImage}
                 />
                 <h2 className="text-xs  md:text-[1vmax]   ">
-                  {t('chat.uploaded')} {progress} %
+                  {t("chat.uploaded")} {progress} %
                 </h2>
               </div>
               <button type="submit" className="  chat_buttonSubmit">

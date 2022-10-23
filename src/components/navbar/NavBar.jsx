@@ -5,28 +5,28 @@ import {
   CALC_ROUTE,
   ACHIEVEMENT_ROUTE,
   CONTACTS_ROUTE,
-} from "../constants/consts";
+} from "../../constants/consts";
 import { useLocation } from "react-router";
-import Clock from "./Clock";
+import Clock from "../clock/Clock";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 
-function NavBar(props) {
+function NavBar({ nav, setNav, animationState }) {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
 
-
   function showMenu() {
-    props.setNav(!props.nav);
+    setNav(!nav);
     const menu = document.querySelector(".burgerMenu");
     const cross = document.querySelector(".cross");
     menu.style.display = "none";
     menu.style.transition = "0s";
     cross.style.opacity = "1";
   }
+
   function hideMenu() {
-    props.setNav(!props.nav);
+    setNav(!nav);
     const menu = document.querySelector(".burgerMenu");
     const cross = document.querySelector(".cross");
     setTimeout(() => {
@@ -60,9 +60,7 @@ function NavBar(props) {
         role="button"
         onClick={(e) => showMenu(e)}
         className={`${
-          props.animationState === "true"
-            ? "animate-menuShow"
-            : "opacity-60 z-10"
+          animationState === "true" ? "animate-menuShow" : "opacity-60 z-10"
         }  burgerMenu navBar_menuButton`}
       >
         <span className="h-5  ">{t("menu.1")}</span>
@@ -70,7 +68,7 @@ function NavBar(props) {
       <div
         onKeyPress={(e) => {
           if (e.key === "Enter") {
-            props.setNav(!props.nav);
+            setNav(!nav);
           }
         }}
         tabIndex="7"
@@ -83,7 +81,7 @@ function NavBar(props) {
         >
           <img
             className=" navBar_crossImage "
-            src="../img/crossPng2.png"
+            src="../../img/crossPng2.png"
             alt=""
           />
         </div>
@@ -91,7 +89,7 @@ function NavBar(props) {
         <div className="navBarContent_wrapper">
           <div
             className={
-              props.nav === true
+              nav === true
                 ? "opacity-100 navBar_contentDiv "
                 : "opacity-0 navBar_contentDiv  "
             }
@@ -172,19 +170,16 @@ function NavBar(props) {
             </div>
           </div>
 
-          <div
-            onClick={() => props.setNav(!props.nav)}
-            className="  navBar_hiddenDiv  "
-          >
+          <div onClick={() => setNav(!nav)} className="  navBar_hiddenDiv  ">
             <div className=" navBar_arrowDiv">
-              {props.nav === false ? (
+              {nav === false ? (
                 <img
                   className=" rotate-180  navBar_arrow"
-                  src="../img/ar.png"
+                  src="../../img/ar.png"
                   alt=""
                 />
               ) : (
-                <img className=" navBar_arrow" src="../img/ar.png" alt="" />
+                <img className=" navBar_arrow" src="../../img/ar.png" alt="" />
               )}
             </div>
           </div>

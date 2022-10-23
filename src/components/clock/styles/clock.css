@@ -1,0 +1,33 @@
+.clock_wrapper {
+  @apply h-[130px] w-[130px] 2xl:h-[8vmax] 2xl:w-[8vmax] rounded-tl-2xl  rounded-br-2xl  from-blue-500  mt-7  relative shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_10px_2px_rgba(0,0,0,0.6)];
+}
+.clock_image {
+  @apply h-[130px] w-[130px] 2xl:h-[8vmax] 2xl:w-[8vmax] opacity-20  rounded-2xl object-fill;
+}
+.clock_cogs {
+  @apply overflow-hidden absolute left-[60%] bottom-[10%] w-[27px] h-[35px] 2xl:w-[2vmax] 2xl:h-[2.5vmax] rounded-md bg-stone-400;
+}
+.clock_cog1 {
+  @apply w-[40px] h-[40px] absolute -left-[25px] -top-[10px] 2xl:w-[2.5vmax]  2xl:h-[2.5vmax] 2xl:-left-[1vmax] 2xl:top-[1.4vmax] animate-[cog_6s_linear_infinite];
+}
+.clock_cog2 {
+  @apply w-[50px] h-[50px]  absolute left-[11px] -top-[10px] 2xl:w-[2vmax]  2xl:h-[2vmax] 2xl:top-[0vmax] animate-[cog_6s_linear_infinite_reverse];
+}
+.clock_hourDiv {
+  @apply absolute flex justify-center w-[90px] h-[90px] top-[calc(50%-45px)] left-[calc(50%-45px)];
+}
+.clock_hourArrow {
+  @apply w-[8px] h-[55px] 2xl:w-[0.4vmax]     rounded-tl-xl rounded-tr-xl bg-sky-800;
+}
+.clock_minDiv {
+  @apply absolute flex justify-center w-[110px] h-[110px] top-[calc(50%-55px)] left-[calc(50%-55px)];
+}
+.clock_minArrow {
+  @apply w-[2px] h-[60px] 2xl:w-[0.3vmax] rounded-tl-xl rounded-tr-xl bg-sky-300;
+}
+.clock_secDiv {
+  @apply absolute flex justify-center w-[120px] h-[120px] top-[calc(50%-60px)] left-[calc(50%-60px)];
+}
+.clock_secArrow {
+  @apply w-[2px] h-[70px] 2xl:w-[0.25vmax]  rounded-tl-xl rounded-tr-xl bg-slate-400;
+}

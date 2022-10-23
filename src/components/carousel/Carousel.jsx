@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { initalState } from "../constants/consts";
+import { initalState } from "../../constants/consts";
+import CarouselCard from "./CarouselCard";
 
 function Carousel() {
   const [cards, setCards] = useState(initalState);
@@ -19,7 +20,6 @@ function Carousel() {
           return o.pos;
         })
       ) + 1;
-
     setCards(prevState);
   };
 
@@ -68,31 +68,12 @@ function Carousel() {
         <div className=" carouselRightArrow_div  ">
           <img
             className=" carosusel_rightArrowImage"
-            src="../img/ar.png"
+            src="../../img/ar.png"
             alt=""
           />
         </div>
       </div>
-      {cards
-        .filter((f) => f.active === true)
-        .sort((a, b) => (a.pos > b.pos ? 1 : b.pos > a.pos ? -1 : 0))
-        .map((card, index) => (
-          <div
-            key={index}
-            onClick={(e) => choosePhoto(e)}
-            className={index === 1 ? "carousel_midDiv  " : " carousel_sideDivs"}
-            id={index}
-          >
-            <img
-              data-id={index}
-              className={
-                index === 1 ? "carousel_midImage " : " carousel_sideImages  "
-              }
-              src={card.url}
-              alt=""
-            />
-          </div>
-        ))}
+      <CarouselCard choosePhoto={choosePhoto} cards={cards} />
       <div
         className="carouselLeftArrow_wrapper"
         onClick={(e) => handleLeftClick(e)}
@@ -100,7 +81,7 @@ function Carousel() {
         <div className=" carouselLeftArrow_div">
           <img
             className="carouselLefttArrow_image"
-            src="../img/ar.png"
+            src="../../img/ar.png"
             alt=""
           />
         </div>

@@ -1,5 +1,5 @@
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "./firebase";
+import { auth } from "../../firebase/firebase";
 import Chat from "./Chat";
 
 function ChatOnline({ showChat, setShowChat }) {
@@ -9,7 +9,7 @@ function ChatOnline({ showChat, setShowChat }) {
       className={
         showChat
           ? "z-50 absolute w-[80vmin] h-[90vmax] md:w-[30vmax] md:h-[70vmin]   md:right-10 opacity-100 ease-in duration-500"
-          : "z-20 absolute w-[80vmin] h-[90vmax]  md:w-[30vmax] md:h-[70vmin] absolute  opacity-0 ease-in duration-500"
+          : "z-20 absolute w-[80vmin] h-[90vmax]  md:w-[30vmax] md:h-[70vmin] md:right-10 absolute  opacity-0 ease-in duration-500"
       }
     >
       {user ? <Chat setShowChat={setShowChat} /> : ""}

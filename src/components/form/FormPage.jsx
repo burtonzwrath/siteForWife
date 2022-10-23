@@ -1,9 +1,9 @@
-import NavBar from "./NavBar";
-import image from "../img/form.jpg";
+import NavBar from "../navbar/NavBar";
+import image from "../../img/form.jpg";
 import { useTranslation } from "react-i18next";
-import LengSwitcher from "./LengSwitcher";
+import LengSwitcher from "../mainPage/LengSwitcher";
 
-function Form(props) {
+function Form({ nav, setNav, animationState }) {
   const { t } = useTranslation();
 
   function formSend(e) {
@@ -13,6 +13,7 @@ function Form(props) {
     dialog.showModal();
     form.reset();
   }
+
   function closeModalWindow() {
     const dialog = document.querySelector("dialog");
     dialog.close();
@@ -22,14 +23,12 @@ function Form(props) {
     <div className="form_wrapper">
       <img className="form_mainImage" src={image} alt="" />
       <div>
-        <div
-          className={props.nav === true ? "navBar_Show  " : "navBar_Hide   "}
-        >
-          <NavBar nav={props.nav} setNav={props.setNav} />
+        <div className={nav === true ? "navBar_Show  " : "navBar_Hide   "}>
+          <NavBar nav={nav} setNav={setNav} />
         </div>
       </div>
       <div className=" lengSwitcher_wrapper ">
-        <LengSwitcher animationState={props.animationState} />
+        <LengSwitcher animationState={animationState} />
       </div>
       <div className="formContent_wrapper">
         <div className="  bg-white  z-40    ">

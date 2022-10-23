@@ -1,0 +1,9 @@
+.heart_wrapper {
+  @apply opacity-0 pb-4 pr-4 sm:hidden   absolute w-screen h-screen flex justify-center items-center z-0;
+}
+.heart_contentWrapper {
+  @apply w-[13vmin] h-[12vmax]  bg-black   absolute overflow-hidden relative flex items-center  justify-center rounded-full;
+}
+.heart_contentDiv {
+  @apply flex h-20  -ml-96 absolute gap-32 justify-between animate-move;
+}

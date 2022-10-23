@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { navRoutes } from "../routes";
+import { navRoutes } from "../../routes";
 
 const AppRouter = (props) => {
   return (

@@ -1,0 +1,23 @@
+.aboutMe_wrapper {
+  @apply flex h-screen w-screen  justify-center absolute bg-green-50;
+}
+
+.aboutMeContent_wrapper {
+  @apply p-[4vmin] 2xl:p-[2vmax]  z-20 rounded-tl-3xl   rounded-br-3xl self-center  h-[80vmax] sm:h-[80vmin]     w-5/6 lg:w-[60vmax] bg-white   shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+}
+
+.aboutMe_h1 {
+  @apply italic font-bold text-green-600 text-xl 2xl:text-[2vmax];
+}
+
+.aboutMeText_wrapper {
+  @apply flex w-full flex flex-col lg:flex-row gap-10 mt-[3vmax];
+}
+
+.aboutMeImage_wrapper {
+  @apply flex justify-center 2xl:w-[15vmax];
+}
+
+.aboutMe_image {
+  @apply object-cover rounded-tl-3xl w-52 md:w-64 2xl:w-[15vmax] rounded-br-3xl;
+}

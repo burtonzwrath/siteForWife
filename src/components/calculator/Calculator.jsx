@@ -1,18 +1,13 @@
-import { useEffect, useRef, useState } from "react";
-import img1 from "../../src/img/bmi1.png";
-import img2 from "../../src/img/bmi2.png";
-import img3 from "../../src/img/bmi3.png";
-import img4 from "../../src/img/bmi4.png";
-import img5 from "../../src/img/5.png";
-import image from "../img/calc5.jpg";
-import NavBar from "./NavBar";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import LengSwitcher from "./LengSwitcher";
+import LengSwitcher from "../mainPage/LengSwitcher";
+import NavBar from "../navbar/NavBar";
+import CalculatorResultImage from "./CalculatorResultImage";
+import image from "../../img/calc5.jpg";
 
-function Calculator(props) {
+function Calculator({ nav, setNav, animationState }) {
   const { t } = useTranslation();
-
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState(null);
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
 
@@ -20,9 +15,6 @@ function Calculator(props) {
   const heightRefNumber = useRef();
   const weightRefRange = useRef();
   const heightRefRange = useRef();
-
-  let img;
-  let h3;
 
   const handleChangeRangeHeight = (e) => {
     e.preventDefault();
@@ -56,37 +48,14 @@ function Calculator(props) {
     setResult(0);
   };
 
-  useEffect(() => {
-    if (weight > 0 && height > 0) {
-      setResult(((weight / Math.pow(height, 2)) * 10000).toFixed(2));
-    }
-  }, [weight, height]);
-
-  if (result < 0.2) {
-    img = <img className="calculator_noIndexImage " src={img5} alt="" />;
-    h3 = <h3 className="calculator_result">{result === 0 ? "" : result}</h3>;
-  } else if (result < 18.5) {
-    img = <img className="  calculator_noIndexImage   " src={img1} alt="" />;
-    h3 = <h3 className="calculator_result">{result}</h3>;
-  } else if (result >= 18 && result <= 24.9) {
-    img = <img className="  calculator_noIndexImage " src={img2} alt="" />;
-    h3 = <h3 className=" calculator_result">{result}</h3>;
-  } else if (result >= 25 && result <= 29.9) {
-    img = <img className=" calculator_noIndexImage    " src={img3} alt="" />;
-    h3 = <h3 className="calculator_result">{result}</h3>;
-  } else if (result >= 30) {
-    img = <img className=" calculator_noIndexImage  " src={img4} alt="" />;
-    h3 = <h3 className="calculator_result">{result}</h3>;
-  }
-
   return (
     <div className="calculator_wrapper ">
-      <div className={props.nav === true ? "navBar_Show  " : "navBar_Hide   "}>
-        <NavBar nav={props.nav} setNav={props.setNav} />
+      <div className={nav === true ? "navBar_Show  " : "navBar_Hide   "}>
+        <NavBar nav={nav} setNav={setNav} />
         <div className="w-full"></div>
       </div>
       <div className=" lengSwitcher_wrapper ">
-        <LengSwitcher animationState={props.animationState} />
+        <LengSwitcher animationState={animationState} />
       </div>
 
       <div id="calc" className=" calculator_contentWrapper ">
@@ -143,11 +112,14 @@ function Calculator(props) {
             <button className="calculator_buttonReset" onClick={handleReset}>
               {t("calculator.reset")}
             </button>
-            <div className="flex items-end h-10 content-center">
-              <h2 className=" calculator_bmi  align-bottom">{t("calculator.bmi")}</h2>
-              <div className="">{h3}</div>
+            <div>
+              <CalculatorResultImage
+                height={height}
+                weight={weight}
+                setResult={setResult}
+                result={result}
+              />
             </div>
-            <div className=" h-40 md:h-28  xl:h-[14vmax] flex justify-center  ">{img}</div>
           </div>
         </div>
       </div>

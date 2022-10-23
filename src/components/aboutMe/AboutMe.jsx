@@ -1,15 +1,17 @@
-import NavBar from "./NavBar";
+import NavBar from "../navbar/NavBar";
 import { useTranslation } from "react-i18next";
-import LengSwitcher from "./LengSwitcher";
-function AboutMe(props) {
+import LengSwitcher from "../mainPage/LengSwitcher";
+
+function AboutMe({ nav, setNav, animationState }) {
   const { t } = useTranslation();
+
   return (
     <div className="aboutMe_wrapper">
-      <div className={props.nav === true ? "navBar_Show  " : "navBar_Hide  "}>
-        <NavBar nav={props.nav} setNav={props.setNav} />
+      <div className={nav === true ? "navBar_Show  " : "navBar_Hide  "}>
+        <NavBar nav={nav} setNav={setNav} />
       </div>
       <div className=" lengSwitcher_wrapper  ">
-        <LengSwitcher animationState={props.animationState} />
+        <LengSwitcher animationState={animationState} />
       </div>
       <div className=" aboutMeContent_wrapper">
         <div className="aboutMe_h1">

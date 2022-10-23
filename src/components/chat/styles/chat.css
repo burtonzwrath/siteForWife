@@ -1,0 +1,30 @@
+.chat_wr {
+  @apply bg-white z-[105] h-full  rounded-tl-2xl     flex flex-col  relative   shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+}
+.chat_singOut {
+  @apply absolute left-5 top-2 pr-1 pl-1 z-50;
+}
+.chat_hideChat {
+  @apply z-50 text-sm  border border-sky-200 bg-green-100  2xl:text-[1vmax] lg:w-[6vmax] lg:h-[1.5vmax] hover:bg-sky-500 hover:text-white absolute duration-150 right-5  top-2  text-sky-600 rounded-xl pr-1 pl-1;
+}
+.chat_wrapper {
+  @apply absolute h-screen w-screen flex justify-center items-center;
+}
+.chat_leftMssg {
+  @apply w-[35vmin] md:w-[12vmax] h-auto flex  bg-sky-200   rounded-tl-3xl mr-4  rounded-br-3xl border-purple-500 overflow-hidden flex flex-col;
+}
+.chat_rightMssg {
+  @apply w-[35vmin] md:w-[12vmax] h-auto flex  bg-purple-200  rounded-tr-3xl ml-4  rounded-bl-3xl border-purple-500 overflow-hidden flex flex-col;
+}
+.chat_icon {
+  @apply border rounded-full border-white w-10 h-10  lg:w-[3vmax] lg:h-[3vmax] m-1 overflow-hidden;
+}
+.chat_textAreaDiv {
+  @apply bg-white h-full rounded-b-lg  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+}
+.chat_textArea {
+  @apply block   p-2  h-24 w-full text-sm lg:h-[4vmax]   2xl:text-[1.2vmax] italic  text-gray-800 bg-white border-0 h-full;
+}
+.chat_buttonSubmit {
+  @apply text-sm 2xl:text-[1vmax]  lg:h-[2vmax]  absolute bottom-2 right-4 inline-flex items-center px-2 py-2.5 text-sm font-medium text-center text-white bg-green-600 opacity-60 rounded-lg hover:bg-blue-800;
+}

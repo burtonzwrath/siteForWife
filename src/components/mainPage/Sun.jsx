@@ -1,27 +1,27 @@
 import { useNavigate } from "react-router";
-import { auth } from "./firebase";
+import { auth } from "../../firebase/firebase";
 import {
   CALC_ROUTE,
   ABOUT_ROUTE,
   ACHIEVEMENT_ROUTE,
   FORM_ROUTE,
   CONTACTS_ROUTE,
-} from "../constants/consts";
+} from "../../constants/consts";
 import { useAuthState } from "react-firebase-hooks/auth";
-import Heart from "./Heart";
+import Heart from "../heart/Heart";
 import { useTranslation } from "react-i18next";
 
-function Sun(props) {
+function Sun({ animationState, signWithGoogle, setShowChat }) {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
   const { t } = useTranslation();
 
   function chatEnter() {
     if (!user) {
-      props.signWithGoogle();
-      props.setShowChat(true);
+      signWithGoogle();
+      setShowChat(true);
     } else {
-      props.setShowChat(true);
+      setShowChat(true);
     }
   }
 
@@ -30,6 +30,7 @@ function Sun(props) {
     e.target.closest(".links-icon").style.transform = "scale(1.1)";
     e.target.closest(".links-icon").style.transition = "transform 0.1s linear";
   }
+
   function onMouseLeave(e) {
     e.target.closest(".links-icon").nextSibling.style.opacity = "0.5";
     e.target.closest(".links-icon").style.transform = "scale(1)";
@@ -38,10 +39,10 @@ function Sun(props) {
 
   return (
     <div className=" sunContent_wrapper ">
-      <Heart animationState={props.animationState} />
+      <Heart animationState={animationState} />
       <div
         className={`${
-          props.animationState === "true" ? "animate-sun1 " : "opacity-95"
+          animationState === "true" ? "animate-sun1 " : "opacity-95"
         } links contacts_animation`}
       >
         <div
@@ -69,7 +70,7 @@ function Sun(props) {
 
       <div
         className={`${
-          props.animationState === "true" ? "animate-sun2 " : "opacity-95"
+          animationState === "true" ? "animate-sun2 " : "opacity-95"
         } links about_animation   `}
       >
         <div
@@ -97,7 +98,7 @@ function Sun(props) {
 
       <div
         className={`${
-          props.animationState === "true" ? "animate-sun3 " : "opacity-95 "
+          animationState === "true" ? "animate-sun3 " : "opacity-95 "
         } links chat_animation  `}
       >
         <div
@@ -123,7 +124,7 @@ function Sun(props) {
 
       <div
         className={`${
-          props.animationState === "true" ? "animate-sun4 " : "opacity-95 "
+          animationState === "true" ? "animate-sun4 " : "opacity-95 "
         } links calculator_animation `}
       >
         <div
@@ -144,12 +145,14 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" sun_calculatorText sun_text ">{t("navBar.calculator")}</div>
+        <div className=" sun_calculatorText sun_text ">
+          {t("navBar.calculator")}
+        </div>
       </div>
 
       <div
         className={`${
-          props.animationState === "true" ? "animate-sun5 " : "opacity-95 "
+          animationState === "true" ? "animate-sun5 " : "opacity-95 "
         } links achievement_animation`}
       >
         <div
@@ -170,12 +173,14 @@ function Sun(props) {
             alt=""
           />
         </div>
-        <div className=" sun_achievementText sun_text ">{t("navBar.achievement")}</div>
+        <div className=" sun_achievementText sun_text ">
+          {t("navBar.achievement")}
+        </div>
       </div>
 
       <div
         className={`${
-          props.animationState === "true" ? "animate-sun6 " : "opacity-95"
+          animationState === "true" ? "animate-sun6 " : "opacity-95"
         } links  book_animation  `}
       >
         <div

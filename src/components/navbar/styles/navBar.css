@@ -1,0 +1,45 @@
+.navBar_Hide {
+  @apply flex absolute fixed h-screen z-40 -left-44 lg:-left-40 2xl:-left-[11.4vmax]  w-32 opacity-100     ease-in duration-700;
+}
+.navBar_Show {
+  @apply flex absolute fixed h-screen  z-40  left-0  ease-in duration-700;
+}
+.navBar_wrapper {
+  @apply h-screen;
+}
+.navBarContent_wrapper {
+  @apply flex gap-[1.5vmax];
+}
+.navBar_contentDiv {
+  @apply ease-in duration-500  pl-3 gap-7 md:gap-5 xl:gap-7  grid grid-cols-1 h-screen w-40 lg:w-32 2xl:w-[8vmax]   items-center self-start;
+}
+.navBar_itemsWrapper {
+  @apply h-[60vmax] sm:h-[60vmin]  self-start grid;
+}
+.navBar_button {
+  @apply items-center flex bg-white justify-center border-2 border-green-100 text-green-700 italic w-32  rounded-tl-2xl  rounded-br-2xl h-12 xl:h-14 2xl:text-[1vmax] 2xl:w-[8.5vmax] 2xl:h-[3vmax] text-center   hover:animate-hoverColor shadow-[0_0_10px_2px_rgba(0,0,0,0.6)] hover:border-2;
+}
+.navBar_hiddenDiv {
+  @apply hidden lg:block  lg:ml-0 2xl:ml-1   lg:self-center lg:h-screen w-8 2xl:w-[2.3vmax]  lg:flex lg:items-center lg:justify-center;
+}
+.navBar_arrowDiv {
+  @apply overflow-hidden w-6  2xl:w-[1.5vmax] 2xl:h-[1.5vmax] rounded-full border-2 border-green-100 hover:border-2 hover:border-white hover:scale-125 duration-200;
+}
+.navBar_arrow {
+  @apply 2xl:w-[1.5vmax] object-fill object-cover overflow-hidden    rounded-full;
+}
+.navBar_menuButton {
+  @apply flex justify-center items-center absolute lg:hidden w-14 h-7 bg-orange-200 top-5 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10  font-['Italianno','cursive']  opacity-0;
+}
+.navBarBox_wrapper {
+  @apply z-50   sm:block flex flex-row h-screen pl-3 2xl:pl-[1.7vmax] bg-neutral-200  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+}
+.navBar_crossDiv {
+  @apply flex  justify-center opacity-50  text-sm   lg:hidden w-5 h-5 absolute top-1 right-0;
+}
+.navBar_crossImage {
+  @apply object-fill opacity-40 bg-white rounded-full w-4 h-4;
+}
+.navBar_contentBox {
+  @apply z-50   sm:block flex flex-row h-screen pl-3 2xl:pl-[1.7vmax] bg-neutral-200  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+}

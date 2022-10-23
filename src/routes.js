@@ -9,14 +9,14 @@ import {
   CONTACTS_ROUTE,
 } from "./constants/consts";
 
-import AboutMe from "./components/AboutMe";
-import Form from "./components/FormPage";
-import MainPage from "./components/MainPage";
-import Calculator from "./components/Calculator";
-import Heart from "./components/Heart";
-import Clock from "./components/Clock";
-import Achievement from "./components/Achievement";
-import Contacts from "./components/Contacts";
+import AboutMe from "./components/aboutMe/AboutMe";
+import Form from "./components/form/FormPage";
+import MainPage from "./components/mainPage/MainPage";
+import Calculator from "./components/calculator/Calculator";
+import Heart from "./components/heart/Heart";
+import Clock from "./components/clock/Clock";
+import Achievement from "./components/achievement/Achievement";
+import Contacts from "./components/contacts/Contacts";
 
 export const navRoutes = [
   {

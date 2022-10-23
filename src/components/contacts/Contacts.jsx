@@ -1,17 +1,19 @@
-import NavBar from "./NavBar";
-import img from "../img/about.jpg";
-import LengSwitcher from "./LengSwitcher";
 import { useTranslation } from "react-i18next";
-function Contacts(props) {
+import NavBar from "../navbar/NavBar";
+import img from "../../img/contacts.jpg";
+import LengSwitcher from "../mainPage/LengSwitcher";
+
+function Contacts({ nav, setNav, animationState }) {
   const { t } = useTranslation();
+
   return (
     <div id="contacts" className=" contacts_wrapper ">
-      <div className={props.nav === true ? "navBar_Show " : "navBar_Hide   "}>
-        <NavBar nav={props.nav} setNav={props.setNav} />
+      <div className={nav === true ? "navBar_Show " : "navBar_Hide   "}>
+        <NavBar nav={nav} setNav={setNav} />
         <div className="w-full"></div>
       </div>
       <div className=" lengSwitcher_wrapper ">
-        <LengSwitcher animationState={props.animationState} />
+        <LengSwitcher animationState={animationState} />
       </div>
       <div className="contactsContent_wrapper relative">
         <div className="contacts_h1">{t("contacts.h1")}</div>

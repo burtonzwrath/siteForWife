@@ -8,8 +8,8 @@ export const ACHIEVEMENT_ROUTE = "/achievement";
 export const CONTACTS_ROUTE = "/contacts";
 
 export const initalState = [
-  { idx: 1, pos: 1, url: "/img/cert1.jpg", active: true },
-  { idx: 2, pos: 2, url: "/img/cert2.jpg", active: true },
-  { idx: 3, pos: 3, url: "/img/cert3.jpg", active: true },
-  { idx: 4, pos: 4, url: "img/cert4.jpg", active: false },
+  { idx: 1, pos: 1, url: "/img/cert4.jpg", active: true },
+  { idx: 2, pos: 2, url: "/img/cert3.jpg", active: true },
+  { idx: 3, pos: 3, url: "/img/cert1.jpg", active: true },
+  { idx: 4, pos: 4, url: "img/cert2.jpg", active: false },
 ];

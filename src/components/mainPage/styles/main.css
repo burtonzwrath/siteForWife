@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .main_wrapper {
+    @apply h-screen flex w-screen  bg-orange-50 absolute -z-20;
+  }
+
+  .main_nameWrapper {
+    @apply w-full  absolute flex  items-end justify-center md:block  top-[10vmax] md:right-[3vmax] md:bottom-[1vmax]  sm:mt-0;
+  }
+
+  .main_nameStyle {
+    @apply text-green-100 md:absolute h-20 text-4xl md:text-[6vmin] md:bottom-0 md:left-[18vmax]  font-['Italianno','cursive']  opacity-0;
+  }
+
+  .main_contentWrapper {
+    @apply w-screen overflow-hidden relative flex justify-center;
+  }
+
+  .main_image {
+    @apply hidden md:block absolute md:w-screen sm:absolute sm:h-screen sm:bg-contain;
+  }
+
+  .main_imageMobile {
+    @apply w-screen absolute h-screen bg-contain bg-no-repeat -z-10;
+  }
+
+  .lengSwitcher_wrapper {
+    @apply z-50 absolute top-6 right-10;
+  }
+
+  .lengSwitcherComponent_wrapper {
+    @apply flex gap-3 opacity-70;
+  }
+  .lengSwitcher_en {
+    @apply border flex justify-center items-center  w-8 h-6   md:w-[3vmax] md:h-[3vmin] md:text-[1vmax] text-center bg-green-100 hover:bg-sky-200 duration-100 focus:outline-none rounded-br-lg  rounded-tl-lg;
+  }
+  .lengSwitcher_ukr {
+    @apply border flex justify-center items-center  w-8 h-6   md:w-[3vmax] md:h-[3vmin] md:text-[1vmax]  text-center h-6 bg-green-100 hover:bg-sky-200 duration-100 focus:outline-none rounded-br-lg rounded-tl-lg;
+  }
+
+  .sun_wrapper {
+    @apply md:mr-[10vmax]  container absolute items-center  justify-center  h-screen flex;
+  }
+
+  .sunContent_wrapper {
+    @apply ml-2 relative md:mt-5   w-10 h-10 rounded-3xl relative flex  items-center justify-center;
+  }
+  .contacts_animation {
+    @apply opacity-0  z-20  absolute    top-10 left-20  md:top-[12vmax]  lg:top-[10vmax] md:-left-[1vmax];
+  }
+  .sun_contacts {
+    @apply w-14 h-14 lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax] rounded-full overflow-hidden  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .sun_contactsImage {
+    @apply object-fill lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax];
+  }
+  .sun_contactsText {
+    @apply text-green-50   opacity-40 left-4 md:left-2 xl:-left-0  lg:opacity-50 top-20 md:top-[7.5vmax] 2xl:top-[6.5vmax]  xl:left-3   2xl:left-0 text-[2.2vmax] md:text-[1.3vmax]    text-white absolute;
+  }
+  .sun_about {
+    @apply w-14 h-14 lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax]    rounded-full overflow-hidden  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .sun_aboutImage {
+    @apply decoration-red-500 object-fill lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax];
+  }
+  .sun_aboutText {
+    @apply text-green-50  w-24 top-20 -left-3 md:-left-[5vmax] md:text-end md:w-20  xl:w-24 2xl:w-48  opacity-50     md:top-[7.5vmax]   xl:right-[6vmax] 2xl:text-center md:right-[6vmax] 2xl:right-[4vmax]  2xl:top-[6vmax]   text-[2.2vmax] md:text-[1.3vmax]    absolute;
+  }
+  .about_animation {
+    @apply opacity-0  z-20  absolute    right-0 top-28  md:top-[6vmax] md:right-[8vmax];
+  }
+  .sun_chat {
+    @apply w-14 h-14 lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax]   rounded-full shadow-[0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .sun_chatImage {
+    @apply object-fill lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax];
+  }
+  .sun_chatText {
+    @apply text-green-50 left-4  md:-left-[5vmax] opacity-40 lg:opacity-50 top-20 md:top-[2vmax]     text-[2.2vmax] md:text-[1.3vmax]    text-white absolute;
+  }
+  .chat_animation {
+    @apply opacity-0    z-20  absolute   right-24 top-10 md:right-[14vmax] md:-top-[1.5vmax];
+  }
+  .sun_calculator {
+    @apply w-14 h-14 lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax]    rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .sun_calculatorImage {
+    @apply object-fill lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax];
+  }
+  .sun_calculatorText {
+    @apply text-green-50 text-center  opacity-40 lg:opacity-50 bottom-20 -left-[6vmin] lg:-left-[5vmax]  md:right-[3vmax] md:bottom-[5.5vmax]   text-[2.2vmax] md:text-[1.3vmax]    text-white absolute;
+  }
+  .calculator_animation {
+    @apply opacity-0  absolute z-20  right-24 bottom-10 md:right-[14vmax] md:bottom-[8vmax];
+  }
+  .sun_achievement {
+    @apply w-14 h-14 lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax]    rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .sun_achievementText {
+    @apply text-green-50 opacity-40  -left-[14px] lg:opacity-50 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax]   text-[2.2vmax] md:text-[1.3vmax]     text-white absolute;
+  }
+  .sun_achievementImage {
+    @apply object-fill lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax];
+  }
+  .achievement_animation {
+    @apply opacity-0 z-20  absolute  bottom-32 right-0 md:bottom-[13vmax] md:right-[7vmax];
+  }
+  .sun_book {
+    @apply w-14 h-14 lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax]     rounded-full  shadow-[0_0_20px_10px_rgba(0,0,0,0.6)];
+  }
+  .sun_bookImage {
+    @apply object-fill lg:w-[6vmax] lg:h-[6vmax] 2xl:w-[4.5vmax] 2xl:h-[4.5vmax];
+  }
+  .sun_bookText {
+    @apply text-green-50  md:w-32 lg:w-52 opacity-50 lg:opacity-60 left-1 bottom-20 md:bottom-[7.5vmax] 2xl:bottom-[6vmax]  text-[2.2vmax] md:text-[1.3vmax]      text-white absolute;
+  }
+  .book_animation {
+    @apply opacity-0 z-30  absolute   left-20 bottom-10 md:-left-[1vmax] md:bottom-[15vmax] lg:bottom-[13vmax] xl:bottom-[10vmax];
+  }
+  .sun_text {
+    @apply italic;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}

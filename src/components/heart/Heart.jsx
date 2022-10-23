@@ -1,8 +1,8 @@
-function Heart(props) {
-  return props.animationState ? (
+function Heart({ animationState }) {
+  return animationState ? (
     <div
       className={` ${
-        props.animationState ? " animate-sun1 " : "opacity-95"
+        animationState ? " animate-sun1 " : "opacity-95"
       } heart_wrapper`}
     >
       <div className=" heart_contentWrapper   ">

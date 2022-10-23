@@ -1,0 +1,27 @@
+.contacts_wrapper {
+  @apply h-screen  w-full flex justify-center bg-green-50   items-center;
+}
+.contactsContent_wrapper {
+  @apply h-[80vmax] w-80 flex flex-col md:h-[60vmin] md:w-1/2 lg:w-1/3  sm:flex justify-center  gap-2 items-center bg-white rounded-tl-3xl  rounded-br-3xl shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];
+}
+.contacts_image {
+  @apply w-48 lg:w-[30vmin] rounded-tl-3xl  rounded-br-3xl;
+}
+.contactsMainContent_wrapper {
+  @apply flex p-[2vmax] flex-col md:flex-row;
+}
+.contacts_info {
+  @apply p-4 flex flex-col gap-[2vmax] pl-[2vmax];
+}
+.contacts_h1 {
+  @apply absolute top-2 lg:top-4 font-bold italic text-green-600 text-xl 2xl:text-[1.5vmax];
+}
+.contacts_div {
+  @apply flex gap-2 text-lg;
+}
+.contacts_imageIcon {
+  @apply h-6 w-6;
+}
+.contacts_text {
+  @apply text-sm md:text-[1.2vmax];
+}
