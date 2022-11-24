@@ -22,11 +22,9 @@ function Form({ nav, setNav, animationState }) {
   return (
     <div className="form_wrapper">
       <img className="form_mainImage" src={image} alt="" />
-      <div>
         <div className={nav === true ? "navBar_Show  " : "navBar_Hide   "}>
           <NavBar nav={nav} setNav={setNav} />
         </div>
-      </div>
       <div className=" lengSwitcher_wrapper ">
         <LengSwitcher animationState={animationState} />
       </div>
