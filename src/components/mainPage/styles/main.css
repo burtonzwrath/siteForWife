@@ -12,7 +12,7 @@
   }
 
   .main_nameStyle {
-    @apply text-green-100 md:absolute h-20 text-4xl md:text-[6vmin] md:bottom-0 md:left-[18vmax]  font-['Italianno','cursive']  opacity-0;
+    @apply text-green-100 md:absolute h-20 text-4xl md:text-[6vmin] md:bottom-0 md:left-[18vmax]  font-['Italianno','normal']  opacity-0;
   }
 
   .main_contentWrapper {

@@ -2,7 +2,7 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     fontFamily: {
-      sans: ['"Italianno"', "cursive"],
+      sans: ["Italianno", "normal"],
     },
     extend: {
       backgroundImage: {
@@ -72,7 +72,7 @@ module.exports = {
         },
         nameShow: {
           "0%": { opacity: "0" },
-          "100%": { opacity: "100" },
+          "100%": { opacity: "1" },
         },
         menuShow: {
           "0%": { opacity: "0",transform: "translateX(-100px)" },

@@ -53,15 +53,16 @@ function NavBar({ nav, setNav, animationState }) {
       }
     }
   }
-
+  console.log(animationState)
   return (
     <div className="navBar_wrapper">
       <div
         role="button"
         onClick={(e) => showMenu(e)}
-        className={`${
-          animationState === "true" ? "animate-menuShow" : "opacity-60 z-10"
-        }  burgerMenu navBar_menuButton`}
+        className={`
+          ${animationState === "true" ? "animate-menuShow" : "opacity-60 z-90"} 
+          burgerMenu navBar_menuButton
+        `}
       >
         <span className="h-5  ">{t("menu.1")}</span>
       </div>
@@ -72,12 +73,12 @@ function NavBar({ nav, setNav, animationState }) {
           }
         }}
         tabIndex="7"
-        className=" navBar_contentBox  "
+        className="navBar_contentBox"
       >
         <div
           role="button"
           onClick={(e) => hideMenu(e)}
-          className="  cross navBar_crossDiv"
+          className="cross navBar_crossDiv"
         >
           <img
             className=" navBar_crossImage "

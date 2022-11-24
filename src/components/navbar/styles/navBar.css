@@ -29,7 +29,7 @@
   @apply 2xl:w-[1.5vmax] object-fill object-cover overflow-hidden    rounded-full;
 }
 .navBar_menuButton {
-  @apply flex justify-center items-center absolute lg:hidden w-14 h-7 bg-orange-200 top-5 left-52 rounded-bl-3xl rounded-tl-3xl  rounded-br-3xl rounded-tr-3xl   -z-10  font-['Italianno','cursive']  opacity-0;
+  @apply flex justify-center items-center absolute lg:hidden w-14 h-7 bg-orange-200 top-5 left-52  rounded-br-xl  rounded-tl-xl  z-50  font-['Italianno','cursive']  opacity-0;
 }
 .navBarBox_wrapper {
   @apply z-50   sm:block flex flex-row h-screen pl-3 2xl:pl-[1.7vmax] bg-neutral-200  shadow-[inset_0_0_30px_rgba(187,247,208,12),0_0_20px_10px_rgba(0,0,0,0.6)];

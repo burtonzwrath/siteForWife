@@ -1,6 +1,5 @@
 import Sun from "./Sun";
 import { useEffect, useState } from "react";
-
 import NavBar from "../navbar/NavBar";
 import img from "../../img/hearthand2.jpg";
 import img2 from "../../img/fonNew2.jpg";
@@ -24,10 +23,11 @@ function MainPage({ nav, setNav, animationState, showModal, setShowModal }) {
       }, 4000);
     }
   }, []);
+  console.log(animationState)
 
   return (
     <div className="main_wrapper">
-      <div className={nav === true ? "navBar_Show " : "navBar_Hide   "}>
+      <div className={nav === true ? "navBar_Show" : "navBar_Hide"}>
         <NavBar
           nav={nav}
           setNav={setNav}
@@ -40,7 +40,7 @@ function MainPage({ nav, setNav, animationState, showModal, setShowModal }) {
       <div className="main_nameWrapper">
         <div
           className={` ${
-            animationState === "true" ? "animate-nameShow" : "opacity-95 z-10"
+            animationState === "true" ? "animate-nameShow" : "opacity-80 z-10"
           } main_nameStyle`}
         >
           Dr.Svetlana Saray

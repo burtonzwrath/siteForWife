@@ -1,11 +1,11 @@
-@import "components/mainPage/styles/main.css";
+@import "components/navbar/styles/navBar.css";
 @import "components/aboutMe/styles/aboutMe.css";
 @import "components/calculator/styles/calculator.css";
 @import "components/achievement/styles/achievement.css";
 @import "components/carousel/styles/carousel.css";
 @import "components/form/styles/form.css";
 @import "components/contacts/styles/contacts.css";
-@import "components/navbar/styles/navBar.css";
 @import "components/heart/styles/heart.css";
 @import "components/clock/styles/clock.css";
 @import "components/chat/styles/chat.css";
+@import "components/mainPage/styles/main.css";

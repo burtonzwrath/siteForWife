@@ -20,7 +20,7 @@ function LengSwitcher() {
       <div
         role="button"
         className={` ${
-          lengEn === false ? "bg-green-100  " : "bg-green-300"
+          lengEn === false ? "bg-green-100" : "bg-green-300"
         } ${lengEn}  lengSwitcher_en`}
         onClick={(e) => languageSwitcher(e, "en")}
       >
