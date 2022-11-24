@@ -35,10 +35,10 @@
     @apply flex gap-3 opacity-70;
   }
   .lengSwitcher_en {
-    @apply border flex justify-center items-center  w-8 h-6   md:w-[3vmax] md:h-[3vmin] md:text-[1vmax] text-center bg-green-100 hover:bg-sky-200 duration-100 focus:outline-none rounded-br-lg  rounded-tl-lg;
+    @apply border flex justify-center items-center  w-8 h-6   md:w-[3vmax] md:h-[3vmin] md:text-[1vmax] text-center bg-green-100  duration-100 focus:outline-none rounded-br-lg  rounded-tl-lg;
   }
   .lengSwitcher_ukr {
-    @apply border flex justify-center items-center  w-8 h-6   md:w-[3vmax] md:h-[3vmin] md:text-[1vmax]  text-center h-6 bg-green-100 hover:bg-sky-200 duration-100 focus:outline-none rounded-br-lg rounded-tl-lg;
+    @apply border flex justify-center items-center  w-8 h-6   md:w-[3vmax] md:h-[3vmin] md:text-[1vmax]  text-center h-6 bg-green-100  duration-100 focus:outline-none rounded-br-lg rounded-tl-lg;
   }
 
   .sun_wrapper {

@@ -9,7 +9,7 @@ function LengSwitcher() {
   function languageSwitcher(e, leng) {
     e.preventDefault();
     i18n.changeLanguage(leng);
-    if (e.target.className.includes("false")) {
+    if (!e.currentTarget.className.includes("bg-green-300")) {
       setLengEn(!lengEn);
       setLengUkr(!lengUkr);
     }

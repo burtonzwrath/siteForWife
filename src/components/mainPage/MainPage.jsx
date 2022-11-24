@@ -51,7 +51,7 @@ function MainPage({ nav, setNav, animationState, showModal, setShowModal }) {
         <div
           className={`${
             animationState === "true" ? "animate-lengShow" : "opacity-70"
-          }  lengSwitcher_wrapper opacity-0  `}
+          }  lengSwitcher_wrapper opacity-0 `}
         >
           <LengSwitcher animationState={animationState} />
         </div>
